@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import Calculator1 from './Menu1/Calculator1'
+import Calculator2 from './Menu1/Calculator2'
 
 const Tab = () => {
     const [tabBtn, setTabBtn] = useState(1)
@@ -21,8 +23,8 @@ const Tab = () => {
 
                 {
                     tabBtn === 1
-                        ? '첫번째 내용들'
-                        : '두번째 내용들'
+                        ? <Calculator1 />
+                        : <Calculator2 />
                 }
             </div>
         </>
