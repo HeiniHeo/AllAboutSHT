@@ -21,9 +21,9 @@ const Tab2 = () => {
         <>
             <div className="tab_right">
                 <div className="btn_array">
-                    <button onClick={btn1}>버튼1</button>
-                    <button onClick={btn2}>버튼2</button>
-                    <button onClick={btn3}>버튼3</button>
+                    <button onClick={btn1}>소득금액 조회 사이트</button>
+                    <button onClick={btn2}>청약 자격 조회 사이트</button>
+                    <button onClick={btn3}>자주 물어보는 질문</button>
                 </div>
                 {
                     tabBtn === 1
