@@ -1,0 +1,34 @@
+.wrap{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.tab_left{
+    width: 600px;
+    height: 600px;
+    margin-right:50px;
+    background-color: #ededed;
+}
+
+.tab_right{
+    width: 600px;
+    background-color: #ededed;
+    height: 600px;
+}
+
+.btn_array{
+    display: flex;
+}
+
+.btn_array > button{
+    width: 100%;
+    border:none;
+    background-color: rgb(127,190,37);
+    padding: 7px 0;
+    color: #fff;
+}
+
+.btn_array > button:hover{
+    background-color: rgb(63, 94, 19);
+}
