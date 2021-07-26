@@ -1,4 +1,7 @@
 import { useState } from 'react'
+import Income from './Menu2/Income'
+import Subscription from './Menu2/Subscription'
+import FAQ from './Menu2/FAQ'
 
 const Tab2 = () => {
     const [tabBtn, setTabBtn] = useState(1)
@@ -24,10 +27,10 @@ const Tab2 = () => {
                 </div>
                 {
                     tabBtn === 1
-                        ? ' 첫번째 내용'
+                        ? <Income/>
                         : (tabBtn === 2
-                            ? '두번째 내용'
-                            : '세번째 내용'
+                            ? <Subscription/>
+                            : <FAQ/>
                         )
                 }
             </div>
