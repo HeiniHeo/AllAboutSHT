@@ -47,10 +47,10 @@ const Calculator1 = ()=>{
                                     <option value = "busan">
                                         부산광역시
                                     </option>
-                                    <option>
+                                    <option value = "dagu">
                                         대구광역시
                                     </option>
-                                    <option>
+                                    <option value = "GwangJu">
                                         인천광역시
                                     </option>
                                     <option>
@@ -128,33 +128,45 @@ const Calculator1 = ()=>{
                                                 </>
                                                 : ( Location === 'busan'
                                                     ? <>
-                                                    <option>종로구</option>
                                                     <option>중구</option>
-                                                    <option>용산구</option>
-                                                    <option>성동구</option>
-                                                    <option>광진구</option>
-                                                    <option>동대문구</option>
-                                                    <option>중량구</option>
-                                                    <option>성북구</option>
-                                                    <option>강북구</option>
-                                                    <option>도봉구</option>
-                                                    <option>노원구</option>
-                                                    <option>은평구</option>
-                                                    <option>서대문구</option>
-                                                    <option>마포구</option>
-                                                    <option>양천구</option>
+                                                    <option>서구</option>
+                                                    <option>동구</option>
+                                                    <option>영도구</option>
+                                                    <option>부산진구</option>
+                                                    <option>동래구</option>
+                                                    <option>남구</option>
+                                                    <option>북구</option>
+                                                    <option>해운대구</option>
+                                                    <option>사하구</option>
+                                                    <option>금정구</option>
                                                     <option>강서구</option>
-                                                    <option>구로구</option>
-                                                    <option>금천구</option>
-                                                    <option>영등포구</option>
-                                                    <option>동작구</option>
-                                                    <option>관악구</option>
-                                                    <option>서초구</option>
-                                                    <option>강남구</option>
-                                                    <option>송파구</option>
-                                                    <option>강동구</option>
+                                                    <option>연제구</option>
+                                                    <option>수영구</option>
+                                                    <option>사상구</option>
+                                                    <option>기장군</option>
                                                     </>
-                                                    : 'df')
+                                                    : ( Location === 'dagu'
+                                                    ? <>
+                                                    <option>중구</option>
+                                                    <option>동구</option>
+                                                    <option>미추홀구</option>
+                                                    <option>연수구</option>
+                                                    <option>남동구</option>
+                                                    <option>부평구</option>
+                                                    <option>계양구</option>
+                                                    <option>서구</option>
+                                                    <option>강화군</option>
+                                                    <option>옹진군</option>
+                                                    </>
+                                                    : ( Location === 'GwangJu'
+                                                    ? <>
+                                                    <option>동구</option>
+                                                    <option>서구</option>
+                                                    <option>남구</option>
+                                                    <option>북구</option>
+                                                    <option>광산구</option>
+                                                    </>
+                                                    : 'df')))
                                         }
                                 </select>
                                 <h6>2. 거주 기간</h6>
