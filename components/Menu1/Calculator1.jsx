@@ -1,4 +1,12 @@
+import { useState } from 'react'
+
 const Calculator1 = ()=>{
+
+    const [Location, setLocation] = useState(1)
+    const ChangeLocation = (e) => {
+        setLocation(e.target.value)
+    }
+
     return(
         <>
             <div class = "subscription_wrap w100">
@@ -7,14 +15,14 @@ const Calculator1 = ()=>{
                         <div class = "calculator_content1">
                             <div class = "option1">
                                 <h5>(1) 가구소득</h5>
+                                <h6>1. 배우자 소득 유무</h6>
                                 <ul>
-                                    <li>1. 배우자 소득 유무</li>
                                     <li><input type = "checkbox"/>맞벌이</li>
                                     <li><input type = "checkbox"/>외벌이</li>
                                     <li><input type = "checkbox"/>둘 다 무직</li>
                                 </ul>
+                                <h6>2. 가구 수</h6>
                                 <ul>
-                                    <li>2. 가구 수</li>
                                     <li><input type = "checkbox"/>3인 이하</li>
                                     <li><input type = "checkbox"/>4인</li>
                                     <li><input type = "checkbox"/>5인</li>
@@ -22,196 +30,145 @@ const Calculator1 = ()=>{
                                     <li><input type = "checkbox"/>7인</li>
                                     <li><input type = "checkbox"/>8인</li>
                                 </ul>
-                                <ul>3. 소득금액 : <input class = "option1" type = "text"/></ul>
-                                <div>점수 : <span class = "option1_result"></span></div>
+                                <h6>3. 소득금액</h6>
+                                    <div><input class = "option1" type = "text"/>원</div>
+                                <div class = "score">점수 : <span class = "option1_result"></span></div>
                             </div>
                             <div class = "option2">
                                 <h5>(2) 해당 시*도 연속 거주기간</h5>
-                                <h3>1. 거주 지역</h3>
-                                <select>
+                                <h6>1. 거주 지역</h6>
+                                <select onClick = {ChangeLocation}>
                                     <option>
-                                        도
+                                        시/도
+                                    </option>
+                                    <option value = "seoul">
+                                        서울특별시
+                                    </option>
+                                    <option value = "busan">
+                                        부산광역시
                                     </option>
                                     <option>
-                                        인천
+                                        대구광역시
                                     </option>
                                     <option>
-                                        남양
+                                        인천광역시
                                     </option>
                                     <option>
-                                        성남
+                                        광주광역시
                                     </option>
                                     <option>
-                                        의왕
+                                        대전광역시
                                     </option>
                                     <option>
-                                        위례
+                                        울산광역시
                                     </option>
                                     <option>
-                                        성남
+                                        세종특별자치시
                                     </option>
                                     <option>
-                                        의정부
+                                        경기도
                                     </option>
                                     <option>
-                                        군포
+                                        강원도
                                     </option>
                                     <option>
-                                        의왕
+                                        충청북도
                                     </option>
                                     <option>
-                                        수원
+                                        충청남도
                                     </option>
                                     <option>
-                                        부천
+                                        전라북도
                                     </option>
                                     <option>
-                                        인천
+                                        전라남도
                                     </option>
                                     <option>
-                                        파주
+                                        경상북도
                                     </option>
                                     <option>
-                                        하남
+                                        경상남도
                                     </option>
                                     <option>
-                                        시흥
-                                    </option>
-                                    <option>
-                                        양주
-                                    </option>
-                                    <option>
-                                        과천
-                                    </option>
-                                    <option>
-                                        남양주
-                                    </option>
-                                    <option>
-                                        부천
-                                    </option>
-                                    <option>
-                                        고양
-                                    </option>
-                                    <option>
-                                        부천
-                                    </option>
-                                    <option>
-                                        시흥
-                                    </option>
-                                    <option>
-                                        안산
-                                    </option>
-                                    <option>
-                                        동작구
-                                    </option>
-                                    <option>
-                                        고양
+                                        제주특별자치도
                                     </option>
                                 </select>   
                                 <select>
                                     <option>
-                                        시
+                                        군/구
                                     </option>
-                                    <option>
-                                        계양
-                                    </option>
-                                    <option>
-                                        주진접2
-                                    </option>
-                                    <option>
-                                        복정1
-                                    </option>
-                                    <option>
-                                        복정2
-                                    </option>
-                                    <option>
-                                        청계2
-                                    </option>
-                                    <option>
-                                        주왕숙2
-                                    </option>
-                                    <option>
-                                        신촌
-                                    </option>
-                                    <option>
-                                        낙생
-                                    </option>
-                                    <option>
-                                        우정
-                                    </option>
-                                    <option>
-                                        대야미
-                                    </option>
-                                    <option>
-                                        월암
-                                    </option>
-                                    <option>
-                                        당수
-                                    </option>
-                                    <option>
-                                        원종
-                                    </option>
-                                    <option>
-                                        검단
-                                    </option>
-                                    <option>
-                                        운정3
-                                    </option>
-                                    <option>
-                                        교산
-                                    </option>
-                                    <option>
-                                        하중
-                                    </option>
-                                    <option>
-                                        회천
-                                    </option>
-                                    <option>
-                                        주암
-                                    </option>
-                                    <option>
-                                        왕숙
-                                    </option>
-                                    <option>
-                                        대장
-                                    </option>
-                                    <option>
-                                        창릉
-                                    </option>
-                                    <option>
-                                        역곡
-                                    </option>
-                                    <option>
-                                        거모
-                                    </option>
-                                    <option>
-                                        장상
-                                    </option>
-                                    <option>
-                                        신길2
-                                    </option>
-                                    <option>
-                                        수방사
-                                    </option>
-                                    <option>
-                                        장항
-                                    </option>
-                                    <option>
-                                        구리갈매역세권
-                                    </option>
+                                        {
+                                            Location === 'seoul'
+                                            ? <>
+                                                <option>종로구</option>
+                                                <option>중구</option>
+                                                <option>용산구</option>
+                                                <option>성동구</option>
+                                                <option>광진구</option>
+                                                <option>동대문구</option>
+                                                <option>중량구</option>
+                                                <option>성북구</option>
+                                                <option>강북구</option>
+                                                <option>도봉구</option>
+                                                <option>노원구</option>
+                                                <option>은평구</option>
+                                                <option>서대문구</option>
+                                                <option>마포구</option>
+                                                <option>양천구</option>
+                                                <option>강서구</option>
+                                                <option>구로구</option>
+                                                <option>금천구</option>
+                                                <option>영등포구</option>
+                                                <option>동작구</option>
+                                                <option>관악구</option>
+                                                <option>서초구</option>
+                                                <option>강남구</option>
+                                                <option>송파구</option>
+                                                <option>강동구</option>
+                                                </>
+                                                : ( Location === 'busan'
+                                                    ? <>
+                                                    <option>종로구</option>
+                                                    <option>중구</option>
+                                                    <option>용산구</option>
+                                                    <option>성동구</option>
+                                                    <option>광진구</option>
+                                                    <option>동대문구</option>
+                                                    <option>중량구</option>
+                                                    <option>성북구</option>
+                                                    <option>강북구</option>
+                                                    <option>도봉구</option>
+                                                    <option>노원구</option>
+                                                    <option>은평구</option>
+                                                    <option>서대문구</option>
+                                                    <option>마포구</option>
+                                                    <option>양천구</option>
+                                                    <option>강서구</option>
+                                                    <option>구로구</option>
+                                                    <option>금천구</option>
+                                                    <option>영등포구</option>
+                                                    <option>동작구</option>
+                                                    <option>관악구</option>
+                                                    <option>서초구</option>
+                                                    <option>강남구</option>
+                                                    <option>송파구</option>
+                                                    <option>강동구</option>
+                                                    </>
+                                                    : 'df')
+                                        }
                                 </select>
-                                <h3>2. 거주 기간</h3>
+                                <h6>2. 거주 기간</h6>
                                 <div class = ""><input type = "text"/>개월</div>
-                                <div>점수 : <span class = "option2_result"></span></div>
+                                <div class = "score">점수 : <span class = "option2_result"></span></div>
                             </div>
                             <div class = "option3">
                                 <h5>(3) 주택청약종합저축 납입인정 횟수</h5>
                                 <div>
                                     <input type = "text" />회
                                 </div>
-                                <div>점수 : <span class = "option3_result"></span></div>
+                                <div class = "score">점수 : <span class = "option3_result"></span></div>
                             </div>
-                            <div>총점 : <span class = "total_result"></span></div>
+                            <div class = "score totalScore">총점 : <span class = "total_result"></span></div>
                         </div>
                     </div>
                 </div>

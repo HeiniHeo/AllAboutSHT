@@ -1,12 +1,12 @@
 .wrap{
     display: flex;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 40px;
 }
 
 .tab_left{
     width: 600px;
-    height: 600px;
+    height: 790px;
     margin-right:50px;
     background-color: #ededed;
 }
@@ -14,7 +14,7 @@
 .tab_right{
     width: 600px;
     background-color: #ededed;
-    height: 600px;
+    height: 790px;
 }
 
 .btn_array{

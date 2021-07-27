@@ -1,5 +1,6 @@
 import '../css/index.css'
 import '../css/tab.css'
+import '../css/Calculator.css'
 import Head from 'next/head'
 
 const App = ({ Component }) => {

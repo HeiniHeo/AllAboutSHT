@@ -10,18 +10,18 @@ const Calculator2 = ()=>{
                                 <div>
                                     <input type = "text" />명
                                 </div>
-                                <div>점수 : <span class = "option1_result"></span></div>
+                                <div class = "score">점수 : <span class = "option1_result"></span></div>
                             </div>
                             <div class = "option2">
                                 <h5>(2) 무주택기간</h5>
                                 <div>
                                     <input type = "text" />개월
                                 </div>
-                                <div>점수 : <span class = "option2_result"></span></div>
+                                <div class = "score">점수 : <span class = "option2_result"></span></div>
                             </div>
                             <div class = "option3">
                                 <h5>(3) 해당 시*도 연속 거주기간</h5>
-                                <h3>1. 거주 지역</h3>
+                                <h6>1. 거주 지역</h6>
                                 <select>
                                     <option>
                                         도
@@ -194,7 +194,7 @@ const Calculator2 = ()=>{
                                         구리갈매역세권
                                     </option>
                                 </select>
-                                <h3>2. 거주 기간</h3>
+                                <h6>2. 거주 기간</h6>
                                 <div class = ""><input type = "text"/>개월</div>
                                 <div>점수 : <span class = "option3_result"></span></div>
                             </div>
@@ -203,9 +203,9 @@ const Calculator2 = ()=>{
                                 <div>
                                     <input type = "text" />회
                                 </div>
-                                <div>점수 : <span class = "option4_result"></span></div>
+                                <div class = "score">점수 : <span class = "option4_result"></span></div>
                             </div>
-                            <div>총점 : <span class = "total_result"></span></div>
+                            <div class = "score totalScore">총점 : <span class = "total_result"></span></div>
                         </div>
                     </div>   
                 </div>                
