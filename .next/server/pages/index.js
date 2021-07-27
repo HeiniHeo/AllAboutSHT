@@ -18,7 +18,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 
 
-var _jsxFileName = "C:\\Users\\KGA_18\\TEAM\\SHT_PROJECT\\components\\Menu1\\Calculator1.jsx";
+var _jsxFileName = "C:\\Users\\KGA_03\\TEAM\\SHT_0727\\components\\Menu1\\Calculator1.jsx";
 
 
 const Calculator1 = () => {
@@ -834,7 +834,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);
 
 
-var _jsxFileName = "C:\\Users\\KGA_18\\TEAM\\SHT_PROJECT\\components\\Menu1\\Calculator2.jsx";
+var _jsxFileName = "C:\\Users\\KGA_03\\TEAM\\SHT_0727\\components\\Menu1\\Calculator2.jsx";
 
 const Calculator2 = () => {
   return /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
@@ -1484,7 +1484,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Menu1_Calculator2__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Menu1/Calculator2 */ "./components/Menu1/Calculator2.jsx");
 
 
-var _jsxFileName = "C:\\Users\\KGA_18\\TEAM\\SHT_PROJECT\\components\\Tab.jsx";
+var _jsxFileName = "C:\\Users\\KGA_03\\TEAM\\SHT_0727\\components\\Tab.jsx";
 
 
 
@@ -1565,7 +1565,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Menu2_FAQ__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Menu2/FAQ */ "./components/Menu2/FAQ.jsx");
 
 
-var _jsxFileName = "C:\\Users\\KGA_18\\TEAM\\SHT_PROJECT\\components\\Tab2.jsx";
+var _jsxFileName = "C:\\Users\\KGA_03\\TEAM\\SHT_0727\\components\\Tab2.jsx";
 
 
 
@@ -1659,7 +1659,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Tab2__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Tab2 */ "./components/Tab2.jsx");
 
 
-var _jsxFileName = "C:\\Users\\KGA_18\\TEAM\\SHT_PROJECT\\pages\\index.jsx";
+var _jsxFileName = "C:\\Users\\KGA_03\\TEAM\\SHT_0727\\pages\\index.jsx";
 
 
 
