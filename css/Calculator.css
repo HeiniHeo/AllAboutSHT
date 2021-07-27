@@ -4,6 +4,7 @@
 h5{
   font-size: 18px;
   margin: 10px 0;
+  display: inline-block;
 }
 h6{
   margin:8px 0;
@@ -29,4 +30,12 @@ ul > li > input, input{
   font-size: 20px;
   font-weight: bold;
   margin-top: 18px;
+}
+
+.BTN{
+  color:green;
+  border:1px solid green;
+  padding:2px;
+  box-sizing: border-box;
+  border-radius: 3px;
 }
