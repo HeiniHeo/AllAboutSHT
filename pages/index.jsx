@@ -1,6 +1,7 @@
 import Tab from '../components/Tab'
 import Tab2 from '../components/Tab2'
 
+
 const Index = () => {
     return (
         <>

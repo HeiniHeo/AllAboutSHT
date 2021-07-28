@@ -17,8 +17,8 @@ const Tab = () => {
         <>
             <div className="tab_left">
                 <div className="btn_array">
-                    <button onClick={btn1}>버튼1</button>
-                    <button onClick={btn2}>버튼2</button>
+                    <button onClick={btn1}>신혼희망타운(1단계)</button>
+                    <button onClick={btn2}>신혼희망타운(2단계)</button>
                 </div>
 
                 {
