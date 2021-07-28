@@ -1,0 +1,50 @@
+.subscription{
+  padding:7px 18px;
+}
+h5{
+  font-size: 18px;
+  margin: 10px 0;
+  display: inline-block;
+}
+h6{
+  margin:8px 0;
+  font-size: 14px;
+  margin-left: 7px;
+}
+
+input, select{
+  margin-left: 18px;
+  margin-bottom: 7px;
+}
+
+ul > li > input, input{
+  display: inline-block;
+  margin-right: 7px;
+}
+
+.score{
+  color:rgb(0,91,172);
+}
+
+.totalScore{
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 18px;
+}
+
+
+.BTN{
+  color:rgb(0,91,172);
+  background: white;
+  border:1px solid rgb(0,91,172);
+  box-sizing: border-box;
+  padding:1px;
+}
+
+.Select_Box{
+  margin-top: 14px;
+  border:1px solid rgb(0,91,172);
+  color:rgb(0,91,172);
+  height:29px;
+  width:130px;
+}
