@@ -1,5 +1,6 @@
 import '../css/index.css'
 import '../css/tab.css'
+import '../css/Calculator.css'
 import '../css/Subscription.css'
 import '../css/Faq.css'
 import Head from 'next/head'
