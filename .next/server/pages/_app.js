@@ -24,7 +24,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_4__);
 
 
-var _jsxFileName = "C:\\Users\\KGA_18\\TEAM\\SHT_PROJECT\\pages\\_app.jsx";
+var _jsxFileName = "C:\\Users\\KGA_20\\TEAM_0728\\SIM\\pages\\_app.jsx";
 
 
 
