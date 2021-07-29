@@ -3,33 +3,33 @@ import Link from 'next/link'
 
 const menu = [
     {
-        id:'1',
-        category:'소득',
-        url:'/faqs/1'
+        id: '1',
+        category: '소득',
+        url: '/faqs/income'
     },
     {
-        id:'2',
-        category:'자산',
-        url:'/faqs/2'
+        id: '2',
+        category: '자산',
+        url: '/faqs/property'
     },
     {
-        id:'3',
-        category:'청약통장',
-        url:'/faqs/3'
+        id: '3',
+        category: '청약통장',
+        url: '/faqs/bank'
     },
     {
-        id:'4',
-        category:'기타',
-        url:'/faqs/4'
+        id: '4',
+        category: '기타',
+        url: '/faqs/etc'
     }
 ]
 
-const FAQ = ()=>{
-    const category = menu.map((v)=>{
+const FAQ = () => {
+    const category = menu.map((v) => {
         return <div className="FaqList" key={v.id}><Link href={v.url}><a>{v.category}</a></Link></div>
     })
 
-    return(
+    return (
         <>
             {category}
         </>
