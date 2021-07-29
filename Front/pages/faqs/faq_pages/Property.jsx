@@ -1,14 +1,12 @@
-import Link from 'next/link'
-
 const PropertyContents = [
     {
         id: '0',
-        title: 'hello property',
-        contents: 'react cham djfuqek djfudnj'
+        question: 'hello property',
+        answer: 'react cham djfuqek djfudnj'
     }, {
         id: '1',
-        title: 'hello property 1',
-        contents: 'react cham djfuqek djfudnj1'
+        question: 'hello property 1',
+        answer: 'react cham djfuqek djfudnj1'
     }
 ]
 
@@ -17,25 +15,19 @@ const Property = () => {
     const PropertyList = PropertyContents.map((v) => {
         return (
             <tr key={v.id}>
-                <td>{v.id}</td>
-                <td><Link href=""><a>{v.title}</a></Link></td>
+                <td>{v.question}</td>
+                <td>{v.answer}</td>
             </tr>
         )
     })
 
     return (
         <>
-            <table className="FaqTable">
-                <thead>
-                    <tr>
-                        <th>No.</th>
-                        <th>Property</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {PropertyList}
-                </tbody>
-            </table>
+
+            <tbody>
+                {PropertyList}
+            </tbody>
+
         </>
     )
 }
