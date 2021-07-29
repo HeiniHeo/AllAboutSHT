@@ -1,12 +1,13 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const cors = require('cors')
 // npm install body-parser
 const app = express()
 const db = require('./models')
-const routes = require('./routes')
-
+const {calculator1,calculator2,FAQ,FeedBack} = require('./models')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:false,}))
+app.use(cors());
 
 db.sequelize.sync({focus:false}) // promise object
 .then(()=>{
@@ -16,13 +17,56 @@ db.sequelize.sync({focus:false}) // promise object
     console.log(`DB 접속 실패 : ${error} `)
 })
 
-app.use('/api',routes)
+app.post('/calculator1',async(req,res,next)=>{
 
-app.get('/',(req,res)=>{
-    res.send('hello aws!')
+    const {income,Resident_period,Resident_Location,Number_Of_Payment,Applying_Location} = req.body
+
+    try{
+        const data = await calculator1.create({
+            income:income,
+            Resident_Period:Resident_period,
+            Resident_Location:Resident_Location,
+            Number_Of_Payment:Number_Of_Payment,
+            Applying_Location:Applying_Location
+
+        })
+
+        res.json(data)
+    } catch (error) {
+        console.error(error)
+        next(error)
+    }
 })
 
-app.listen(80,()=>{
-    console.log('start server port 3000')    
+
+app.post('/calculator2',async(req,res,next)=>{
+
+    const {Number_Of_Children,Resident_period,Resident_Location,Number_Of_Payment,Applying_Location,Period_Of_HomeLessness} = req.body
+
+    try{
+        const data = await calculator2.create({
+            Number_Of_Children:Number_Of_Children,
+            Resident_Period:Resident_period,
+            Resident_Location:Resident_Location,
+            Number_Of_Payment:Number_Of_Payment,
+            Applying_Location:Applying_Location,
+            Period_Of_HomeLessness:Period_Of_HomeLessness,
+
+        })
+
+        res.json(data)
+    } catch (error) {
+        console.error(error)
+        next(error)
+    }
+})
+
+
+app.get('/',(req,res)=>{
+    res.send('sadgsdg')
+})
+
+app.listen(5000,()=>{
+    console.log('start server port 4000')    
 })
 
