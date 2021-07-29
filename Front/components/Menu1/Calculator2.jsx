@@ -1,9 +1,11 @@
 import { useState } from 'react'
+import {postCalculator2} from '../../api/api'
 
 const Calculator2 = ()=>{
 
     const [Location, setLocation] = useState(1)
     const [Location2, setLocation2] = useState(1)
+    const [apply, setapply] = useState(1)
 
     const [option1, setOption1] = useState(1)
     const [option2, setOption2] = useState(1)
@@ -12,6 +14,11 @@ const Calculator2 = ()=>{
     const [Result1, setResult1] = useState(1)
     const [Result2, setResult2] = useState(1)
     const [Result4, setResult4] = useState(1)
+
+
+    const Applying_Location = (e) => {
+        setapply(e.target.value)
+    }
 
     const changOption1 = (e) => {
         setOption1(e.target.value)
@@ -71,6 +78,11 @@ const Calculator2 = ()=>{
         setLocation2(e.target.value)
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        postCalculator2({Number_Of_Children:Result1,Resident_period:1,Resident_Location:'d',Period_Of_HomeLessness:Result2,Number_Of_Payment:Result4,Applying_Location:apply})
+
+    }
 
     
 
@@ -80,6 +92,7 @@ const Calculator2 = ()=>{
             <div class = "subscription_wrap w100">
                 <div class = "subscription w1200">
                     <div class>
+                    <form onSubmit = {handleSubmit}>
                         <div class = "calculator_content2">
                             <div class = "option1">
                                 <h5>(1) 미성년 자녀수</h5><input onClick = {HandleResult1} class = "BTN" type = "button" value = "결과"/>
@@ -161,31 +174,31 @@ const Calculator2 = ()=>{
                                         {
                                             Location === 'seoul'
                                             ? <>
-                                                <option>종로구</option>
-                                                <option>중구</option>
-                                                <option>용산구</option>
-                                                <option>성동구</option>
-                                                <option>광진구</option>
-                                                <option>동대문구</option>
-                                                <option>중량구</option>
-                                                <option>성북구</option>
-                                                <option>강북구</option>
-                                                <option>도봉구</option>
-                                                <option>노원구</option>
-                                                <option>은평구</option>
-                                                <option>서대문구</option>
-                                                <option>마포구</option>
-                                                <option>양천구</option>
-                                                <option>강서구</option>
-                                                <option>구로구</option>
-                                                <option>금천구</option>
-                                                <option>영등포구</option>
-                                                <option>동작구</option>
-                                                <option>관악구</option>
-                                                <option>서초구</option>
-                                                <option>강남구</option>
-                                                <option>송파구</option>
-                                                <option>강동구</option>
+                                                <option value = "종로구">종로구</option>
+                                                <option value = "중구">중구</option>
+                                                <option value = "용산구">용산구</option>
+                                                <option value = "성동구">성동구</option>
+                                                <option value = "광진구">광진구</option>
+                                                <option value = "동대문구">동대문구</option>
+                                                <option value = "중량구">중량구</option>
+                                                <option value = "성북구">성북구</option>
+                                                <option value = "강북구">강북구</option>
+                                                <option value = "도봉구">도봉구</option>
+                                                <option value = "노원구">노원구</option>
+                                                <option value = "은평구">은평구</option>
+                                                <option value = "서대문구">서대문구</option>
+                                                <option value = "마포구">마포구</option>
+                                                <option value = "양천구">양천구</option>
+                                                <option value = "강서구">강서구</option>
+                                                <option value = "구로구">구로구</option>
+                                                <option value = "금천구">금천구</option>
+                                                <option value = "영등포구">영등포구</option>
+                                                <option value = "동작구">동작구</option>
+                                                <option value = "관악구">관악구</option>
+                                                <option value = "서초구">서초구</option>
+                                                <option value = "강남구">강남구</option>
+                                                <option value = "송파구">송파구</option>
+                                                <option value = "강동구">강동구</option>
                                                 </>
                                                 : ( Location === 'busan'
                                                     ? <>
@@ -477,7 +490,7 @@ const Calculator2 = ()=>{
                                 </div>
                                 <div class = "score">점수 : <span class = "option4_result">{Result4}</span></div>
                             </div>
-                            <div class = "score totalScore">총점 : <span class = "total_result">{Result1+Result2+Result4}</span></div>
+                            <div class = "score totalScore inline-block">총점 : <span class = "total_result">{Result1+Result2+Result4}</span></div><input class = "submitBTN" value = "저장하고 지원내역 보기" type = "submit"/>
                             <div class = "score totalScore">지원 지역</div>
                             <select class = "Select_Box" onClick = {ChangeLocation2}>
                                 <option value = "first">1차 지원(7월)</option>
@@ -485,7 +498,7 @@ const Calculator2 = ()=>{
                                 <option value = "third">3차 지원(11월)</option>
                                 <option value = "fourth">4차 지원(12월)</option>
                             </select>
-                            <select class = "Select_Box">
+                            <select class = "Select_Box" onClick = {Applying_Location}>
                                 {
                                     Location2 == 'first'
                                     ? <>
@@ -534,6 +547,7 @@ const Calculator2 = ()=>{
                                 }
                             </select>
                         </div>
+                    </form>
                     </div>   
                 </div>                
             </div>

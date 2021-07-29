@@ -1,9 +1,15 @@
-import { useState } from 'react'
+import React,{useContext,useReducer,useEffect,useState} from 'react'
+import Store from '../../Store/context'
+import reducer from '../../Store/reducer'
+import {postCalculator1} from '../../api/api'
 
 const Calculator1 = ()=>{
+    const {state,dispatch} = useContext(Store)
 
     const [Location, setLocation] = useState(1)
     const [Location2, setLocation2] = useState(1)
+    const [apply, setapply] = useState(1)
+
     const [Income, setIncome] = useState(1)
     const [Person, setPerson] = useState(1)
     const [Cost, setCost] = useState(1)
@@ -143,11 +149,22 @@ const Calculator1 = ()=>{
         setLocation2(e.target.value)
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        postCalculator1({income:Result1,Resident_period:1,Resident_Location:'d',Number_Of_Payment:Result3,Applying_Location:apply})
+
+    }
+
+    const Applying_Location = (e) => {
+        setapply(e.target.value)
+    }
+
     return(
         <>
             <div class = "subscription_wrap w100">
                 <div class = "subscription w1200">
                     <div class>
+                    <form onSubmit = {handleSubmit}>
                         <div class = "calculator_content1">
                             <div class = "option1">
                                 <h5>(1) 가구소득</h5><input onClick = {HandleResult1} class = "BTN" type = "button" value = "결과"/>
@@ -552,7 +569,7 @@ const Calculator1 = ()=>{
                                 </div>
                                 <div class = "score">점수 : <span class = "option3_result">{Result3}</span></div>
                             </div>
-                            <div class = "score totalScore">총점 : <span class = "total_result">{Result1+Result3}</span></div>
+                            <div class = "score totalScore inline-block">총점 : <span class = "total_result">{Result1+Result3}</span></div><input class = "submitBTN" value = "저장하고 지원내역 보기" type = "submit"/>
                             <div class = "score totalScore">지원 지역</div>
                             <select class = "Select_Box" onClick = {ChangeLocation2}>
                                 <option value = "first">1차 지원(7월)</option>
@@ -560,48 +577,48 @@ const Calculator1 = ()=>{
                                 <option value = "third">3차 지원(11월)</option>
                                 <option value = "fourth">4차 지원(12월)</option>
                             </select>
-                            <select class = "Select_Box">
+                            <select class = "Select_Box" onClick = {Applying_Location}>
                                 {
                                     Location2 == 'first'
                                     ? <>
-                                    <option>인천계양</option>
-                                    <option>남양주진접2</option>
-                                    <option>성남복정1</option>
-                                    <option>의왕청계2</option>
-                                    <option>위례</option></>
+                                    <option value = "인천계양">인천계양</option>
+                                    <option value = "남양주진접2">남양주진접2</option>
+                                    <option value = "성남복정1">성남복정1</option>
+                                    <option value = "의왕청계2">의왕청계2</option>
+                                    <option value = "위례">위례</option></>
                                     : (
                                         Location2 == 'second'
                                         ? <>
-                                             <option>남양주왕숙2</option>
-                                    <option>성남신촌</option>
-                                    <option>성남낙생</option>
-                                    <option>성남복정2</option>
-                                    <option>의정부우정</option>
-                                    <option>군포대야미</option>
-                                    <option>의왕월암</option>
-                                    <option>수원당수</option>
-                                    <option>부천원종</option>
-                                    <option>인천검단</option>
-                                    <option>파주운정3</option></>
+                                             <option value = "남양주왕숙2">남양주왕숙2</option>
+                                    <option value = "성남신촌">성남신촌</option>
+                                    <option value = "성남낙생">성남낙생</option>
+                                    <option value = "성남복정2">성남복정2</option>
+                                    <option value = "의정부우정">의정부우정</option>
+                                    <option value = "군포대야미">군포대야미</option>
+                                    <option value = "의왕월암">의왕월암</option>
+                                    <option value = "수원당수">수원당수</option>
+                                    <option value = "부천원종">부천원종</option>
+                                    <option value = "인천검단">인천검단</option>
+                                    <option value = "파주운정3">파주운정3</option></>
                                         : (
                                             Location2 == 'third'
                                             ? <>
-                                            <option>하남교산</option>
-                                   <option>시흥하중</option>
-                                   <option>양주회천</option>
-                                   <option>과천주암</option></>
+                                            <option value = "하남교산">하남교산</option>
+                                   <option value = "시흥하중">시흥하중</option>
+                                   <option value = "양주회천">양주회천</option>
+                                   <option value = "과천주암">과천주암</option></>
                                             : (
                                                 Location2 == 'fourth'
-                                                ? <> <option>남양주왕숙</option>
-                                                <option>부천대장</option>
-                                                <option>고양창릉</option>
-                                                <option>부천역곡</option>
-                                                <option>시흥거모</option>
-                                                <option>안산장상</option>
-                                                <option>안산신길2</option>
-                                                <option>동작구수방사</option>
-                                                <option>구리갈매역세권</option>
-                                                <option>고앙장항</option></>
+                                                ? <> <option value = "남양주왕숙">남양주왕숙</option>
+                                                <option value = "부천대장">부천대장</option>
+                                                <option value = "고양창릉">고양창릉</option>
+                                                <option value = "부천역곡">부천역곡</option>
+                                                <option value = "시흥거모">시흥거모</option>
+                                                <option value = "안산장상">안산장상</option>
+                                                <option value = "안산신길2">안산신길2</option>
+                                                <option value = "동작구수방사">동작구수방사</option>
+                                                <option value = "구리갈매역세권">구리갈매역세권</option>
+                                                <option value = "고앙장항">고앙장항</option></>
                                                 :'bye'
                                             )
                                         )
@@ -609,6 +626,7 @@ const Calculator1 = ()=>{
                                 }
                             </select>
                         </div>
+                    </form>
                     </div>
                 </div>
             </div>

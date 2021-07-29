@@ -6,7 +6,7 @@
 
 .tab_left{
     width: 600px;
-    height: 700px;
+    height: 750px;
     margin-right:50px;
     background-color: #fff;
     border: 5px solid rgb(0,91,172);
@@ -16,7 +16,7 @@
 
 .tab_right{
     width: 600px;
-    height: 700px;
+    height: 750px;
     background-color: #fff;
     border: 5px solid rgb(0,91,172);
     border-bottom-left-radius: 10px;

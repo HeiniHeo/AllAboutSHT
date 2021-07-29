@@ -50,3 +50,16 @@ ul > li > input, input{
   height:29px;
   width:130px;
 }
+
+.inline-block{
+  display: inline-block;
+  margin-right: 3px;
+}
+
+.submitBTN{
+  background: white;
+  border:1px solid rgb(0,91,172);
+  color:rgb(0,91,172);
+  box-sizing: border-box;
+  padding:2px;
+}
