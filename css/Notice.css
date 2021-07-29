@@ -1,0 +1,30 @@
+.notice_header{
+    width:500px;
+    margin:0 auto;
+}
+
+.notice{
+    width:80px;
+    height:80px;
+    border-radius: 10px;
+    background-color: #fff;
+    position: absolute;
+    transform: translateX(-55%);
+    text-align: center;
+    margin-left:850px;
+    font-size:18px;
+    font-family:"LH_L";
+    color:rgb(255, 70, 70);
+}
+
+.notice:hover{
+    background-color: rgb(5, 138, 255);
+    color:#333;
+}
+
+.notice_img{
+    width:1200px;
+    height:700px;
+    position:absolute;
+    transform:translate(-29%,15%);
+}
