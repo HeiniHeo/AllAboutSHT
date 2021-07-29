@@ -66,7 +66,7 @@ app.get('/',(req,res)=>{
     res.send('sadgsdg')
 })
 
-app.listen(5000,()=>{
+app.listen(4000,()=>{
     console.log('start server port 4000')    
 })
 
