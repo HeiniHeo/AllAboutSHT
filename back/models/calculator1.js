@@ -6,7 +6,6 @@ module.exports = class calculator1 extends Sequelize.Model{
             Resident_Period:{
                 type: Sequelize.INTEGER(50),
                 allowNull:false,
-                unique:true,
             },
             income:{
                 type: Sequelize.INTEGER(200),
