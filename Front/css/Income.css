@@ -1,0 +1,30 @@
+.office_worker{
+    width:100%;
+    height: 200px;
+    border-bottom: 1px solid #333;
+}
+
+.office_worker div{
+
+}
+
+.office_worker div h3{
+    text-align: center;
+}
+
+.office_worker div p a{
+    margin:0 auto;
+}
+
+.office_worker div p a img{
+    width:150px;
+    height:70px;
+}
+
+.entrepreneur{
+    width:100%;
+}
+
+.entrepreneur div h3{
+    text-align: center;
+}
