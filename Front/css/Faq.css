@@ -6,23 +6,69 @@
     border-radius:15px;
     margin-top:50px;
     transform: translateX(50%);
+    padding: 33px 0;
+    box-sizing: border-box;
+    cursor:pointer;
+    z-index: 66;
+}
+
+.FaqList:hover{
+    border: 5px solid rgb(0,91,172);
+    background-color: #fff;
+    padding: 28px 0;
+}
+
+.FaqList:hover > a{
+    color: #000;
 }
 
 .FaqList > a{
     height:100px;
-    vertical-align:middle;
     color: #fff;
     font-family: "LH_B";
     font-size:30px;
 }
 
-.FaqBoard{
+.FaqBoardWrap{
+    margin:70px auto 0 auto;
     width: 1250px;
+}
+
+.homeBtn{
+    display: inline-block;
+    width:100px;
+    height: 45px;
+    border-radius: 8px;
+    text-align: center;
+    padding: 12px 0;
+    color:#fff;
+    box-sizing: border-box;
+    background-color: rgb(0,91,172);
+    margin-bottom: 30px;
+}
+
+.homeBtn:hover{
+    border: 3px solid rgb(0,91,172);
+    background-color: #fff;
+    color: #000;
+    padding: 9px 0;
+}
+
+.FaqBoard{
     height: 700px;
-    margin: 100px auto 0 auto;
+    width: 100%;
     border: 3px solid rgb(0,91,172);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+}
+
+.FaqBoard > .btn_array > button:nth-child(1){
+    border-left:none;
+}
+
+table,tr,td{
+    border-collapse:collapse;
+    /* border:1px solid red; */
 }
 
 .FaqTable{
@@ -30,18 +76,33 @@
 }
 
 .FaqTable > thead{
-    height: 50px;
+    height: 60px;
+    border-bottom: 2px solid #000;
 }
 
 .FaqTable > thead> tr > th:nth-child(1){
-    width: 233.633px;
+    width: 50%;
+    border-right: 1px solid #000;
 }
 
 .FaqTable > thead> tr > th:nth-child(2){
-    width: 1012.620px;
+    width: 50%;
+}
+
+.FaqTable > thead > tr > th{
+    font-size:20px
 }
 
 .FaqTable > tbody > tr{
     text-align: center;
     height: 35px;
+}
+
+.FaqTable > tbody > tr > td {
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+.FaqTable > tbody > tr > td:nth-child(2){
+    border-right: none;
 }

@@ -1,14 +1,12 @@
-import Link from 'next/link'
-
 const BankContents = [
     {
         id: '0',
-        title: 'hello Bank',
-        contents: 'react cham djfuqek djfudnj'
+        question: 'hello Bank',
+        answer: 'react cham djfuqek djfudnj'
     }, {
         id: '1',
-        title: 'hello Bank 1',
-        contents: 'react cham djfuqek djfudnj1'
+        question: 'hello Bank 1',
+        answer: 'react cham djfuqek djfudnj1'
     }
 ]
 
@@ -17,25 +15,17 @@ const Bank = () => {
     const BankList = BankContents.map((v) => {
         return (
             <tr key={v.id}>
-                <td>{v.id}</td>
-                <td><Link href=""><a>{v.title}</a></Link></td>
+                <td>{v.question}</td>
+                <td>{v.answer}</td>
             </tr>
         )
     })
 
     return (
         <>
-            <table className="FaqTable">
-                <thead>
-                    <tr>
-                        <th>No.</th>
-                        <th>Bank</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {BankList}
-                </tbody>
-            </table>
+            <tbody>
+                {BankList}
+            </tbody>
         </>
     )
 
