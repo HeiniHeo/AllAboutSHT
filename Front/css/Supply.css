@@ -1,0 +1,38 @@
+.supply_header{
+    width:500px;
+    margin:0 auto;
+}
+
+.supply{
+    width:110px;
+    height:90px;
+    border: 1px solid rgb(0,91,172);
+    border-radius: 10px;
+    background-color: #fff;
+    position: absolute;
+    transform: translateX(-170%);
+    text-align: center;
+    margin-left:850px;
+    font-size:14px;
+    font-family:"LH_L";
+    color:rgb(0,91,172);
+}
+
+.supply:hover{
+    color:rgb(0,91,172);
+    border: 3px solid rgb(0,91,172);
+    font-family:"LH_B";
+}
+
+.supply > img{
+    width: 65px;
+    height: 50px;
+    margin-left:5px;
+}
+
+.supply_img{
+    width:1600px;
+    height:750px;
+    position:absolute;
+    transform:translate(-33%,15%);
+}

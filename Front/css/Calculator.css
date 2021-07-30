@@ -1,6 +1,7 @@
 .subscription{
   padding:7px 18px;
-}
+  background-color: #fff;
+} 
 
 h5{
   font-size: 18px;
@@ -9,14 +10,16 @@ h5{
 }
 
 h6{
-  margin:8px 0;
-  font-size: 14px;
+  margin:1px 0;
+  font-size: 15px;
   margin-left: 7px;
 }
 
 input, select{
   margin-left: 18px;
   margin-bottom: 7px;
+  margin-top: 7px;
+  width:100px;
 }
 
 ul > li > input, input{
@@ -26,27 +29,99 @@ ul > li > input, input{
 
 .score{
   color:rgb(0,91,172);
+  font-size: 15px;
+  margin-top:3px;
+  margin-bottom: 20px;
 }
 
 .totalScore{
-  font-size: 20px;
+  font-size: 15px;
   font-weight: bold;
   margin-top: 18px;
 }
 
 
 .BTN{
-  color:rgb(0,91,172);
-  background: white;
-  border:1px solid rgb(0,91,172);
+  color:white;
+  background: rgb(40, 140, 228);
+  border:1px solid rgb(40, 140, 228);
   box-sizing: border-box;
-  padding:1px;
+  padding:3px;
+  font-size: 11px;
+  border-radius: 4px;
+
+}
+
+.BTN:hover{
+  background: rgba(40, 140, 228, 0.274);
+  border:1px solid rgba(40, 140, 228, 0.274);
+  color:black;
+  box-sizing: border-box;
+  padding:3px;
+
 }
 
 .Select_Box{
   margin-top: 14px;
   border:1px solid rgb(0,91,172);
-  color:rgb(0,91,172);
-  height:29px;
+  height:22px;
+  border-radius: 5px;
   width:130px;
+}
+
+.inline-block{
+  display: inline-block;
+  margin-right: 3px;
+
+}
+.margin-left{
+  margin-left: 30px;
+}
+
+.submitBTN{
+  color:white;
+  background: rgb(40, 140, 228);
+  border:1px solid rgb(40, 140, 228);
+  box-sizing: border-box;
+  padding:3px;
+  font-size: 11px;
+  border-radius: 4px;
+}
+
+.submitBTN:hover{
+  background: rgba(40, 140, 228, 0.274);
+  border:1px solid rgba(40, 140, 228, 0.274);
+  color:black;
+  box-sizing: border-box;
+  padding:3px;
+
+}
+
+.apply{
+  display: inline-block;
+}
+.block{
+  display: block;
+}
+
+*{
+  font-family: "LH_M";
+}
+
+.LocationBox{
+  border: 3px solid rgb(0,91,172);
+  text-align: center;
+  box-sizing: border-box;
+  padding:60px 0px;
+  margin-top: 4px;
+  border-radius: 7px;
+}
+
+.LocationBox2{
+  border: 3px solid rgb(0,91,172);
+  text-align: center;
+  box-sizing: border-box;
+  padding:60px 0px;
+  border-radius: 7px;
+  margin-top: 18px;
 }

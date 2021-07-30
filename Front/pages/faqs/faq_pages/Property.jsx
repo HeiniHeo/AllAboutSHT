@@ -12,9 +12,9 @@ const Property = () => {
         dispatch({ type: 'FAQ_GET', payload: data })
     }, [])
 
-    const PropertyList = state.FAQ.map((v) => {
+    const PropertyList = state.FAQ.map((v,k) => {
         return (
-            <tr key={v.id}>
+            <tr key={k}>
                 <td>{v.question}</td>
                 <td>{v.answer}</td>
             </tr>

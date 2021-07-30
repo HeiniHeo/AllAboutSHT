@@ -1,0 +1,32 @@
+.office_worker{
+    width:550px;
+    height: 130px;
+    margin:20px auto;
+    border: 1px solid rgb(0,91,172);  
+    border-radius: 5px;
+}
+
+.office_worker div h3{
+    text-align: center;
+}
+
+.office_worker div p a{
+    margin:0 auto;
+}
+
+.office_worker div p a img{
+    width:150px;
+    height:70px;
+}
+
+.entrepreneur{
+    width:550px;
+    height: 130px;
+    margin:20px auto;
+    border: 1px solid rgb(0,91,172);  
+    border-radius: 5px;
+}
+
+.entrepreneur div h3{
+    text-align: center;
+}
