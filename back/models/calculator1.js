@@ -15,7 +15,11 @@ module.exports = class calculator1 extends Sequelize.Model{
                 type: Sequelize.INTEGER(100),
                 allowNull:false,
             },
-            Resident_Location:{
+            Resident_Location1:{
+                type: Sequelize.STRING(500),
+                allowNull:false,
+            },
+            Resident_Location2:{
                 type: Sequelize.STRING(500),
                 allowNull:false,
             },
