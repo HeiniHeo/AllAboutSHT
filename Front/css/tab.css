@@ -28,6 +28,7 @@
 }
 
 .btn_array > button{
+    cursor: pointer;
     width: 100%;
     height:50px;
     border:none;
@@ -43,4 +44,3 @@
     background-color: rgb(40, 140, 228);
     color:aliceblue;
 }
-
