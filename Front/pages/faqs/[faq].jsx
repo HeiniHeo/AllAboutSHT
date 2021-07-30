@@ -19,7 +19,7 @@ const menuOpen = (faq) => {
     }
 }
 
-const color = {"background":"#288CE4","color":"#fff"}
+const color = {"background":"#1e65a3","color":"#fff"}
 
 const FaqList = () => {
     const router = useRouter()

@@ -7,14 +7,22 @@ import '../css/Notice.css'
 import '../css/Supply.css'
 import '../css/Faq.css'
 import Head from 'next/head'
+import { useContext, useReducer } from 'react'
+import Store from '../Store/context'
+import reducer from '../Store/reducer'
 
 const App = ({ Component }) => {
+    const globalStore = useContext(Store)
+    const [state, dispatch] = useReducer(reducer, globalStore)
+
     return (
         <>
             <Head>
                 <title>test</title>
             </Head>
-            <Component />
+            <Store.Provider value={{ state, dispatch }}>
+                <Component />
+            </Store.Provider>
         </>
     )
 }

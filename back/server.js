@@ -19,13 +19,14 @@ db.sequelize.sync({focus:false}) // promise object
 
 app.post('/calculator1',async(req,res,next)=>{
 
-    const {income,Resident_period,Resident_Location,Number_Of_Payment,Applying_Location} = req.body
+    const {income,Resident_period,Resident_Location1,Resident_Location2,Number_Of_Payment,Applying_Location} = req.body
 
     try{
         const data = await calculator1.create({
             income:income,
             Resident_Period:Resident_period,
-            Resident_Location:Resident_Location,
+            Resident_Location1:Resident_Location1,
+            Resident_Location2:Resident_Location2,
             Number_Of_Payment:Number_Of_Payment,
             Applying_Location:Applying_Location
 
@@ -41,13 +42,14 @@ app.post('/calculator1',async(req,res,next)=>{
 
 app.post('/calculator2',async(req,res,next)=>{
 
-    const {Number_Of_Children,Resident_period,Resident_Location,Number_Of_Payment,Applying_Location,Period_Of_HomeLessness} = req.body
+    const {Number_Of_Children,Resident_period,Resident_Location1,Resident_Location2,Number_Of_Payment,Applying_Location,Period_Of_HomeLessness} = req.body
 
     try{
         const data = await calculator2.create({
             Number_Of_Children:Number_Of_Children,
             Resident_Period:Resident_period,
-            Resident_Location:Resident_Location,
+            Resident_Location1:Resident_Location1,
+            Resident_Location2:Resident_Location2,
             Number_Of_Payment:Number_Of_Payment,
             Applying_Location:Applying_Location,
             Period_Of_HomeLessness:Period_Of_HomeLessness,
@@ -61,10 +63,33 @@ app.post('/calculator2',async(req,res,next)=>{
     }
 })
 
+app.get('/getFAQIncome',async(req,res,next)=>{
+
+        const data = await FAQ.findAll({
+            where:{Category:'소득'}
+        })
+
+        console.log(data)
+
+        // res.json({question:data.Question, answer:data.Answer,})
+        res.json(
+            {...data}
+        )
+        
+
+})
 
 app.get('/',(req,res)=>{
     res.send('sadgsdg')
 })
+app.get('/lolo',(req,res)=>{
+    res.send('lolo')
+})
+app.get('/ff',(req,res)=>{
+    res.send('asdf')
+})
+
+
 
 app.listen(4000,()=>{
     console.log('start server port 4000')    

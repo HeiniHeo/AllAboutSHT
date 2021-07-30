@@ -10,12 +10,15 @@ const Calculator2 = ()=>{
 
     const [option1, setOption1] = useState(1)
     const [option2, setOption2] = useState(1)
+    const [option3, setOption3] = useState(1)
     const [option4, setOption4] = useState(1)
 
     const [Result1, setResult1] = useState(1)
     const [Result2, setResult2] = useState(1)
+    const [Result3, setResult3] = useState(1)
     const [Result4, setResult4] = useState(1)
 
+    const [alert, setAlert] = useState('지원 가능 여부입니다')
 
     const Applying_Location = (e) => {
         setapply(e.target.value)
@@ -37,6 +40,9 @@ const Calculator2 = ()=>{
                     )
                 )
         }
+    }
+    const changeOption3 = (e) => {
+        setOption3(e.target.value)
     }
     const changOption2 = (e) => {
         setOption2(e.target.value)
@@ -81,7 +87,7 @@ const Calculator2 = ()=>{
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        postCalculator2({Number_Of_Children:Result1,Resident_period:1,Resident_Location:dbLocation,Period_Of_HomeLessness:Result2,Number_Of_Payment:Result4,Applying_Location:apply})
+        postCalculator2({Number_Of_Children:Result1,Resident_period:Result3,Resident_Location1:Location,Resident_Location2:dbLocation,Period_Of_HomeLessness:Result2,Number_Of_Payment:Result4,Applying_Location:apply})
 
     }
 
@@ -89,30 +95,253 @@ const Calculator2 = ()=>{
         setdbLocation(e.target.value)
     }
 
+    const HandleResult3 = (e) => {
+        {
+            Location == 'Incheon' && apply == '인천계양' && option3 >= 24 
+            ? setResult3(3)
+            : ( Location == 'Incheon' && apply == '인천계양' && option3 < 24 && option3 >= 12 
+            ? setResult3(2)
+            : ( Location == 'Incheon' && apply == '인천계양' && option3 < 12
+            ? setResult3(1)
+            : ( Location == 'seoul' && apply == '동작구수방사' && option3 >= 24 
+            ? setResult3(3)
+            : ( Location == 'seoul' && apply == '동작구수방사' && option3 < 24 && option3 >= 12 
+            ? setResult3(2)
+            : ( Location == 'seoul' && apply == '동작구수방사' && option3 < 12
+            ? setResult3(1)
+            : ( Location == 'GyeongGi' && apply != '동작구수방사' && apply != '인천계양' && option3 >= 24
+            ? setResult3(3)
+            : ( Location == 'GyeongGi' && apply != '동작구수방사' && apply != '인천계양' && option3 < 24 && option3 >= 12 
+            ? setResult3(2)
+            : ( Location == 'GyeongGi' && apply != '동작구수방사' && apply != '인천계양' && option3 < 12
+            ? setResult3(1)
+            : setResult3(0)
+
+            )
+
+            )
+
+            )
+
+            )
+
+            )
+
+            )
+ 
+            )
+
+            )
+        }
+    }
+
+    const ChangeAlert = (e) => {
+        {
+            apply == '인천계양' && Location == 'Incheon'
+            ? 
+                setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 237호 입니다.')
+                :(apply == '인천계양' && Location != 'Incheon'
+                ? 
+                    setAlert('기타지역 거주자 이시네요! 1단계 공급물량은 총 118호 입니다.')
+                    : (apply == '남양주진접2' && Location == 'GyeongGi' && dbLocation == '남양주시' && option3 >= 12
+                    ? 
+                        setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 305호 입니다.')
+                        : (apply == '남양주진접2' && Location == 'GyeongGi' && dbLocation != '남양주시' && option3 >= 6
+                        ? 
+                            setAlert('경기도 거주자 이시네요! 1단계 공급물량은 총 212호 입니다.')
+                            : (apply == '남양주진접2' && Location != 'GyeongGi'
+                            ? 
+                                setAlert('기타지역 거주자 이시네요! 1단계 공급물량은 총 152호 입니다.')
+                                : (apply == '성남복정1' && dbLocation == '성남시' && option3 >= 24
+                                ? 
+                                    setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 0호 입니다.')
+                                    : apply == '성남복정1' && dbLocation != '성남시'
+                                    ? 
+                                        setAlert('지원불가능합니다.')
+                                        : (apply == '의왕청계2' && dbLocation == '의왕시' && option3 >= 24
+                                        ? 
+                                            setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 0호 입니다.')
+                                            : (apply == '의왕청계2' && dbLocation != '의왕시'
+                                            ? 
+                                                setAlert('지원불가능합니다.')
+                                                : (apply == '위례' && Location == 'GyeongGi' && dbLocation == '성남시' && option3 >= 24
+                                                ? 
+                                                    setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 291호 입니다.')
+                                                    : (apply == '위례' && Location == 'GyeongGi' && dbLocation != '성남시' && option3 >= 24
+                                                    ? 
+                                                        setAlert('경기도 거주자 이시네요! 1단계 공급물량은 총 203호 입니다.')
+                                                        : (apply == '위례' && Location != 'GyeongGi' && option3 >= 24
+                                                        ? 
+                                                            setAlert('기타지역 거주자 이시네요! 1단계 공급물량은 총 146호 입니다.')
+                                                            : (apply == '성남낙생' && dbLocation == '성남시' && option3 >= 24
+                                                            ? 
+                                                                setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 0호 입니다.')
+                                                                : (apply == '성남낙생' && dbLocation != '성남시'
+                                                                ? 
+                                                                    setAlert('지원불가능합니다.')
+                                                                    : (apply == '성남복정2' && dbLocation == '성남시' && option3 >= 24
+                                                                    ? 
+                                                                    setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 0호 입니다.')
+                                                                        : (apply == '성남복정2' && dbLocation != '성남시'
+                                                                        ? 
+                                                                        setAlert('지원불가능합니다.')
+                                                                            : (apply == '군포대야미' && dbLocation == '군포시' && option3 >= 24
+                                                                            ? 
+                                                                            setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 0호 입니다.')
+                                                                                : (apply == '군포대야미' && dbLocation != '군포시'
+                                                                                ? 
+                                                                                setAlert('지원불가능합니다.')
+                                                                                    : apply == '의왕월암' && dbLocation == '의왕시' && option3 >= 24
+                                                                                    ? 
+                                                                                    setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 0호 입니다.')
+                                                                                        : (apply == '의왕월암' && dbLocation != '의왕시'
+                                                                                        ? 
+                                                                                        setAlert('지원불가능합니다.')
+                                                                                            : (apply == '수원당수' && Location == 'GyeongGi' && dbLocation == '수원시' && option3 >= 24
+                                                                                            ? 
+                                                                                            setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 350호 입니다.')
+                                                                                                : apply == '수원당수' && Location == 'GyeongGi' && dbLocation != '수원시' && option3 >= 24
+                                                                                                ? 
+                                                                                                setAlert('경기도 거주자 이시네요! 1단계 공급물량은 총 245호 입니다.')
+                                                                                                    : (apply == '수원당수' && Location != 'GyeongGi'
+                                                                                                    ? 
+                                                                                                    setAlert('기타지역 거주자 이시네요! 1단계 공급물량은 총 175호 입니다.')
+                                                                                                        : apply == '부천원종' && dbLocation == '부천시' && option3 >= 24
+                                                                                                        ? 
+                                                                                                        setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 0호 입니다.')
+                                                                                                            : (apply == '부천원종' && dbLocation != '부천시'
+                                                                                                            ? 
+                                                                                                            setAlert('지원불가능합니다.')
+                                                                                                                : (apply == '시흥하중' && dbLocation == '시흥시' && option3 >= 12
+                                                                                                                ? 
+                                                                                                                setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 0호 입니다.')
+                                                                                                                    : (apply == '시흥하중' && dbLocation != '시흥시'
+                                                                                                                    ? 
+                                                                                                                    setAlert('당해 미달시 지원 가능합니다.')
+                                                                                                                        : (apply == '과천주암' && dbLocation == '과천시' && option3 >= 24
+                                                                                                                        ? 
+                                                                                                                        setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 0호 입니다.')
+                                                                                                                            : (apply == '과천주암' && dbLocation != '과천시'
+                                                                                                                            ? 
+                                                                                                                            setAlert('당해 미달시 지원 가능합니다.')
+                                                                                                                                : (apply == '남양주왕숙2' && Location == 'GyeongGi' && dbLocation == '남양주시' && option3 >= 12
+                                                                                                                                ? 
+                                                                                                                                setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 490호 입니다.')
+                                                                                                                                    : (apply == '남양주왕숙2' && Location == 'GyeongGi' && dbLocation != '남양주시' && option3 >= 6
+                                                                                                                                    ? 
+                                                                                                                                    setAlert('경기도 거주자 이시네요! 1단계 공급물량은 총 343호 입니다.')
+                                                                                                                                        : (apply == '남양주왕숙2' && Location != 'GyeongGi'
+                                                                                                                                        ? 
+                                                                                                                                        setAlert('기타지역 거주자 이시네요! 1단계 공급물량은 총 245호 입니다.')
+                                                                                                                                            : (apply == '부천대장' && Location == 'GyeongGi' && dbLocation == '부천시' && option3 >= 12
+                                                                                                                                            ? 
+                                                                                                                                            setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 700호 입니다.')
+                                                                                                                                                : (apply == '부천대장' && Location == 'GyeongGi' && dbLocation != '부천시' && option3 >= 6
+                                                                                                                                                ? 
+                                                                                                                                                setAlert('경기도 거주자 이시네요! 1단계 공급물량은 총 490호 입니다.')
+                                                                                                                                                    : (apply == '부천대장' && Location != 'GyeongGi'
+                                                                                                                                                    ? 
+                                                                                                                                                    setAlert('기타지역 거주자 이시네요! 1단계 공급물량은 총 350호 입니다.')
+                                                                                                                                                        : (apply == '고양창릉' && Location == 'GyeongGi' && dbLocation == '고양시' && option3 >= 12
+                                                                                                                                                        ? 
+                                                                                                                                                        setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 420호 입니다.')
+                                                                                                                                                            : (apply == '고양창릉' && Location == 'GyeongGi' && dbLocation != '고양시' && option3 >= 6
+                                                                                                                                                            ? 
+                                                                                                                                                            setAlert('경기도 거주자 이시네요! 1단계 공급물량은 총 294호 입니다.')
+                                                                                                                                                                : (apply == '고양창릉' && Location != 'GyeongGi'
+                                                                                                                                                                ? 
+                                                                                                                                                                setAlert('기타지역 거주자 이시네요! 1단계 공급물량은 총 210호 입니다.')
+                                                                                                                                                                    : (apply == '부천역곡' && Location == 'GyeongGi' && dbLocation == '부천시' && option3 >= 12
+                                                                                                                                                                    ? 
+                                                                                                                                                                    setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 630호 입니다.')
+                                                                                                                                                                        : (    apply == '부천역곡' && Location == 'GyeongGi' && dbLocation != '부천시' && option3 >= 6
+                                                                                                                                                                        ? 
+                                                                                                                                                                        setAlert('경기도 거주자 이시네요! 1단계 공급물량은 총 441호 입니다.')
+                                                                                                                                                                            : (apply == '부천역곡' && Location != 'GyeongGi'
+                                                                                                                                                                            ? 
+                                                                                                                                                                            setAlert('기타지역 거주자 이시네요! 1단계 공급물량은 총 315호 입니다.')
+                                                                                                                                                                                : (apply == '시흥거모' && Location == 'GyeongGi' && dbLocation == '시흥시' && option3 >= 12
+                                                                                                                                                                                ? 
+                                                                                                                                                                                setAlert('당해기준 충족자 이시네요!1단계 공급물량은 총 560호 입니다.')
+                                                                                                                                                                                    : (apply == '시흥거모' && Location == 'GyeongGi' && dbLocation != '시흥시' && option3 >= 6
+                                                                                                                                                                                    ? 
+                                                                                                                                                                                    setAlert('경기도 거주자 이시네요! 1단계 공급물량은 총 392호 입니다.')
+                                                                                                                                                                                        : (apply == '시흥거모' && Location != 'GyeongGi'
+                                                                                                                                                                                        ? 
+                                                                                                                                                                                        setAlert('기타지역 거주자 이시네요! 1단계 공급물량은 총 280호 입니다.')
+                                                                                                                                                                                            : (apply == '안산장상' && Location == 'GyeongGi' && dbLocation == '안산시' && option3 >= 12
+                                                                                                                                                                                            ? 
+                                                                                                                                                                                            setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 210호 입니다.')
+                                                                                                                                                                                                : (apply == '안산장상' && Location == 'GyeongGi' && dbLocation != '안산시' && option3 >= 6
+                                                                                                                                                                                                ? 
+                                                                                                                                                                                                setAlert('경기도 거주자 이시네요! 1단계 공급물량은 총 147호 입니다.')
+                                                                                                                                                                                                    : (apply == '안산장상' && Location != 'GyeongGi'
+                                                                                                                                                                                                    ? 
+                                                                                                                                                                                                    setAlert('기타지역 거주자 이시네요! 1단계 공급물량은 총 105호 입니다.')
+                                                                                                                                                                                                        : (apply == '안산신길2' && Location == 'GyeongGi' && dbLocation == '안산시' && option3 >= 12
+                                                                                                                                                                                                        ? 
+                                                                                                                                                                                                        setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 420호 입니다.')
+                                                                                                                                                                                                            : (apply == '안산신길2' && Location == 'GyeongGi' && dbLocation != '안산시' && option3 >= 6
+                                                                                                                                                                                                            ? 
+                                                                                                                                                                                                            setAlert('경기도 거주자 이시네요! 1단계 공급물량은 총 294호 입니다.')
+                                                                                                                                                                                                                : (apply == '안산신길2' && Location != 'GyeongGi'
+                                                                                                                                                                                                                ? 
+                                                                                                                                                                                                                setAlert('기타지역 거주자 이시네요! 1단계 공급물량은 총 210호 입니다.')
+                                                                                                                                                                                                                    : (apply == '동작구수방사' && Location == 'seoul' && option3 >= 24
+                                                                                                                                                                                                                    ? 
+                                                                                                                                                                                                                    setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 0호 입니다.')
+                                                                                                                                                                                                                        : (apply == '동작구수방사' && Location != 'seoul'
+                                                                                                                                                                                                                        ? 
+                                                                                                                                                                                                                        setAlert('지원 미달시 지원 가능 합니다!')
+                                                                                                                                                                                                                            : apply == '구리갈매역세권' && Location == 'GyeongGi' && dbLocation == '구리시' && option3 >= 24
+                                                                                                                                                                                                                            ? 
+                                                                                                                                                                                                                            setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 770호 입니다.')
+                                                                                                                                                                                                                                : (apply == '구리갈매역세권' && Location == 'GyeongGi' && dbLocation != '구리시' && option3 >= 24
+                                                                                                                                                                                                                                ? 
+                                                                                                                                                                                                                                setAlert('경기도 거주자 이시네요! 1단계 공급물량은 총 539호 입니다.')
+                                                                                                                                                                                                                                    : (apply == '구리갈매역세권' && Location != 'GyeongGi'
+                                                                                                                                                                                                                                    ? 
+                                                                                                                                                                                                                                    setAlert('기타지역 거주자 이시네요! 1단계 공급물량은 총 385호 입니다.')
+                                                                                                                                                                                                                                        : '')))))))))))))))))))))))))))))))))))))))))))) ) ) ) ) ) 
+            
+        }
+    }
 
     return(
         <>
             <div className = "subscription_wrap w100">
                 <div className = "subscription w1200">
-                    <div>
+                    <div className>
                     <form onSubmit = {handleSubmit}>
                         <div className = "calculator_content2">
                             <div className = "option1">
-                                <h5>(1) 미성년 자녀수</h5><input onClick = {HandleResult1} className = "BTN" type = "button" value = "결과"/>
-                                <div>
+                                <h5>(1) 미성년 자녀수</h5>
+                                <div className = "inline-block">
                                     <input onChange = {changOption1} type = "text" />명
                                 </div>
+                                <input onClick = {HandleResult1} className = "BTN" type = "button" value = "점수 계산"/>
                                 <div className = "score">점수 : <span className = "option1_result">{Result1}</span></div>
                             </div>
                             <div className = "option2">
-                                <h5>(2) 무주택기간</h5><input onClick = {HandleResult2} className = "BTN" type = "button" value = "결과"/>
-                                <div>
+                                <h5>(2) 무주택기간</h5>
+                                <div className = "inline-block">
                                     <input onChange = {changOption2} type = "text" />개월
                                 </div>
+                                <input onClick = {HandleResult2} className = "BTN" type = "button" value = "점수 계산"/>
                                 <div className = "score">점수 : <span className = "option2_result">{Result2}</span></div>
                             </div>
+                            <div className = "option4">
+                                <h5>(3) 주택청약종합저축 납입인정 횟수</h5>
+                                <div className = "inline-block">
+                                    <input onChange = {changOption4} type = "text" />회
+                                </div>
+                                <input onClick = {HandleResult4} className = "BTN" type = "button" value = "점수 계산"/>
+                                <div className = "score">점수 : <span className = "option4_result">{Result4}</span></div>
+                            </div>
                             <div className = "option3">
-                                <h5>(3) 해당 시*도 연속 거주기간</h5>
+                                <h5>(4) 해당 시*도 연속 거주기간</h5><input onClick = {HandleResult3} className = "BTN" type = "button" value = "점수 계산"/>
+                                <div></div>
+                                <div className = "inline-block">
                                 <h6>1. 거주 지역</h6>
                                 <select onClick = {ChangeLocation}>
                                     <option>
@@ -482,19 +711,13 @@ const Calculator2 = ()=>{
                                                     : 'GyeongSang1')))))))))))))))))
                                         }
                                 </select>
-                                <h6>2. 거주 기간</h6>
-                                <div className = ""><input type = "text"/>개월</div>
-                                <div>점수 : <span className = "option3_result"></span></div>
-                            </div>
-                            <div className = "option4">
-                                <h5>(4) 주택청약종합저축 납입인정 횟수</h5><input onClick = {HandleResult4} className = "BTN" type = "button" value = "결과"/>
-                                <div>
-                                    <input onChange = {changOption4} type = "text" />회
                                 </div>
-                                <div className = "score">점수 : <span className = "option4_result">{Result4}</span></div>
+                                <div className = "inline-block margin-left">
+                                <h6>2. 거주 기간</h6>
+                                <div className = ""><input onChange = {changeOption3} type = "text"/>개월</div>
+                                </div>
                             </div>
-                            <div className = "score totalScore inline-block">총점 : <span className = "total_result">{Result1+Result2+Result4}</span></div><input className = "submitBTN" value = "저장하고 지원내역 보기" type = "submit"/>
-                            <div className = "score totalScore">지원 지역</div>
+                            <div className = "score totalScore apply">지원 지역</div>
                             <select className = "Select_Box" onClick = {ChangeLocation2}>
                                 <option value = "first">1차 지원(7월)</option>
                                 <option value = "second">2차 지원(10월)</option>
@@ -505,51 +728,46 @@ const Calculator2 = ()=>{
                                 {
                                     Location2 == 'first'
                                     ? <>
-                                    <option>인천계양</option>
-                                    <option>남양주진접2</option>
-                                    <option>성남복정1</option>
-                                    <option>의왕청계2</option>
-                                    <option>위례</option></>
+                                    <option value = "인천계양">인천계양</option>
+                                    <option value = "남양주진접2">남양주진접2</option>
+                                    <option value = "성남복정1">성남복정1</option>
+                                    <option value = "의왕청계2">의왕청계2</option>
+                                    <option value = "위례">위례</option></>
                                     : (
                                         Location2 == 'second'
                                         ? <>
-                                             <option>남양주왕숙2</option>
-                                    <option>성남신촌</option>
-                                    <option>성남낙생</option>
-                                    <option>성남복정2</option>
-                                    <option>의정부우정</option>
-                                    <option>군포대야미</option>
-                                    <option>의왕월암</option>
-                                    <option>수원당수</option>
-                                    <option>부천원종</option>
-                                    <option>인천검단</option>
-                                    <option>파주운정3</option></>
+                                    <option value = "성남낙생">성남낙생</option>
+                                    <option value = "성남복정2">성남복정2</option>
+                                    <option value = "군포대야미">군포대야미</option>
+                                    <option value = "의왕월암">의왕월암</option>
+                                    <option value = "수원당수">수원당수</option>
+                                    <option value = "부천원종">부천원종</option></>
                                         : (
                                             Location2 == 'third'
                                             ? <>
-                                            <option>하남교산</option>
-                                   <option>시흥하중</option>
-                                   <option>양주회천</option>
-                                   <option>과천주암</option></>
+                                   <option value = "시흥하중">시흥하중</option>
+                                   <option value = "과천주암">과천주암</option></>
                                             : (
                                                 Location2 == 'fourth'
-                                                ? <> <option>남양주왕숙</option>
-                                                <option>부천대장</option>
-                                                <option>고양창릉</option>
-                                                <option>부천역곡</option>
-                                                <option>시흥거모</option>
-                                                <option>안산장상</option>
-                                                <option>안산신길2</option>
-                                                <option>동작구수방사</option>
-                                                <option>구리갈매역세권</option>
-                                                <option>고앙장항</option></>
+                                                ? <> <option value = "남양주왕숙2">남양주왕숙2</option>
+                                                <option value = "부천대장">부천대장</option>
+                                                <option value = "고양창릉">고양창릉</option>
+                                                <option value = "부천역곡">부천역곡</option>
+                                                <option value = "시흥거모">시흥거모</option>
+                                                <option value = "안산장상">안산장상</option>
+                                                <option value = "안산신길2">안산신길2</option>
+                                                <option value = "동작구수방사">동작구수방사</option>
+                                                <option value = "구리갈매역세권">구리갈매역세권</option></>
                                                 :'bye'
                                             )
                                         )
                                     )
                                 }
                             </select>
+                            <div className = "score">점수 : <span class = "option3_result">{Result3}</span></div>
+                            <div className = "block"><div className = "score totalScore inline-block">총점 : <span className = "total_result">{Result1+Result2+Result3+Result4}</span></div><input onClick = {ChangeAlert} className = "submitBTN" value = "결과 보기" type = "submit"/></div>
                         </div>
+                        <div className = "LocationBox">{alert}</div>
                     </form>
                     </div>   
                 </div>                
