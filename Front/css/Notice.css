@@ -5,21 +5,23 @@
 
 .notice{
     width:80px;
-    height:80px;
-    border: 3px solid #333;
+    height:90px;
+    border: 1px solid rgb(0,91,172);
     border-radius: 10px;
     background-color: #fff;
     position: absolute;
-    transform: translateX(-55%);
+    transform: translateX(-65%);
     text-align: center;
     margin-left:850px;
     font-size:18px;
     font-family:"LH_L";
-    color:rgb(255, 70, 70);
+    color:rgb(0,91,172);
 }
 
 .notice:hover{
-    color:#333;
+    color:rgb(0,91,172);
+    border: 3px solid rgb(0,91,172);
+    font-family:"LH_B";
 }
 
 .notice_img{

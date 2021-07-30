@@ -167,13 +167,13 @@ const Calculator1 = ()=>{
 
     return(
         <>
-            <div class = "subscription_wrap w100">
-                <div class = "subscription w1200">
-                    <div class>
+            <div className = "subscription_wrap w100">
+                <div className = "subscription w1200">
+                    <div>
                     <form onSubmit = {handleSubmit}>
-                        <div class = "calculator_content1">
-                            <div class = "option1">
-                                <h5>(1) 가구소득</h5><input onClick = {HandleResult1} class = "BTN" type = "button" value = "결과"/>
+                        <div className = "calculator_content1">
+                            <div className = "option1">
+                                <h5>(1) 가구소득</h5><input onClick = {HandleResult1} className = "BTN" type = "button" value = "결과"/>
                                 <h6>1. 배우자 소득 유무</h6>
                                 <select onClick = {ChangeIncome}>
                                     <option value = "two">맞벌이</option>
@@ -190,10 +190,10 @@ const Calculator1 = ()=>{
                                     <option value = "eight">8인</option>
                                 </select>
                                 <h6>3. 소득금액</h6>
-                                    <div><input class = "option1" type = "text" onChange = {ChangeCost}/>원</div>
-                                <div class = "score">점수 : <span class = "option1_result">{Result1}</span></div>
+                                    <div><input className = "option1" type = "text" onChange = {ChangeCost}/>원</div>
+                                <div className = "score">점수 : <span className = "option1_result">{Result1}</span></div>
                             </div>
-                            <div class = "option2">
+                            <div className = "option2">
                                 <h5>(2) 해당 시*도 연속 거주기간</h5>
                                 <h6>1. 거주 지역</h6>
                                 <select onClick = {ChangeLocation}>
@@ -565,25 +565,25 @@ const Calculator1 = ()=>{
                                         }
                                 </select>
                                 <h6>2. 거주 기간</h6>
-                                <div class = ""><input type = "text"/>개월</div>
-                                <div class = "score">점수 : <span class = "option2_result"></span></div>
+                                <div className = ""><input type = "text"/>개월</div>
+                                <div className = "score">점수 : <span className = "option2_result"></span></div>
                             </div>
-                            <div class = "option3">
-                                <h5>(3) 주택청약종합저축 납입인정 횟수</h5><input onClick = {HandleResult3} class = "BTN" type = "button" value = "결과"/>
+                            <div className = "option3">
+                                <h5>(3) 주택청약종합저축 납입인정 횟수</h5><input onClick = {HandleResult3} className = "BTN" type = "button" value = "결과"/>
                                 <div>
                                     <input onChange = {changOption3} type = "text" />회
                                 </div>
-                                <div class = "score">점수 : <span class = "option3_result">{Result3}</span></div>
+                                <div className = "score">점수 : <span className = "option3_result">{Result3}</span></div>
                             </div>
-                            <div class = "score totalScore inline-block">총점 : <span class = "total_result">{Result1+Result3}</span></div><input class = "submitBTN" value = "저장하고 지원내역 보기" type = "submit"/>
-                            <div class = "score totalScore">지원 지역</div>
-                            <select class = "Select_Box" onClick = {ChangeLocation2}>
+                            <div className = "score totalScore inline-block">총점 : <span className = "total_result">{Result1+Result3}</span></div><input className = "submitBTN" value = "저장하고 지원내역 보기" type = "submit"/>
+                            <div className = "score totalScore">지원 지역</div>
+                            <select className = "Select_Box" onClick = {ChangeLocation2}>
                                 <option value = "first">1차 지원(7월)</option>
                                 <option value = "second">2차 지원(10월)</option>
                                 <option value = "third">3차 지원(11월)</option>
                                 <option value = "fourth">4차 지원(12월)</option>
                             </select>
-                            <select class = "Select_Box" onClick = {Applying_Location}>
+                            <select className = "Select_Box" onClick = {Applying_Location}>
                                 {
                                     Location2 == 'first'
                                     ? <>

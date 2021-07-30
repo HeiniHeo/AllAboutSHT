@@ -1,11 +1,9 @@
 .office_worker{
-    width:100%;
-    height: 200px;
-    border-bottom: 1px solid #333;
-}
-
-.office_worker div{
-
+    width:550px;
+    height: 130px;
+    margin:20px auto;
+    border: 1px solid rgb(0,91,172);  
+    border-radius: 5px;
 }
 
 .office_worker div h3{
@@ -22,7 +20,11 @@
 }
 
 .entrepreneur{
-    width:100%;
+    width:550px;
+    height: 130px;
+    margin:20px auto;
+    border: 1px solid rgb(0,91,172);  
+    border-radius: 5px;
 }
 
 .entrepreneur div h3{

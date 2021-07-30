@@ -1,9 +1,32 @@
-.bank_site > li > a > img{
+.bank_site{
+    width:550px;
+    height: 300px;
+    margin:0 auto;
+    border: 1px solid rgb(0,91,172);  
+    border-radius: 5px;
+}
+.kb > a > img{
     width:180px;
     height:150px;
 }
+.nh > a > img{
+    width:150px;
+    height:150px;
+}
+.woori > a > img{
+    width:180px;
+    height:150px;
+}
+.keb > a > img{
+    width:150px;
+    height:150px;
+}
+.ibk > a > img{
+    width:200px;
+    height:70px;
+}
 
-.bank_site > li {
+.bank_site > ul > li {
     float:left;
     margin-left: 15px;
 }

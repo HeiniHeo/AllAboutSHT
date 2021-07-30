@@ -9,18 +9,18 @@
     height: 700px;
     margin-right:50px;
     background-color: #fff;
-    border: 5px solid rgb(0,91,172);
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 5px 5px 5px -2px rgb(0, 0, 0,.15) ;
 }
 
 .tab_right{
     width: 600px;
     height: 700px;
     background-color: #fff;
-    border: 5px solid rgb(0,91,172);
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 5px 5px 5px -2px rgb(0, 0, 0,.15) ;
 }
 
 .btn_array{
@@ -34,7 +34,7 @@
     background-color:#fff;
     padding: 7px 0;
     border-left: 0.5px solid rgb(0,91,172);
-    border-bottom: 3px solid rgb(0,91,172);
+    border-bottom: 1.5px solid rgb(0,91,172);
     font-size:20px;
     font-family: "LH_M";        
 }
