@@ -27,7 +27,7 @@ const LinkCss = Styled.a`
     }
 `
 
-const color = {"background":"#1e65a3","cursor":"pointer"}
+const color = { "background": "#1e65a3", "color": "#fff" }
 
 const FaqList = () => {
 
@@ -51,91 +51,52 @@ const FaqList = () => {
     const titleComponent = () => {
         switch (faq) {
             case "income":
-                return <h1>자산</h1>
+                return <h1 className="faqHeader">자산</h1>
             case "property":
-                return <h1>소득</h1>
+                return <h1 className="faqHeader">소득</h1>
             case "bank":
-                return <h1>청약통장</h1>
+                return <h1 className="faqHeader">청약통장</h1>
             case "etc":
-                return <h1>기타</h1>
+                return <h1 className="faqHeader">기타</h1>
             default:
         }
-    }    
+    }
 
     return (
         <>
-
-            {titleComponent()}
-            <div className="FaqBoardWrap">
-                <Link href="/"><a className="homeBtn">홈으로</a></Link>
-                <div className="FaqBoard">
-                    <div className="btn_array">
-                        <Link href="http://localhost:3001/faqs/income"><LinkCss style={(faq === "income") ? color : {} }>소득</LinkCss></Link>
-                        <Link href="http://localhost:3001/faqs/property"><LinkCss style={(faq === "property") ? color : {} }>자산</LinkCss></Link>
-                        <Link href="http://localhost:3001/faqs/bank"><LinkCss style={(faq === "bank") ? color : {} }>청약통장</LinkCss></Link>
-                        <Link href="http://localhost:3001/faqs/etc"><LinkCss style={(faq === "etc") ? color : {} }>기타</LinkCss></Link>
+            <div className="site_wrap">
+                <div className="FaqBoardWrap">
+                    {titleComponent()}
+                    <div className="btnWrap">
+                        <Link href="/"><a className="homeBtn">홈으로</a></Link>
                     </div>
-                    <table className="FaqTable">
-                        <thead>
-                            <tr>
-                                <th>질문</th>
-                                <th>답변</th>
-                            </tr>
-                        </thead>
-                        {
-                            <>
-                                {renderComponent()}
-                            </>
-                        }
-                    </table>
+                    <div className="FaqBoard">
+                        <div className="btn_array">
+                            <Link href="http://localhost:3001/faqs/income"><LinkCss style={(faq === "income") ? color : {}}>소득</LinkCss></Link>
+                            <Link href="http://localhost:3001/faqs/property"><LinkCss style={(faq === "property") ? color : {}}>자산</LinkCss></Link>
+                            <Link href="http://localhost:3001/faqs/bank"><LinkCss style={(faq === "bank") ? color : {}}>청약통장</LinkCss></Link>
+                            <Link href="http://localhost:3001/faqs/etc"><LinkCss style={(faq === "etc") ? color : {}}>기타</LinkCss></Link>
+                        </div>
+                        <div className="tableWrap">
+                            <table className="FaqTable">
+                                <thead>
+                                    <tr>
+                                        <th>질문</th>
+                                        <th>답변</th>
+                                    </tr>
+                                </thead>
+                                {
+                                    <>
+                                        {renderComponent()}
+                                    </>
+                                }
+                            </table>
+                        </div>
 
-
+                    </div>
                 </div>
             </div>
         </>
-        // <>
-        //     {
-        //         boardNum === 1
-        //             ? <h1>소득</h1>
-        //             : (boardNum === 2
-        //                 ? <h1>자산</h1>
-        //                 : boardNum === 3
-        //                     ? <h1>청약통장</h1>
-        //                     : <h1>기타</h1>
-        //             )
-        //     }
-        //     <div className="FaqBoardWrap">
-        //         <Link href="/"><a className="homeBtn">홈으로</a></Link>
-        //         <div className="FaqBoard">
-        //             <div className="btn_array">
-        //                 <button style={ (boardNum === 1) ? color : color2  } onClick={() => { boardBtn(1) }}>소득</button>
-        //                 <button style={ (boardNum === 2) ? color : color2  } onClick={() => { boardBtn(2) }}>자산</button>
-        //                 <button style={ (boardNum === 3) ? color : color2  } onClick={() => { boardBtn(3) }}>청약통장</button>
-        //                 <button style={ (boardNum === 4) ? color : color2  } onClick={() => { boardBtn(4) }}>기타</button>
-        //             </div>
-        //             <table className="FaqTable">
-        //                 <thead>
-        //                     <tr>
-        //                         <th>질문</th>
-        //                         <th>답변</th>
-        //                     </tr>
-        //                 </thead>
-        //                 {
-        //                     boardNum === 1
-        //                         ? <Income />
-        //                         : (boardNum === 2
-        //                             ? <Property />
-        //                             : boardNum === 3
-        //                                 ? <Bank />
-        //                                 : <Etc />
-        //                         )
-        //                 }
-        //             </table>
-
-
-        //         </div>
-        //     </div>
-        // </>
     )
 }
 
