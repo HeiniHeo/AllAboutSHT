@@ -6,6 +6,12 @@ const initalState = {
             answer:'test',
             question:'test',
         }
+    ],
+    FAQ2:[
+        {
+            answer:'test',
+            question:'test',
+        }
     ]
 }
 

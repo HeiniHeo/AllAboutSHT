@@ -9,10 +9,10 @@ const Bank = () => {
     useEffect(async () => {
         const response = await fetch('http://localhost:4000/faqs/bank')
         const data = await response.json()
-        dispatch({ type: 'FAQ_GET', payload: data })
+        dispatch({ type: 'FAQ_GET2', payload: data })
     }, [])
 
-    const BankList = state.FAQ.map((v) => {
+    const BankList = state.FAQ2.map((v) => {
         return (
             <tr key={v.id}>
                 <td>{v.question}</td>

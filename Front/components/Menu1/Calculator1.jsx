@@ -388,12 +388,12 @@ const Calculator1 = ()=>{
 
     return(
         <>
-            <div class = "subscription_wrap w100">
-                <div class = "subscription w1200">
-                    <div class>
+            <div className = "subscription_wrap w100">
+                <div className = "subscription w1200">
+                    <div className>
                     <form onSubmit = {handleSubmit}>
-                        <div class = "calculator_content1">
-                            <div class = "option1">
+                        <div className = "calculator_content1">
+                            <div className = "option1">
                                 <h5>(1) 가구소득</h5><input onClick = {HandleResult1} class = "BTN" type = "button" value = "점수 계산"/>
                                 <div>
 
@@ -419,20 +419,20 @@ const Calculator1 = ()=>{
                                 </div>
                                 <div className = "inline-block margin-left">
                                 <h6>3. 소득금액</h6>
-                                    <div><input class = "option1" type = "text" onChange = {ChangeCost}/>원</div>     
+                                    <div><input className = "option1" type = "text" onChange = {ChangeCost}/>원</div>     
                                 </div>
-                                <div class = "score">점수 : <span class = "option1_result">{Result1}</span></div>
+                                <div className = "score">점수 : <span className = "option1_result">{Result1}</span></div>
                             </div>
-                            <div class = "option3">
+                            <div className = "option3">
                                 <h5>(2) 주택청약종합저축 납입인정 횟수</h5>
                                 <div className = "inline-block">
                                     <input onChange = {changOption3} type = "text" />회
                                 </div>
-                                <input onClick = {HandleResult3} class = "BTN" type = "button" value = "점수 계산"/>
-                                <div class = "score">점수 : <span class = "option3_result">{Result3}</span></div>
+                                <input onClick = {HandleResult3} className = "BTN" type = "button" value = "점수 계산"/>
+                                <div className = "score">점수 : <span className = "option3_result">{Result3}</span></div>
                             </div>
-                            <div class = "option2">
-                                <h5>(3) 해당 시*도 연속 거주기간</h5><input onClick = {HandleResult2} class = "BTN" type = "button" value = "점수 계산"/>
+                            <div className = "option2">
+                                <h5>(3) 해당 시*도 연속 거주기간</h5><input onClick = {HandleResult2} className = "BTN" type = "button" value = "점수 계산"/>
                                 <div></div>
                                 <div className = "inline-block">
                                 <h6>1. 거주 지역</h6>
@@ -807,17 +807,17 @@ const Calculator1 = ()=>{
                                 </div>
                                 <div className = "inline-block margin-left">
                                 <h6>2. 거주 기간</h6>
-                                <div class = ""><input onChange = {changeOption2} type = "text"/>개월</div>
+                                <div className = ""><input onChange = {changeOption2} type = "text"/>개월</div>
                                 </div>
                             </div>
-                            <div class = "score totalScore apply">지원 지역</div>
-                            <select class = "Select_Box" onClick = {ChangeLocation2}>
+                            <div className = "score totalScore apply">지원 지역</div>
+                            <select className = "Select_Box" onClick = {ChangeLocation2}>
                                 <option value = "first">1차 지원(7월)</option>
                                 <option value = "second">2차 지원(10월)</option>
                                 <option value = "third">3차 지원(11월)</option>
                                 <option value = "fourth">4차 지원(12월)</option>
                             </select>
-                            <select class = "Select_Box" onClick = {Applying_Location}>
+                            <select className = "Select_Box" onClick = {Applying_Location}>
                                 {
                                     Location2 == 'first'
                                     ? <>
@@ -857,10 +857,10 @@ const Calculator1 = ()=>{
                                     )
                                 }
                             </select>
-                            <div class = "score">점수 : <span class = "option2_result">{Result2}</span></div>
-                            <div class = "block"><div class = "score totalScore inline-block">총점 : <span class = "total_result">{Result1+Result2+Result3}</span></div><input class = "submitBTN" value = "결과 보기" onClick = {ChangeAlert} type = "submit"/></div>
+                            <div className = "score">점수 : <span className = "option2_result">{Result2}</span></div>
+                            <div className = "block"><div className = "score totalScore inline-block">총점 : <span className = "total_result">{Result1+Result2+Result3}</span></div><input className = "submitBTN" value = "결과 보기" onClick = {ChangeAlert} type = "submit"/></div>
                         </div>
-                        <div class = "LocationBox2">{alert}</div>
+                        <div className = "LocationBox2">{alert}</div>
                     </form>
                     </div>
                 </div>

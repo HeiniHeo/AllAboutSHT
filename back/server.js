@@ -66,7 +66,7 @@ app.post('/calculator2',async(req,res,next)=>{
 app.get('/getFAQIncome',async(req,res,next)=>{
 
         const data = await FAQ.findAll({
-            where:{Category:'소득'}
+            where:{Category:'income'}
         })
 
         console.log(data)
@@ -76,6 +76,22 @@ app.get('/getFAQIncome',async(req,res,next)=>{
             {...data}
         )
         
+
+})
+
+app.get('/faqs/bank',async(req,res,next)=>{
+
+    const data = await FAQ.findAll({
+        where:{Category:'property'}
+    })
+
+    console.log(data)
+
+    // res.json({question:data.Question, answer:data.Answer,})
+    res.json(
+        {...data}
+    )
+    
 
 })
 
