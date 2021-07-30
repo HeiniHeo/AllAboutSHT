@@ -35,4 +35,5 @@
     height:750px;
     position:absolute;
     transform:translate(-33%,15%);
+    z-index:7
 }

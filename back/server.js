@@ -66,7 +66,7 @@ app.post('/calculator2',async(req,res,next)=>{
 app.get('/getFAQIncome',async(req,res,next)=>{
 
         const data = await FAQ.findAll({
-            where:{Category:'소득'}
+            where:{Category:'income'}
         })
 
         console.log(data)
