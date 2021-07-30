@@ -1,5 +1,4 @@
-import { useEffect } from 'react'
-import { useContext } from 'react'
+import { useEffect,useContext,useCallback } from 'react'
 import Store from '../../../Store/context'
 
 const Income = () => {
@@ -12,9 +11,9 @@ const Income = () => {
         dispatch({ type: 'FAQ_GET', payload: data })
     }, [])
 
-    const IncomeList = state.FAQ.map((v) => {
+    const IncomeList = state.FAQ.map((v,k) => {
         return (
-            <tr key={v.id}>
+            <tr key={k}>
                 <td>{v.question}</td>
                 <td>{v.answer}</td>
             </tr>

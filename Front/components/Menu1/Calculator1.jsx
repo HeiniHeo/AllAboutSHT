@@ -44,13 +44,13 @@ const Calculator1 = ()=>{
                                 setAlert('기타지역 거주자 이시네요! 1단계 공급물량은 총 67호 입니다.')
                                 : (apply == '성남복정1' && dbLocation == '성남시' && option2 >= 24
                                 ? 
-                                    setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 443호 입니다.')
+                                    setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 134호 입니다.')
                                     : apply == '성남복정1' && dbLocation != '성남시'
                                     ? 
                                         setAlert('지원불가능합니다.')
                                         : (apply == '의왕청계2' && dbLocation == '의왕시' && option2 >= 24
                                         ? 
-                                            setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 304호 입니다.')
+                                            setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 92호 입니다.')
                                             : (apply == '의왕청계2' && dbLocation != '의왕시'
                                             ? 
                                                 setAlert('지원불가능합니다.')
@@ -65,25 +65,25 @@ const Calculator1 = ()=>{
                                                             setAlert('기타지역 거주자 이시네요! 1단계 공급물량은 총 63호 입니다.')
                                                             : (apply == '성남낙생' && dbLocation == '성남시' && option2 >= 24
                                                             ? 
-                                                                setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 900호 입니다.')
+                                                                setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 270호 입니다.')
                                                                 : (apply == '성남낙생' && dbLocation != '성남시'
                                                                 ? 
                                                                     setAlert('지원불가능합니다.')
                                                                     : (apply == '성남복정2' && dbLocation == '성남시' && option2 >= 24
                                                                     ? 
-                                                                    setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 600호 입니다.')
+                                                                    setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 180호 입니다.')
                                                                         : (apply == '성남복정2' && dbLocation != '성남시'
                                                                         ? 
                                                                         setAlert('지원불가능합니다.')
                                                                             : (apply == '군포대야미' && dbLocation == '군포시' && option2 >= 24
                                                                             ? 
-                                                                            setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 1000호 입니다.')
+                                                                            setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 300호 입니다.')
                                                                                 : (apply == '군포대야미' && dbLocation != '군포시'
                                                                                 ? 
                                                                                 setAlert('지원불가능합니다.')
                                                                                     : apply == '의왕월암' && dbLocation == '의왕시' && option2 >= 24
                                                                                     ? 
-                                                                                    setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 800호 입니다.')
+                                                                                    setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 240호 입니다.')
                                                                                         : (apply == '의왕월암' && dbLocation != '의왕시'
                                                                                         ? 
                                                                                         setAlert('지원불가능합니다.')
@@ -98,19 +98,19 @@ const Calculator1 = ()=>{
                                                                                                     setAlert('기타지역 거주자 이시네요! 1단계 공급물량은 총 75호 입니다.')
                                                                                                         : apply == '부천원종' && dbLocation == '부천시' && option2 >= 24
                                                                                                         ? 
-                                                                                                        setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 400호 입니다.')
+                                                                                                        setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 120호 입니다.')
                                                                                                             : (apply == '부천원종' && dbLocation != '부천시'
                                                                                                             ? 
                                                                                                             setAlert('지원불가능합니다.')
                                                                                                                 : (apply == '시흥하중' && dbLocation == '시흥시' && option2 >= 12
                                                                                                                 ? 
-                                                                                                                setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 700호 입니다.')
+                                                                                                                setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 210호 입니다.')
                                                                                                                     : (apply == '시흥하중' && dbLocation != '시흥시'
                                                                                                                     ? 
                                                                                                                     setAlert('당해 미달시 지원 가능합니다.')
                                                                                                                         : (apply == '과천주암' && dbLocation == '과천시' && option2 >= 24
                                                                                                                         ? 
-                                                                                                                        setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 1400호 입니다.')
+                                                                                                                        setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 420호 입니다.')
                                                                                                                             : (apply == '과천주암' && dbLocation != '과천시'
                                                                                                                             ? 
                                                                                                                             setAlert('당해 미달시 지원 가능합니다.')
@@ -179,7 +179,7 @@ const Calculator1 = ()=>{
                                                                                                                                                                                                                 setAlert('기타지역 거주자 이시네요! 1단계 공급물량은 총 90호 입니다.')
                                                                                                                                                                                                                     : (apply == '동작구수방사' && Location == 'seoul' && option2 >= 24
                                                                                                                                                                                                                     ? 
-                                                                                                                                                                                                                    setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 200호 입니다.')
+                                                                                                                                                                                                                    setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 60호 입니다.')
                                                                                                                                                                                                                         : (apply == '동작구수방사' && Location != 'seoul'
                                                                                                                                                                                                                         ? 
                                                                                                                                                                                                                         setAlert('지원 미달시 지원 가능 합니다!')
@@ -392,9 +392,9 @@ const Calculator1 = ()=>{
                 <div className = "subscription w1200">
                     <div>
                     <form onSubmit = {handleSubmit}>
-                        <div class = "calculator_content1">
-                            <div class = "option1">
-                                <h5>(1) 가구소득</h5><input onClick = {HandleResult1} class = "BTN" type = "button" value = "점수 계산"/>
+                        <div className = "calculator_content1">
+                            <div className = "option1">
+                                <h5>(1) 가구소득</h5><input onClick = {HandleResult1} className = "BTN" type = "button" value = "점수 계산"/>
                                 <div>
 
                                 </div>
@@ -419,20 +419,20 @@ const Calculator1 = ()=>{
                                 </div>
                                 <div className = "inline-block margin-left">
                                 <h6>3. 소득금액</h6>
-                                    <div><input class = "option1" type = "text" onChange = {ChangeCost}/>원</div>     
+                                    <div><input className = "option1" type = "text" onChange = {ChangeCost}/>원</div>     
                                 </div>
-                                <div class = "score">점수 : <span class = "option1_result">{Result1}</span></div>
+                                <div className = "score">점수 : <span className = "option1_result">{Result1}</span></div>
                             </div>
-                            <div class = "option3">
+                            <div className = "option3">
                                 <h5>(2) 주택청약종합저축 납입인정 횟수</h5>
                                 <div className = "inline-block">
                                     <input onChange = {changOption3} type = "text" />회
                                 </div>
-                                <input onClick = {HandleResult3} class = "BTN" type = "button" value = "점수 계산"/>
-                                <div class = "score">점수 : <span class = "option3_result">{Result3}</span></div>
+                                <input onClick = {HandleResult3} className = "BTN" type = "button" value = "점수 계산"/>
+                                <div className = "score">점수 : <span className = "option3_result">{Result3}</span></div>
                             </div>
-                            <div class = "option2">
-                                <h5>(3) 해당 시*도 연속 거주기간</h5><input onClick = {HandleResult2} class = "BTN" type = "button" value = "점수 계산"/>
+                            <div className = "option2">
+                                <h5>(3) 해당 시*도 연속 거주기간</h5><input onClick = {HandleResult2} className = "BTN" type = "button" value = "점수 계산"/>
                                 <div></div>
                                 <div className = "inline-block">
                                 <h6>1. 거주 지역</h6>
@@ -807,11 +807,11 @@ const Calculator1 = ()=>{
                                 </div>
                                 <div className = "inline-block margin-left">
                                 <h6>2. 거주 기간</h6>
-                                <div class = ""><input onChange = {changeOption2} type = "text"/>개월</div>
+                                <div className = ""><input onChange = {changeOption2} type = "text"/>개월</div>
                                 </div>
                             </div>
-                            <div class = "score totalScore apply">지원 지역</div>
-                            <select class = "Select_Box" onClick = {ChangeLocation2}>
+                            <div className = "score totalScore apply">지원 지역</div>
+                            <select className = "Select_Box" onClick = {ChangeLocation2}>
                                 <option value = "first">1차 지원(7월)</option>
                                 <option value = "second">2차 지원(10월)</option>
                                 <option value = "third">3차 지원(11월)</option>
@@ -857,10 +857,10 @@ const Calculator1 = ()=>{
                                     )
                                 }
                             </select>
-                            <div class = "score">점수 : <span class = "option2_result">{Result2}</span></div>
-                            <div class = "block"><div class = "score totalScore inline-block">총점 : <span class = "total_result">{Result1+Result2+Result3}</span></div><input class = "submitBTN" value = "결과 보기" onClick = {ChangeAlert} type = "submit"/></div>
+                            <div className = "score">점수 : <span className = "option2_result">{Result2}</span></div>
+                            <div className = "block"><div className = "score totalScore inline-block">총점 : <span className = "total_result">{Result1+Result2+Result3}</span></div><input className = "submitBTN" value = "결과 보기" onClick = {ChangeAlert} type = "submit"/></div>
                         </div>
-                        <div class = "LocationBox2">{alert}</div>
+                        <div className = "LocationBox2">{alert}</div>
                     </form>
                     </div>
                 </div>
