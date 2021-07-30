@@ -7,12 +7,12 @@ module.exports = class FAQ extends Sequelize.Model{
                 type: Sequelize.STRING(500),
                 allowNull:false,
             },
-            Question:{
+            question:{
                 type: Sequelize.STRING(500),
                 allowNull:false,
                 unique:true,
             },
-            Answer:{
+            answer:{
                 type: Sequelize.STRING(500),
                 allowNull:false,
             },
