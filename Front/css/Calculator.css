@@ -3,14 +3,14 @@
 }
 
 h5{
-  font-size: 18px;
+  font-size: 15px;
   margin: 10px 0;
   display: inline-block;
 }
 
 h6{
-  margin:8px 0;
-  font-size: 14px;
+  margin:1px 0;
+  font-size: 12px;
   margin-left: 7px;
 }
 
@@ -26,10 +26,11 @@ ul > li > input, input{
 
 .score{
   color:rgb(0,91,172);
+  font-size: 12px;
 }
 
 .totalScore{
-  font-size: 20px;
+  font-size: 15px;
   font-weight: bold;
   margin-top: 18px;
 }
@@ -49,4 +50,24 @@ ul > li > input, input{
   color:rgb(0,91,172);
   height:29px;
   width:130px;
+}
+
+.inline-block{
+  display: inline-block;
+  margin-right: 3px;
+}
+
+.submitBTN{
+  background: white;
+  border:1px solid rgb(0,91,172);
+  color:rgb(0,91,172);
+  box-sizing: border-box;
+  padding:2px;
+}
+
+.apply{
+  display: inline-block;
+}
+.block{
+  display: block;
 }
