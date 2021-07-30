@@ -27,4 +27,5 @@
     height:700px;
     position:absolute;
     transform:translate(-29%,15%);
+    z-index: 5;
 }

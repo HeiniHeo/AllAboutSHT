@@ -1,18 +1,18 @@
-const EtcContents = [
-    {
-        id: '0',
-        question: 'hello Etc',
-        answer: 'react cham djfuqek djfudnj'
-    }, {
-        id: '1',
-        question: 'hello Etc1',
-        answer: 'react cham djfuqek djfudnj1'
-    }
-]
+import { useEffect } from 'react'
+import { useContext } from 'react'
+import Store from '../../../Store/context'
 
 const Etc = () => {
 
-    const EtcList = EtcContents.map((v) => {
+    const { state, dispatch } = useContext(Store)
+
+    useEffect(async () => {
+        const response = await fetch('http://localhost:4000/faqs/etc')
+        const data = await response.json()
+        dispatch({ type: 'FAQ_GET', payload: data })
+    }, [])
+
+    const EtcList = state.FAQ.map((v) => {
         return (
             <tr key={v.id}>
                 <td>{v.question}</td>

@@ -101,6 +101,8 @@ table,tr,td{
 .FaqTable > tbody > tr > td {
     border-bottom: 1px solid #000;
     border-right: 1px solid #000;
+    padding: 15px 30px;
+    box-sizing: border-box;
 }
 
 .FaqTable > tbody > tr > td:nth-child(2){
