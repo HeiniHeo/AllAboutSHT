@@ -1,7 +1,20 @@
+.applyhome{
+    width:550px;
+    height:100px;
+    margin:10px auto;
+    border: 1px solid rgb(0,91,172);  
+    border-radius: 5px;
+    padding: 10px;
+}
+.applyhome_img{
+    width:100px;
+    height:100px;
+}
+
 .bank_site{
     width:550px;
-    height: 300px;
-    margin:0 auto;
+    height: 500px;
+    margin:10px auto;
     border: 1px solid rgb(0,91,172);  
     border-radius: 5px;
 }

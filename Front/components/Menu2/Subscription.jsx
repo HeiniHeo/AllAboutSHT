@@ -1,6 +1,10 @@
 const Subscription = () => {
     return(
         <>
+            <div className="applyhome">
+                방법2. 청약홈 홈페이지 
+                <a href="https://www.applyhome.co.kr/co/coa/selectMainView.do"><img className="applyhome_img" src="applyhome.png"/></a>
+            </div>
             <div className="bank_site">
                 <ul>
                 방법2. 청약저축통장 가입은행 사이트 방문하여 개인로그인 후 청약저축납입횟수 조회
@@ -11,10 +15,6 @@ const Subscription = () => {
                     <li className="ibk"><a href="https://mybank.ibk.co.kr/uib/jsp/index.jsp"><img src="/IBK.png" /></a></li>
                 </ul>
             </div>
-            <div className="applyhhome">
-                
-            </div>
-            방법2. 청약홈 홈페이지 
         </>
     )
 }
