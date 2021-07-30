@@ -10,23 +10,17 @@
     box-sizing: border-box;
     cursor:pointer;
     z-index: 66;
+    height:100px;
+    color: #fff;
+    font-family: "LH_B";
+    font-size:30px;
 }
 
 .FaqList:hover{
     border: 5px solid rgb(0,91,172);
     background-color: #fff;
     padding: 28px 0;
-}
-
-.FaqList:hover > a{
     color: #000;
-}
-
-.FaqList > a{
-    height:100px;
-    color: #fff;
-    font-family: "LH_B";
-    font-size:30px;
 }
 
 .FaqBoardWrap{
@@ -62,7 +56,7 @@
     border-bottom-right-radius: 10px;
 }
 
-.FaqBoard > .btn_array > button:nth-child(1){
+.FaqBoard > .btn_array > a:nth-child(1){
     border-left:none;
 }
 

@@ -12,9 +12,9 @@ const Bank = () => {
         dispatch({ type: 'FAQ_GET', payload: data })
     }, [])
 
-    const BankList = state.FAQ.map((v) => {
+    const BankList = state.FAQ.map((v,k) => {
         return (
-            <tr key={v.id}>
+            <tr key={k}>
                 <td>{v.question}</td>
                 <td>{v.answer}</td>
             </tr>
