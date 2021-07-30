@@ -1,18 +1,18 @@
-const BankContents = [
-    {
-        id: '0',
-        question: 'hello Bank',
-        answer: 'react cham djfuqek djfudnj'
-    }, {
-        id: '1',
-        question: 'hello Bank 1',
-        answer: 'react cham djfuqek djfudnj1'
-    }
-]
+import { useEffect } from 'react'
+import { useContext } from 'react'
+import Store from '../../../Store/context'
 
 const Bank = () => {
 
-    const BankList = BankContents.map((v) => {
+    const { state, dispatch } = useContext(Store)
+
+    useEffect(async () => {
+        const response = await fetch('http://localhost:4000/faqs/bank')
+        const data = await response.json()
+        dispatch({ type: 'FAQ_GET', payload: data })
+    }, [])
+
+    const BankList = state.FAQ.map((v) => {
         return (
             <tr key={v.id}>
                 <td>{v.question}</td>
