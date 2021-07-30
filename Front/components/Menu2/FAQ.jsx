@@ -26,7 +26,7 @@ const menu = [
 
 const FAQ = () => {
     const category = menu.map((v) => {
-        return <div className="FaqList" key={v.id}><Link href={v.url}><a>{v.category}</a></Link></div>
+        return <Link href={v.url}><a><div className="FaqList" key={v.id}>{v.category}</div></a></Link>
     })
 
     return (

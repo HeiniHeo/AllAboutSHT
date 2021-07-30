@@ -12,9 +12,9 @@ const Etc = () => {
         dispatch({ type: 'FAQ_GET', payload: data })
     }, [])
 
-    const EtcList = state.FAQ.map((v) => {
+    const EtcList = state.FAQ.map((v,k) => {
         return (
-            <tr key={v.id}>
+            <tr key={k}>
                 <td>{v.question}</td>
                 <td>{v.answer}</td>
             </tr>
@@ -23,7 +23,6 @@ const Etc = () => {
 
     return (
         <>
-
             <tbody>
                 {EtcList}
             </tbody>

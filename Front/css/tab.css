@@ -1,7 +1,7 @@
 .wrap{
     display: flex;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 130px;
 }
 
 .tab_left{
@@ -28,6 +28,7 @@
 }
 
 .btn_array > button{
+    cursor: pointer;
     width: 100%;
     height:50px;
     border:none;
@@ -43,4 +44,3 @@
     background-color: rgb(40, 140, 228);
     color:aliceblue;
 }
-
