@@ -65,6 +65,7 @@ app.post('/calculator2', async (req, res, next) => {
 
 app.get('/faqs/:localhost', async (req, res, next) => {
 
+<<<<<<< HEAD
     const {localhost} = req.params
 
     const data = await FAQ.findAll({
@@ -72,6 +73,11 @@ app.get('/faqs/:localhost', async (req, res, next) => {
     })
 
     console.log(data)
+=======
+        const data = await FAQ.findAll({
+            where:{Category:'income'}
+        })
+>>>>>>> origin/master
 
     // res.json({question:data.Question, answer:data.Answer,})
     res.json(

@@ -13,6 +13,7 @@ const Index = () => {
                 <Tab />
                 <Tab2 />
             </div>
+                <a href = "https://apply.lh.or.kr/#"><input className = "GoTo"  type = "button" value = "청약하러가기"/></a>
         </div>
     )
 }

@@ -1,3 +1,5 @@
+import {base_url} from '../Store/baseurl'
+
 export const postCalculator1 = async (body) => {
     //code block
     //fetch 
@@ -10,7 +12,7 @@ export const postCalculator1 = async (body) => {
         },
         body:JSON.stringify(body)
     }
-    const response = await fetch('http://localhost:4000/calculator1',options) //restful api 
+    const response = await fetch(`${base_url}/calculator1`,options) //restful api 
 
 }
 
@@ -26,7 +28,7 @@ const options = {
     },
     body:JSON.stringify(body)
 }
-const response = await fetch('http://localhost:4000/calculator2',options) //restful api 
+const response = await fetch(`${base_url}/calculator2`,options) //restful api 
 
 }
 
@@ -39,7 +41,7 @@ export const getFAQIncome = async () => {
     let options = {
         method:'GET'
     }
-        const response = await fetch('http://localhost:4000/getFAQIncome',options) //restful api 
+        const response = await fetch(`${base_url}/getFAQIncome`,options) //restful api 
         const data = await response.json()
 
         const result = data.map( obj => {

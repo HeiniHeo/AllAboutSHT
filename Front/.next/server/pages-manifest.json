@@ -2,6 +2,9 @@
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
+<<<<<<< HEAD
   "/faqs/[faq]": "pages/faqs/[faq].js",
+=======
+>>>>>>> origin/master
   "/": "pages/index.js"
 }
