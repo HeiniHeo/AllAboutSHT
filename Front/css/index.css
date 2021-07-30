@@ -30,8 +30,9 @@ a{
     background-color: rgba(40, 140, 228, 0.274);
 }
 
-h1{
+.indexHeader{
     text-align: center;
     font-size:50px;
     font-family: "LH_B";
+    padding-top: 50px;
 }
