@@ -63,6 +63,22 @@ app.post('/calculator2', async (req, res, next) => {
     }
 })
 
+app.post('/Feedback', async (req, res, next) => {
+
+    const { feedbackcontent } = req.body
+
+    try {
+        const data = await FeedBack.create({
+            Content:feedbackcontent
+        })
+
+        res.json(data)
+    } catch (error) {
+        console.error(error)
+        next(error)
+    }
+})
+
 app.get('/faqs/:localhost', async (req, res, next) => {
 
     const {localhost} = req.params

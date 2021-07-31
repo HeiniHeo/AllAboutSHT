@@ -1,8 +1,8 @@
-
 import Tab from '../components/Tab'
 import Tab2 from '../components/Tab2'
 import Notice from '../components/Notice'
 import Supply from '../components/Supply'
+import Feedback from '../components/Feedback'
 
 const Index = () => {
     return (
@@ -15,13 +15,9 @@ const Index = () => {
                 <Tab2 />
             </div>
                 <a href = "https://apply.lh.or.kr/#"><input className = "GoTo"  type = "button" value = "청약하러가기"/></a>
+            <Feedback />
         </div>
     )
 }
 
 export default Index
-
-ReactDOM.render(
-    <Index />,
-    document.querySelector('#root')
-)
