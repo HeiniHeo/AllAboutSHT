@@ -1,9 +1,15 @@
+.income_img{
+    width:580px;
+    height:400px;
+}
+
 .office_worker{
     width:550px;
-    height: 130px;
+    height: 110px;
     margin:20px auto;
     border: 1px solid rgb(0,91,172);  
     border-radius: 5px;
+    padding: 10px;
 }
 
 .office_worker div h3{
@@ -16,15 +22,16 @@
 
 .office_worker div p a img{
     width:150px;
-    height:70px;
+    height:50px;
 }
 
 .entrepreneur{
     width:550px;
-    height: 130px;
+    height: 110px;
     margin:20px auto;
     border: 1px solid rgb(0,91,172);  
     border-radius: 5px;
+    padding: 10px;
 }
 
 .entrepreneur div h3{

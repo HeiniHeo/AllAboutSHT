@@ -1,32 +1,78 @@
+.applyhome{
+    width:550px;
+    height:100px;
+    margin:10px auto;
+    padding: 10px;
+    border: 1px solid rgb(0,91,172);  
+    border-radius: 5px;
+    position: relative;
+}
+.applyhome_img{
+    width:100px;
+    height:100px;
+    position: absolute;
+    right:20px;
+    top:10px;
+}
+
+.applyhome_img:hover{
+    transform: scale(1.1, 1.1);
+    transition-duration: 0.3s;
+}
+
 .bank_site{
     width:550px;
-    height: 300px;
-    margin:0 auto;
+    height: 450px;
+    margin:10px auto;
+    padding: 10px;
     border: 1px solid rgb(0,91,172);  
     border-radius: 5px;
 }
 .kb > a > img{
-    width:180px;
-    height:150px;
+    width:150px;
+    height:120px;
 }
 .nh > a > img{
     width:150px;
     height:150px;
 }
 .woori > a > img{
-    width:180px;
-    height:150px;
+    width:150px;
+    height:120px;
 }
 .keb > a > img{
-    width:150px;
-    height:150px;
+    width:120px;
+    height:120px;
+    margin-left:10px;
 }
 .ibk > a > img{
-    width:200px;
-    height:70px;
+    width:180px;
+    height:120px;
 }
-
+.sh > a > img{
+    width:180px;
+    height:120px;
+}
+.bnk > a > img{
+    width:160px;
+    height:100px;
+}
+.bnk_b > a > img{
+    width:160px;
+    height:100px;
+}
+.dgb > a > img{
+    width:160px;
+    height:100px;
+}
 .bank_site > ul > li {
     float:left;
     margin-left: 15px;
+}
+.bank_site > ul > li > a > img{
+    margin-top:10px;
+}
+.bank_site > ul > li > a > img:hover{
+    transform: scale(1.1, 1.1);
+    transition-duration: 0.5s;
 }
