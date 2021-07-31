@@ -63,9 +63,24 @@ app.post('/calculator2', async (req, res, next) => {
     }
 })
 
+app.post('/Feedback', async (req, res, next) => {
+
+    const { feedbackcontent } = req.body
+
+    try {
+        const data = await FeedBack.create({
+            Content:feedbackcontent
+        })
+
+        res.json(data)
+    } catch (error) {
+        console.error(error)
+        next(error)
+    }
+})
+
 app.get('/faqs/:localhost', async (req, res, next) => {
 
-<<<<<<< HEAD
     const {localhost} = req.params
 
     const data = await FAQ.findAll({
@@ -73,11 +88,6 @@ app.get('/faqs/:localhost', async (req, res, next) => {
     })
 
     console.log(data)
-=======
-        const data = await FAQ.findAll({
-            where:{Category:'income'}
-        })
->>>>>>> origin/master
 
     // res.json({question:data.Question, answer:data.Answer,})
     res.json(

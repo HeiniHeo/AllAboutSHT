@@ -32,6 +32,17 @@ const response = await fetch(`${base_url}/calculator2`,options) //restful api
 
 }
 
+export const postFeedback = async (body) => {
+
+    const options = {
+        method:'POST',
+        headers:{
+            'Content-type':'application/json;charset=utf-8'
+        },
+        body:JSON.stringify(body)
+    }
+    const response = await fetch(`${base_url}/Feedback`,options) //restful api 
+}
 export const getFAQIncome = async () => {
     //code block
     //fetch 
