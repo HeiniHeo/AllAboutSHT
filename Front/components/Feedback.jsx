@@ -1,5 +1,5 @@
-import {useState} from 'react'
-import {postFeedback} from '../api/api'
+import { useState } from 'react'
+import { postFeedback } from '../api/api'
 
 const FeedBack = () => {
 
@@ -16,19 +16,24 @@ const FeedBack = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        postFeedback({feedbackcontent:feedbackcontent})
+        postFeedback({ feedbackcontent: feedbackcontent })
 
     }
 
-    return(
+    return (
         <>
-            <button class = "FeedBack" onClick = {handleFeedback}>피드백</button>
-            {feedback
+            <button className={feedback ? "FeedBack_close" : "FeedBack_open"} onClick={handleFeedback}>피드백</button>
+            {/* {feedback
             ?
-            <div class = "Feedbackcontent"><input onChange = {handleFeedbackContent} class = "inputcontent" type = "text"></input>
-            <div class = "feedbackSubmitBtn"><input onClick = {handleSubmit} type = "submit" value = "의견 보내기"/></div></div>
+            <div className = "Feedbackcontent"><input onChange = {handleFeedbackContent} class = "inputcontent" type = "text"></input>
+            <div className = "feedbackSubmitBtn"><input onClick = {handleSubmit} type = "submit" value = "의견 보내기"/></div></div>
             : ''
-            }
+            } */}
+
+            <div className={feedback ? "feedbackClose" : "feedbackOpen"}>
+                <input onChange={handleFeedbackContent} className="inputcontent" type="text"></input>
+                <input onClick={handleSubmit} className="feedback_submit_btn" type="submit" value="의견 보내기" />
+            </div>
         </>
     )
 }
