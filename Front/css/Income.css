@@ -1,3 +1,9 @@
+.sub_income{
+    margin-top:10px;
+    margin-left:10px;
+    color: rgba(255, 0, 0, 0.644);
+}
+
 .income_img{
     width:580px;
     height:400px;
@@ -23,6 +29,13 @@
 .office_worker div p a img{
     width:150px;
     height:50px;
+    margin-top:20px;
+    margin-left:200px;
+}
+
+.office_worker div p a img:hover{
+    transform: scale(1.2, 1.2);
+    transition-duration: 0.5s;
 }
 
 .entrepreneur{
@@ -36,4 +49,55 @@
 
 .entrepreneur div h3{
     text-align: center;
+}
+
+.center{
+    text-align: center;
+}
+
+.entrepreneur div p a img{
+    width:120px;
+    height:50px;
+    margin-top:20px;
+    margin-left:200px;
+}
+
+.entrepreneur div p a img:hover{
+    transform: scale(1.2, 1.2);
+    transition-duration: 0.5s;
+}
+
+
+.EtcIncome{
+    width:550px;
+    height: 110px;
+    margin:20px auto;
+    border: 1px solid rgb(0,91,172);  
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.EtcIncome  div h3{
+    text-align: center;
+}
+
+.EtcIncome > div > p{
+    margin-top:5px;
+}
+
+.middle_font{
+    font-size:15px;
+}
+
+.middle_font a{
+    color:blue;
+}
+
+.middle_font a:hover{
+    color:crimson;
+    font-size: 17px;
+}
+
+.small_font{
+    font-size:12px;
 }

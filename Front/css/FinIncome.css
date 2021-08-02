@@ -1,0 +1,26 @@
+.finincome_header > button{
+    width:20px;
+    margin-left:530px;
+    background-color: rgb(40, 140, 228);
+    color:#fff;
+    border-radius:5px;
+    font-size:10px;
+}
+
+.finincome_header > button:hover{
+    background-color: rgba(40, 140, 228, 0.274);
+    color:#000;
+}
+
+.finincome{
+    width:500px;
+    height:100px;
+    margin-top:-40px;
+    background-color:#fff;
+    font-size:12px;
+
+}
+
+.finincome2{
+    margin-top:-40px;
+}
