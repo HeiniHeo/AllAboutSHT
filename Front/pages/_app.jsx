@@ -19,7 +19,7 @@ const App = ({ Component }) => {
     return (
         <>
             <Head>
-                <title>test</title>
+                <title>신희타가점도우미</title>
             </Head>
             <Store.Provider value={{ state, dispatch }}>
                 <Component />
