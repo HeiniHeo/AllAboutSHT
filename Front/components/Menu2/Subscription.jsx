@@ -14,7 +14,7 @@ const Subscription = () => {
                     <li className="woori"><a href="https://svc.wooribank.com/svc/Dream?withyou=hb"><img src="/WOORI.png" /></a></li>
                     <li className="ibk"><a href="https://mybank.ibk.co.kr/uib/jsp/index.jsp"><img src="/sh.jpg" /></a></li>
                     <li className="keb"><a href="https://www.kebhana.com/cont/houd/houd01/houd0103/index.jsp"><img src="/KEB.png" /></a></li>
-                    <li className="bnk"><a href="https://www.knbank.co.kr/ib20/mnu/BHP000000000001"><img src="/bnk.png.crdownload" /></a></li>
+                    <li className="bnk"><a href="https://www.knbank.co.kr/ib20/mnu/BHP000000000001"><img src="/bnk.png" /></a></li>
                     <li className="bnk_b"><a href="https://www.busanbank.co.kr/ib20/mnu/BHPHUG0010001"><img src="/bnk_busan.jpg" /></a></li>
                     <li className="dgb"><a href="https://www.doksamo.co.kr/cms/fsv/sdb_8/sdb_81/1215901_4841.html"><img src="/dgb.jpg" /></a></li>
                 </ul>
