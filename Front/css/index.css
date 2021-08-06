@@ -14,8 +14,7 @@
 *{
     margin:0;
     padding:0;
-    overflow-x:hidden;
-    overflow-y:hidden;
+    overflow:hidden;
 }
 
 
@@ -83,7 +82,7 @@ body{
     cursor:pointer;
     color:#fff;
     right:0;
-    top: 1060px;
+    top: 676px;
     transition:all 0.4s;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 7px;
@@ -105,7 +104,7 @@ body{
     cursor:pointer;
     color:#fff;
     right:420px;
-    top: 1060px;
+    top: 676px;
     transition:all 0.5s;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
