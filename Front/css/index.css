@@ -82,7 +82,7 @@ a{
     top: 1060px;
     transition:all 0.4s;
     border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
+    border-bottom-left-radius: 7px;
 }
 
 .FeedBack_open:hover{
