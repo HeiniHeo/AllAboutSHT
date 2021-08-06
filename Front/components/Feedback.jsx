@@ -18,7 +18,7 @@ const FeedBack = () => {
         e.preventDefault()
         setFeedback(!feedback)
         postFeedback({ feedbackcontent: feedbackcontent })
-
+        setfeedbackcontent('')
     }
 
     return (
@@ -32,7 +32,7 @@ const FeedBack = () => {
             } */}
 
             <div className={feedback ? "feedbackClose" : "feedbackOpen"}>
-                <input onChange={handleFeedbackContent} className="inputcontent" type="text"></input>
+                <input onChange={handleFeedbackContent} className="inputcontent" type="text" value={feedbackcontent}></input>
                 <input onClick={handleSubmit} className="feedback_submit_btn" type="submit" value="의견 보내기" />
             </div>
         </>
