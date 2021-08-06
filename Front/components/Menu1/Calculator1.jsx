@@ -858,7 +858,7 @@ const Calculator1 = ()=>{
                                 }
                             </select>
                             <div className = "score">점수 : <span className = "option2_result">{Result2}</span></div>
-                            <div className = "block"><div className = "score totalScore inline-block">총점 : <span className = "total_result">{Result1+Result2+Result3}</span></div><input className = "submitBTN" value = "결과 보기" onClick = {ChangeAlert} type = "submit"/></div>
+                            <div className = "block"><div className = "score totalScore inline-block">총점 : <span className = "total_result">{Result1+Result2+Result3}</span>/9</div><input className = "submitBTN" value = "결과 보기" onClick = {ChangeAlert} type = "submit"/></div>
                         </div>
                         <div className = "LocationBox2">{alert}</div>
                     </form>

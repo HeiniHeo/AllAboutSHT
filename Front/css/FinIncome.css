@@ -18,9 +18,21 @@
     margin-top:-40px;
     background-color:#fff;
     font-size:12px;
-
 }
 
 .finincome2{
     margin-top:-40px;
+}
+
+@media screen and (max-width:768px) {
+    .finincome_header > button{
+        margin-left:360px;
+    }
+    .finincome{
+        width:350px;
+        height:100px;
+        margin-top:-40px;
+        background-color:#fff;
+        font-size:10px;
+    }
 }

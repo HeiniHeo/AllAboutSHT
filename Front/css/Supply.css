@@ -3,6 +3,10 @@
     margin:0 auto;
 }
 
+.supply_header2{
+    display:none;
+}
+
 .supply{
     width:110px;
     height:90px;
@@ -36,4 +40,26 @@
     position:absolute;
     transform:translate(-33%,15%);
     z-index:7
+}
+
+@media screen and (max-width:768px) {
+    .supply_header{
+        display:none;
+    }
+    .supply_header2{
+        width:500px;
+        margin:0 auto;
+        display:block;
+    }
+    .supply{
+        margin-left:0px;
+        transform: translateX(250%);
+    }
+
+    .supply_img{
+        width:420px;
+        height:850px;
+        transform:translate(3%,15%);
+        z-index:7
+    }
 }

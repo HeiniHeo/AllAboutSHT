@@ -25,7 +25,7 @@ const Income = () =>{
                     <h3>기타소득 : 공적이전소득</h3>
                     <p className="middle_font">공적이전소득이란? <br />
                     각종 법령의 규정에 의해 정기적으로 지급되는 각종 수당․연금․급여․기타금품</p>
-                    <p className="small_font">공적이전소득 예시: 국민연금급여,사학퇴직연금급여,공무원퇴직연금급여,국방부퇴직연금급여,별정우체국연금,<br />한국고용정보원 실업급여,근로복지공단 산재보험급여, 보훈처 보훈대상자 보상급여 및 보훈대상자 명예수당 등 </p>
+                    <p className="small_font">공적이전소득 예시: 국민연금급여,사학퇴직연금급여,공무원퇴직연금급여,국방부퇴직연금급여,별정우체국연금,한국고용정보원 실업급여,근로복지공단 산재보험급여, 보훈처 보훈대상자 보상급여 및 보훈대상자 명예수당 등 </p>
                     <p className="middle_font"><a href="http://www.mohw.go.kr">보건복지부</a>, <a href="https://www.nps.or.kr">국민연금</a>, <a href="https://www.tp.or.kr">사학연금</a>, <a href="https://www.geps.or.kr">공무원연금</a>, <a href="https://m.geps.or.kr/">군인연금관리공단</a>, <a href="https://www.kcomwel.or.kr">근로복지공단</a>, <a href="https://www.mpva.go.kr">보훈처</a></p>
                 </div>
             </div>

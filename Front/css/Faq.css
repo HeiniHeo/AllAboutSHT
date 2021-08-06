@@ -125,3 +125,9 @@ table,tr,td{
     text-align: center;
     font-size: 45px;
 }
+
+@media screen and (max-width:768px) {
+    .FaqList{
+        transform: translateX(20%);
+    }
+}

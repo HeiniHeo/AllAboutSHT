@@ -101,3 +101,48 @@
 .small_font{
     font-size:12px;
 }
+
+@media screen and (max-width:768px) {
+    .office_worker{
+        width:380px;
+    }
+
+    .office_worker div h3{
+        font-size:15px;
+    }
+    .office_worker div p a img{
+        margin-left:120px;
+    }
+
+    .entrepreneur{
+        width:380px;
+    }
+
+    .entrepreneur div h3{
+        font-size:15px;
+    }
+    .entrepreneur div p a img{
+        margin-left:120px;
+    }
+
+    .EtcIncome{
+        width:380px;
+    }
+
+    .EtcIncome div h3{
+        font-size:15px;
+    }
+    .EtcIncome div p a img{
+        margin-left:120px;
+    }
+    .middle_font{
+        font-size:12px;
+    }
+    .small_font{
+        font-size:8px;
+    }
+    .middle_font a{
+        font-size:10px;
+        color:blue;
+    }
+}

@@ -7,14 +7,25 @@ const Supply = () =>{
         setSupply(!supply)
     }
         return(
-            <div className="supply_header">
-                <button className="supply" onClick={supplyOpen}><img src="/home.png" /><br/>3기신도시 신희타 <br/>물량공급표</button>
-                    {supply 
-                    ?
-                    <img className="supply_img" src="/공급표.png" />
-                    :''
-                    }
-            </div>
+            <>
+                <div className="supply_header">
+                    <button className="supply" onClick={supplyOpen}><img src="/home.png" /><br/>3기신도시 신희타 <br/>물량공급표</button>
+                        {supply 
+                        ?
+                        <img className="supply_img" src="/공급표.png" />
+                        :''
+                        }
+                </div>
+                <div className="supply_header2">
+                    <button className="supply" onClick={supplyOpen}><img src="/home.png" /><br/>3기신도시 신희타 <br/>물량공급표</button>
+                        {supply 
+                        ?
+                        <img className="supply_img" src="/공급표2.png" />
+                        :''
+                        }
+                </div>
+            </>
+            
         )
 
 }

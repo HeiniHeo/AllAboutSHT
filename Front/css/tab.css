@@ -44,3 +44,24 @@
     background-color: rgb(40, 140, 228);
     color:aliceblue;
 }
+
+@media screen and (max-width: 768px) {
+    .wrap{
+        width:100%;
+        display: block;
+    }
+
+    .tab_left{
+        width:420px;
+        margin: 50px auto;
+    }
+
+    .tab_right{
+        width:420px;
+        margin: 50px auto;
+    }
+
+    .btn_array > button{
+        font-size:15px;
+    }
+}

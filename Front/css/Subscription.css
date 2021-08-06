@@ -76,3 +76,63 @@
     transform: scale(1.1, 1.1);
     transition-duration: 0.5s;
 }
+
+@media screen and (max-width:768px) {
+
+    h3{
+        font-size:13px;
+    }
+    .applyhome{
+        width:380px;
+    }
+    .bank_site{
+        width:380px;
+    }
+    .applyhome_img{
+        width:80px;
+        height:80px;
+        position: absolute;
+        right:160px;
+        top:40px;
+    }
+    .kb > a > img{
+        width:110px;
+        height:80px;
+    }
+    .nh > a > img{
+        width:80px;
+        height:80px;
+    }
+    .woori > a > img{
+        width:100px;
+        height:80px;
+    }
+    .keb > a > img{
+        width:80px;
+        height:80px;
+        margin-left:10px;
+    }
+    .ibk > a > img{
+        width:120px;
+        height:80px;
+    }
+    .sh > a > img{
+        width:120px;
+        height:80px;
+    }
+    .bnk > a > img{
+        width:110px;
+        height:80px;
+    }
+    .bnk_b > a > img{
+        width:110px;
+        height:80px;
+    }
+    .dgb > a > img{
+        width:110px;
+        height:80px;
+    }
+    .bank_site > ul > li {
+        margin-top: 35px;
+    }
+}
