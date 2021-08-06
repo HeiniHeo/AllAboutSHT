@@ -401,6 +401,7 @@ const Calculator1 = ()=>{
                                 <div className = "inline-block">
                                 <h6>1. 배우자 소득 유무</h6>
                                 <select onClick = {ChangeIncome}>
+                                    <option>선택</option>
                                     <option value = "two">맞벌이</option>
                                     <option value = "one">외벌이</option>
                                     <option value = "zero">둘 다 무직</option>
@@ -409,6 +410,7 @@ const Calculator1 = ()=>{
                                 <div className = "inline-block margin-left">
                                 <h6>2. 가구 수</h6>
                                 <select onClick = {ChangePerson}>
+                                    <option>선택</option>
                                     <option value = "three">3인 이하</option>
                                     <option value = "four">4인</option>
                                     <option value = "five">5인</option>
