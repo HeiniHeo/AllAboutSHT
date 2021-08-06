@@ -292,7 +292,7 @@ const Calculator2 = ()=>{
                                                                                                                                                                                                                     setAlert('당해기준 충족자 이시네요! 2단계 공급물량은 총 140호 입니다.')
                                                                                                                                                                                                                         : (apply == '동작구수방사' && Location != 'seoul'
                                                                                                                                                                                                                         ? 
-                                                                                                                                                                                                                        setAlert('지원 미달시 지원 가능 합니다!')
+                                                                                                                                                                                                                        setAlert('당해 지원 미달시 지원 가능 합니다!')
                                                                                                                                                                                                                             : apply == '구리갈매역세권' && Location == 'GyeongGi' && dbLocation == '구리시' && option3 >= 24
                                                                                                                                                                                                                             ? 
                                                                                                                                                                                                                             setAlert('당해기준 충족자 이시네요! 2단계 공급물량은 총 770호 입니다.')
@@ -302,7 +302,14 @@ const Calculator2 = ()=>{
                                                                                                                                                                                                                                     : (apply == '구리갈매역세권' && Location != 'GyeongGi'
                                                                                                                                                                                                                                     ? 
                                                                                                                                                                                                                                     setAlert('기타지역 거주자 이시네요! 2단계 공급물량은 총 385호 입니다.')
-                                                                                                                                                                                                                                        : '')))))))))))))))))))))))))))))))))))))))))))) ) ) ) ) ) 
+                                                                                                                                                                                                                                        : (apply == '성남금토' && dbLocation == '성남시' && option3 >= 24
+                                                                                                                                                                                                                                        ? 
+                                                                                                                                                                                                                                            setAlert('당해기준 충족자 이시네요! 2단계 공급물량은 총 490호 입니다.')
+                                                                                                                                                                                                                                            : apply == '성남금토' && dbLocation != '성남시'
+                                                                                                                                                                                                                                            ? 
+                                                                                                                                                                                                                                                setAlert('지원불가능합니다.')
+                                                                                                                                                                                                                                                :
+                                                                                                                                                                                                                                                '')))))))))))))))))))))))))))))))))))))))))))) ) ) ) ) ) )
             
         }
     }
@@ -319,7 +326,7 @@ const Calculator2 = ()=>{
                                 <div className = "inline-block">
                                     <input onChange = {changOption1} type = "text" />명
                                 </div>
-                                <input onClick = {HandleResult1} className = "BTN" type = "button" value = "점수 계산"/>
+                                <input onClick = {HandleResult1} onTouchEnd = {HandleResult1}  className = "BTN" type = "button" value = "점수 계산"/>
                                 <div className = "score">점수 : <span className = "option1_result">{Result1}</span></div>
                             </div>
                             <div className = "option2">
@@ -327,7 +334,7 @@ const Calculator2 = ()=>{
                                 <div className = "inline-block">
                                     <input onChange = {changOption2} type = "text" />개월
                                 </div>
-                                <input onClick = {HandleResult2} className = "BTN" type = "button" value = "점수 계산"/>
+                                <input onClick = {HandleResult2} onTouchEnd = {HandleResult2} className = "BTN" type = "button" value = "점수 계산"/>
                                 <div className = "score">점수 : <span className = "option2_result">{Result2}</span></div>
                             </div>
                             <div className = "option4">
@@ -335,11 +342,11 @@ const Calculator2 = ()=>{
                                 <div className = "inline-block">
                                     <input onChange = {changOption4} type = "text" />회
                                 </div>
-                                <input onClick = {HandleResult4} className = "BTN" type = "button" value = "점수 계산"/>
+                                <input onClick = {HandleResult4} onTouchEnd = {HandleResult4} className = "BTN" type = "button" value = "점수 계산"/>
                                 <div className = "score">점수 : <span className = "option4_result">{Result4}</span></div>
                             </div>
                             <div className = "option3">
-                                <h5>(4) 해당 시*도 연속 거주기간</h5><input onClick = {HandleResult3} className = "BTN" type = "button" value = "점수 계산"/>
+                                <h5>(4) 해당 시*도 연속 거주기간</h5><input onClick = {HandleResult3} onTouchEnd = {HandleResult3} className = "BTN" type = "button" value = "점수 계산"/>
                                 <div></div>
                                 <div className = "inline-block">
                                 <h6>1. 거주 지역</h6>
@@ -750,6 +757,7 @@ const Calculator2 = ()=>{
                                             : (
                                                 Location2 == 'fourth'
                                                 ? <> <option value = "남양주왕숙2">남양주왕숙2</option>
+                                                <option value = "성남금토">성남금토</option>
                                                 <option value = "부천대장">부천대장</option>
                                                 <option value = "고양창릉">고양창릉</option>
                                                 <option value = "부천역곡">부천역곡</option>
