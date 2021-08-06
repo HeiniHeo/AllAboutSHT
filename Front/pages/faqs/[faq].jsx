@@ -72,10 +72,10 @@ const FaqList = () => {
                     </div>
                     <div className="FaqBoard">
                         <div className="btn_array">
-                            <Link href="http://localhost:3001/faqs/income"><LinkCss style={(faq === "income") ? color : {}}>소득</LinkCss></Link>
-                            <Link href="http://localhost:3001/faqs/property"><LinkCss style={(faq === "property") ? color : {}}>자산</LinkCss></Link>
-                            <Link href="http://localhost:3001/faqs/bank"><LinkCss style={(faq === "bank") ? color : {}}>청약통장</LinkCss></Link>
-                            <Link href="http://localhost:3001/faqs/etc"><LinkCss style={(faq === "etc") ? color : {}}>기타</LinkCss></Link>
+                            <Link href="http://jebaldangcheom.com/faqs/income"><LinkCss style={(faq === "income") ? color : {}}>소득</LinkCss></Link>
+                            <Link href="http://jebaldangcheom.com/faqs/property"><LinkCss style={(faq === "property") ? color : {}}>자산</LinkCss></Link>
+                            <Link href="http://jebaldangcheom.com/faqs/bank"><LinkCss style={(faq === "bank") ? color : {}}>청약통장</LinkCss></Link>
+                            <Link href="http://jebaldangcheom.com/faqs/etc"><LinkCss style={(faq === "etc") ? color : {}}>기타</LinkCss></Link>
                         </div>
                         <div className="tableWrap">
                             <table className="FaqTable">
