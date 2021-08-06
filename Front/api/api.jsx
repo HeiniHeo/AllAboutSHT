@@ -56,7 +56,7 @@ export const getFAQIncome = async () => {
         const data = await response.json()
 
         const result = data.map( obj => {
-            return {...obj, Question:obj.question, Answer:obj.answer}
+            return {...obj, question:obj.question, answer:obj.answer}
         } )       
 
         dispatch({type:'GET_FAQ',payload:result})

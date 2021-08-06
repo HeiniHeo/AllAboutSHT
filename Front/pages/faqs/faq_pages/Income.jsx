@@ -6,7 +6,7 @@ const Income = () => {
     const { state, dispatch } = useContext(Store)
 
     useEffect(async () => {
-        const response = await fetch('http://localhost:4000/getFAQIncome')
+        const response = await fetch('http://localhost:80/faqs/income')
         const data = await response.json()
         dispatch({ type: 'FAQ_GET', payload: data })
     }, [])

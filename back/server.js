@@ -83,6 +83,8 @@ app.get('/faqs/:localhost', async (req, res, next) => {
 
     const {localhost} = req.params
 
+    console.log(localhost)
+
     const data = await FAQ.findAll({
         where: { Category: localhost }
     })
@@ -93,21 +95,17 @@ app.get('/faqs/:localhost', async (req, res, next) => {
     res.json(
         { ...data }
     )
-
-
 })
 
-app.get('/', (req, res) => {
-    res.send('sadgsdg')
-})
-app.get('/lolo', (req, res) => {
-    res.send('lolo')
-})
-app.get('/ff', (req, res) => {
-    res.send('asdf')
-})
-
-
+// app.get('/', (req, res) => {
+//     res.send('sadgsdg')
+// })
+// app.get('/lolo', (req, res) => {
+//     res.send('lolo')
+// })
+// app.get('/ff', (req, res) => {
+//     res.send('asdf')
+// })
 
 app.listen(80, () => {
     console.log('start server port 80')
