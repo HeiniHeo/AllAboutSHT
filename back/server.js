@@ -31,7 +31,6 @@ app.post('/calculator1', async (req, res, next) => {
             Applying_Location: Applying_Location
 
         })
-
         res.json(data)
     } catch (error) {
         console.error(error)
@@ -64,14 +63,11 @@ app.post('/calculator2', async (req, res, next) => {
 })
 
 app.post('/Feedback', async (req, res, next) => {
-
     const { feedbackcontent } = req.body
-
     try {
         const data = await FeedBack.create({
             Content:feedbackcontent
         })
-
         res.json(data)
     } catch (error) {
         console.error(error)
