@@ -6,7 +6,6 @@ module.exports = class FeedBack extends Sequelize.Model{
             Content:{
                 type: Sequelize.STRING(500),
                 allowNull:false,
-                unique:true,
             },
         },{
             sequelize,
