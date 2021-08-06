@@ -7,7 +7,7 @@ const Property = () => {
     const { state, dispatch } = useContext(Store)
 
     useEffect(async () => {
-        const response = await fetch('http://jebaldangcheom.com/faqs/property')
+        const response = await fetch('http://api.jebaldangcheom.com/faqs/property')
         const data = await response.json()
         dispatch({ type: 'FAQ_GET', payload: data })
     }, [])

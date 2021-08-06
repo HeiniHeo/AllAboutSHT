@@ -7,7 +7,7 @@ const Bank = () => {
     const { state, dispatch } = useContext(Store)
 
     useEffect(async () => {
-        const response = await fetch('http://jebaldangcheom.com/faqs/bank')
+        const response = await fetch('http://api.jebaldangcheom.com/faqs/bank')
         const data = await response.json()
         dispatch({ type: 'FAQ_GET', payload: data })
     }, [])
