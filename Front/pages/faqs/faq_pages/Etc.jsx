@@ -7,7 +7,7 @@ const Etc = () => {
     const { state, dispatch } = useContext(Store)
 
     useEffect(async () => {
-        const response = await fetch('http://localhost:4000/faqs/etc')
+        const response = await fetch('http://localhost:80/faqs/etc')
         const data = await response.json()
         dispatch({ type: 'FAQ_GET', payload: data })
     }, [])

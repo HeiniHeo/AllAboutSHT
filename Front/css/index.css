@@ -14,6 +14,7 @@
 *{
     margin:0;
     padding:0;
+    overflow-x:hidden;
 }
 
 
@@ -68,14 +69,13 @@ body{
     font-size: 20px;
     background: rgb(40, 140, 228);
     color:white;
-
 }
 
 .FeedBack_open{
     position:absolute;
     width: 120px;
     height: 50px;
-    background: #1e65a3;
+    background: rgb(0,91,172);
     text-align: center;
     padding:18px 0;
     box-sizing: border-box;
@@ -85,14 +85,19 @@ body{
     top: 1060px;
     transition:all 0.4s;
     border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
+    border-bottom-left-radius: 7px;
+}
+
+.FeedBack_open:hover{
+    background: rgb(40, 140, 228);
+    color:white;
 }
 
 .FeedBack_close{
     position:absolute;
     width: 120px;
     height: 50px;
-    background: #1e65a3;
+    background: rgb(0,91,172);
     text-align: center;
     padding:18px 0;
     box-sizing: border-box;
@@ -103,6 +108,11 @@ body{
     transition:all 0.5s;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
+}
+
+.FeedBack_close:hover{
+    background: rgb(40, 140, 228);
+    color:white;
 }
 
 .feedbackOpen{

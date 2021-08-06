@@ -16,6 +16,7 @@ const FeedBack = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        setFeedback(!feedback)
         postFeedback({ feedbackcontent: feedbackcontent })
 
     }

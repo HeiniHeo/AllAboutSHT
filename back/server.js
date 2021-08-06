@@ -31,7 +31,6 @@ app.post('/calculator1', async (req, res, next) => {
             Applying_Location: Applying_Location
 
         })
-
         res.json(data)
     } catch (error) {
         console.error(error)
@@ -64,14 +63,11 @@ app.post('/calculator2', async (req, res, next) => {
 })
 
 app.post('/Feedback', async (req, res, next) => {
-
     const { feedbackcontent } = req.body
-
     try {
         const data = await FeedBack.create({
             Content:feedbackcontent
         })
-
         res.json(data)
     } catch (error) {
         console.error(error)
@@ -83,6 +79,8 @@ app.get('/faqs/:localhost', async (req, res, next) => {
 
     const {localhost} = req.params
 
+    console.log(localhost)
+
     const data = await FAQ.findAll({
         where: { Category: localhost }
     })
@@ -93,21 +91,17 @@ app.get('/faqs/:localhost', async (req, res, next) => {
     res.json(
         { ...data }
     )
-
-
 })
 
-app.get('/', (req, res) => {
-    res.send('sadgsdg')
-})
-app.get('/lolo', (req, res) => {
-    res.send('lolo')
-})
-app.get('/ff', (req, res) => {
-    res.send('asdf')
-})
-
-
+// app.get('/', (req, res) => {
+//     res.send('sadgsdg')
+// })
+// app.get('/lolo', (req, res) => {
+//     res.send('lolo')
+// })
+// app.get('/ff', (req, res) => {
+//     res.send('asdf')
+// })
 
 app.listen(80, () => {
     console.log('start server port 80')

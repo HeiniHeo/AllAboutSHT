@@ -12,7 +12,7 @@ const reducer = (state,action) => {
         }
         
         const rst = result.map(v=>{
-            return {id:v.id,question:v.Question,answer:v.Answer}
+            return {id:v.id,question:v.question,answer:v.answer}
         })
         // []
             return {
