@@ -350,7 +350,7 @@ const Calculator2 = ()=>{
                                 <div></div>
                                 <div className = "inline-block">
                                 <h6>1. 거주 지역</h6>
-                                <select onClick = {ChangeLocation}>
+                                <select onClick = {ChangeLocation} onTouchEnd = {ChangeLocation}>
                                     <option>
                                         시/도
                                     </option>
@@ -406,7 +406,7 @@ const Calculator2 = ()=>{
                                         제주특별자치도
                                     </option>
                                 </select>   
-                                <select onClick = {dbLocationset}>
+                                <select onClick = {dbLocationset}  onTouchEnd = {dbLocationset}>
                                     <option>
                                         군/구
                                     </option>
@@ -731,7 +731,7 @@ const Calculator2 = ()=>{
                                 <option value = "third">3차 지원(11월)</option>
                                 <option value = "fourth">4차 지원(12월)</option>
                             </select>
-                            <select className = "Select_Box" onClick = {Applying_Location}>
+                            <select className = "Select_Box" onClick = {Applying_Location}  onTouchEnd = {Applying_Location}>
                                 {
                                     Location2 == 'first'
                                     ? <>

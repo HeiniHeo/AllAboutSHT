@@ -403,11 +403,10 @@ const Calculator1 = ()=>{
                             <div className = "option1">
                                 <h5>(1) 가구소득</h5><input onClick = {HandleResult1} onTouchEnd = {HandleResult1} className = "BTN" type = "button" value = "점수 계산"/>
                                 <div>
-
                                 </div>
                                 <div className = "inline-block">
                                 <h6>1. 배우자 소득 유무</h6>
-                                <select onClick = {ChangeIncome}>
+                                <select onClick = {ChangeIncome} onTouchEnd = {ChangeIncome}>
                                     <option>선택</option>
                                     <option value = "two">맞벌이</option>
                                     <option value = "one">외벌이</option>
@@ -416,7 +415,7 @@ const Calculator1 = ()=>{
                                 </div>
                                 <div className = "inline-block margin-left">
                                 <h6>2. 가구 수</h6>
-                                <select onClick = {ChangePerson}>
+                                <select onClick = {ChangePerson} onTouchEnd = {ChangePerson}>
                                     <option>선택</option>
                                     <option value = "three">3인 이하</option>
                                     <option value = "four">4인</option>
@@ -428,7 +427,7 @@ const Calculator1 = ()=>{
                                 </div>
                                 <div className = "inline-block margin-left">
                                 <h6>3. 소득금액</h6>
-                                    <div><input className = "option1" type = "text" onChange = {ChangeCost}/>원</div>     
+                                    <div><input className = "option1" type = "text" onChange = {ChangeCost} />원</div>     
                                 </div>
                                 <div className = "score">점수 : <span className = "option1_result">{Result1}</span></div>
                             </div>
@@ -445,7 +444,7 @@ const Calculator1 = ()=>{
                                 <div></div>
                                 <div className = "inline-block">
                                 <h6>1. 거주 지역</h6>
-                                <select onClick = {ChangeLocation}>
+                                <select onClick = {ChangeLocation} onTouchEnd = {ChangeLocation}>
                                     <option>
                                         시/도
                                     </option>
@@ -501,7 +500,7 @@ const Calculator1 = ()=>{
                                         제주특별자치도
                                     </option>
                                 </select>   
-                                <select onClick = {dbLocationset}>
+                                <select onClick = {dbLocationset}  onTouchEnd = {dbLocationset}>
                                     <option>
                                         군/구
                                     </option>
@@ -820,13 +819,13 @@ const Calculator1 = ()=>{
                                 </div>
                             </div>
                             <div className = "score totalScore apply">지원 지역</div>
-                            <select className = "Select_Box" onClick = {ChangeLocation2}>
+                            <select className = "Select_Box" onClick = {ChangeLocation2}  onTouchEnd = {ChangeLocation2}>
                                 <option value = "first">1차 지원(7월)</option>
                                 <option value = "second">2차 지원(10월)</option>
                                 <option value = "third">3차 지원(11월)</option>
                                 <option value = "fourth">4차 지원(12월)</option>
                             </select>
-                            <select className = "Select_Box" onClick = {Applying_Location}>
+                            <select className = "Select_Box" onClick = {Applying_Location} onTouchEnd = {Applying_Location}>
                                 {
                                     Location2 == 'first'
                                     ? <>
