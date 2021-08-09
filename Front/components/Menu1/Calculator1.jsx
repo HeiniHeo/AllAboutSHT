@@ -6,24 +6,33 @@ import {postCalculator1} from '../../api/api'
 const Calculator1 = ()=>{
     const {state,dispatch} = useContext(Store)
 
-    const [Location, setLocation] = useState(1)
-    const [Location2, setLocation2] = useState(1)
-    const [apply, setapply] = useState(1)
-    const [dbLocation, setdbLocation] = useState(1)
+    const [Location, setLocation] = useState('.')
+    const [Location2, setLocation2] = useState('.')
+    const [apply, setapply] = useState('.')
+    const [dbLocation, setdbLocation] = useState('.')
     
 
-    const [Income, setIncome] = useState(1)
-    const [Person, setPerson] = useState(1)
-    const [Cost, setCost] = useState(1)
+    const [Income, setIncome] = useState('.')
+    const [Person, setPerson] = useState('.')
+    const [Cost, setCost] = useState('.')
 
-    const [option2, setOption2] = useState(1)
-    const [option3, setOption3] = useState(1)
-    const [Result1, setResult1] = useState(1)
-    const [Result2, setResult2] = useState(1)
-    const [Result3, setResult3] = useState(1)
+
+
+    const [option2, setOption2] = useState('.')
+    const [option3, setOption3] = useState('.')
+
+    const [Result1, setResult1] = useState(0)
+    const [Result1_Alert, setResult1_Alert] = useState('')
+    const [Result2, setResult2] = useState(0)
+    const [Result2_Alert, setResult2_Alert] = useState('')
+    const [Result3, setResult3] = useState(0)
+    const [Result3_Alert, setResult3_Alert] = useState('')
+
+    const [Result4_Alert, setResult4_Alert] = useState('')
 
 
     const [alert, setAlert] = useState('지원 가능 여부입니다')
+    const [className,setClassName] = useState('')
 
     const ChangeAlert = (e) => {
         {
@@ -227,19 +236,38 @@ const Calculator1 = ()=>{
         setCost(e.target.value)
     }
 
+    const option3_function1 = (e) => (
+        setResult3(1), 
+        setResult3_Alert('')
+    )
+
+    const option3_function2 = (e) => (
+        setResult3(2), 
+        setResult3_Alert('')
+    )
+
+    const option3_function3 = (e) => (
+        setResult3(3), 
+        setResult3_Alert('')
+    )
     const HandleResult3 = (e) => {
         {
             option3 < 12
-            ? setResult3(1)
+            ? option3_function1()
             : ( option3 >= 12 && option3 < 24
-                ? setResult3(2)
+                ? option3_function2()
                 : ( option3 >= 24
-                    ? setResult3(3)
-                    : ''
+                    ? option3_function3()
+                    : ( option3 == '.' 
+                        ? setResult3_Alert('항목을 입력해주세요')
+                        : ''
+                            )
+
                     )
                 )
         }
     }
+
     const HandleResult2 = (e) => {
         {
             Location == 'Incheon' && apply == '인천계양' && option2 >= 24 
@@ -260,7 +288,15 @@ const Calculator1 = ()=>{
             ? setResult2(2)
             : ( Location == 'GyeongGi' && apply != '동작구수방사' && apply != '인천계양' && option2 < 12
             ? setResult2(1)
-            : setResult2(0)
+            : ( Location == '.' || apply == '.' || option2 == '.' || dbLocation == '.' || Location2 == '.'
+              ? setResult2_Alert('모든 항목을 입력해주세요')
+              : (
+                Location != '.' || apply != '.' || option2 != '.' || dbLocation != '.' || Location2 != '.'
+                ? setResult2_Alert('')
+                : setResult2(0)
+              )
+
+            )
 
             )
 
@@ -281,6 +317,11 @@ const Calculator1 = ()=>{
     }
     
     const HandleResult1 = (e) => {
+        HandleResult11()
+        ,HandleResult12()
+    }
+    const HandleResult11 = (e) => {
+
         {
             Income == "two" && Person == "three" && Cost <= 4824128
             ? setResult1(3)
@@ -344,7 +385,9 @@ const Calculator1 = ()=>{
                     ? setResult1(1)
                     : (Income == "zero"
                     ? setResult1(3)
-                    : '')
+                    : (Income == 0 || Person == 0 || Cost == '.' 
+                        ? setResult1_Alert('모든 항목을 입력해주세요')
+                        : ''))
                     )
                     )
                     )
@@ -375,14 +418,17 @@ const Calculator1 = ()=>{
                 
     }}
 
-    const ChangeLocation2 = (e) => {
-        setLocation2(e.target.value)
+    const HandleResult12 = (e) => {
+        {
+            Income != "." && Person != "." && Cost != '.'
+            ? setResult1_Alert('')
+            : ''
+        }
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        postCalculator1({income:Result1,Resident_period:Result2,Resident_Location1:Location,Resident_Location2:dbLocation,Number_Of_Payment:Result3,Applying_Location:apply})
 
+    const ChangeLocation2 = (e) => {
+        setLocation2(e.target.value)
     }
 
     const Applying_Location = (e) => {
@@ -393,6 +439,24 @@ const Calculator1 = ()=>{
         setdbLocation(e.target.value)
     }
 
+
+    const successSubmit = (e) => {
+        setResult4_Alert('결과가 저장되었습니다!'),
+        setClassName('blue'),
+        postCalculator1({income:Result1,Resident_period:Result2,Resident_Location1:Location,Resident_Location2:dbLocation,Number_Of_Payment:Result3,Applying_Location:apply})
+
+    }
+    const handleSubmit = (e) => {
+
+        e.preventDefault()
+        {
+            Result1_Alert == '모든 항목을 입력해주세요' || Result2_Alert == '모든 항목을 입력해주세요' || Result3_Alert == '모든 항목을 입력해주세요' || Result1 == 0 || Result3 == 0 || Location == '.' || apply == '.' || option3 == '.' || dbLocation == '.' || Location2 == '.'
+            ? setResult4_Alert('모든 항목의 점수를 내주세요')
+            : successSubmit()
+        }
+
+    }
+    
     return(
         <>
             <div className = "subscription_wrap w100">
@@ -429,7 +493,7 @@ const Calculator1 = ()=>{
                                 <h6>3. 소득금액</h6>
                                     <div><input className = "option1" type = "text" onChange = {ChangeCost} />원</div>     
                                 </div>
-                                <div className = "score">점수 : <span className = "option1_result">{Result1}</span></div>
+                                <div className = "score">점수 : <span className = "option1_result">{Result1}</span><span class = "red">{Result1_Alert}</span></div>
                             </div>
                             <div className = "option3">
                                 <h5>(2) 주택청약종합저축 납입인정 횟수</h5>
@@ -437,7 +501,7 @@ const Calculator1 = ()=>{
                                     <input onChange = {changOption3} type = "text" />회
                                 </div>
                                 <input onClick = {HandleResult3} onTouchEnd = {HandleResult3} className = "BTN" type = "button" value = "점수 계산"/>
-                                <div className = "score">점수 : <span className = "option3_result">{Result3}</span></div>
+                                <div className = "score">점수 : <span className = "option1_result">{Result3}</span><span className = "red">{Result3_Alert}</span></div>
                             </div>
                             <div className = "option2">
                                 <h5>(3) 해당 시*도 연속 거주기간</h5><input onClick = {HandleResult2} onTouchEnd = {HandleResult2} className = "BTN" type = "button" value = "점수 계산"/>
@@ -866,8 +930,9 @@ const Calculator1 = ()=>{
                                     )
                                 }
                             </select>
-                            <div className = "score">점수 : <span className = "option2_result">{Result2}</span></div>
+                            <div className = "score">점수 : <span className = "option1_result">{Result2}</span><span class = "red">{Result2_Alert}</span></div>
                             <div className = "block"><div className = "score totalScore inline-block">총점 : <span className = "total_result">{Result1+Result2+Result3}</span>/9</div><input className = "submitBTN" value = "결과 보기" onClick = {ChangeAlert} type = "submit"/></div>
+                            <div className = "result4_alert red"><span class = {className}>{Result4_Alert}</span></div>
                         </div>
                         <div className = "LocationBox2">{alert}</div>
                     </form>
