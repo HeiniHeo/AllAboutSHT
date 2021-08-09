@@ -501,7 +501,7 @@ const Calculator1 = ()=>{
                                 <h6>3. 소득금액</h6>
                                     <div><input className = "option1" type = "text" onChange = {ChangeCost} />원</div>     
                                 </div>
-                                <div className = "score">점수 : <span className = "option1_result">{Result1}</span><span class = "red">{Result1_Alert}</span></div>
+                                <div className = "score">점수 : <span className = "option1_result">{Result1}</span><span className = "red">{Result1_Alert}</span></div>
                             </div>
                             <div className = "option3">
                                 <h5>(2) 주택청약종합저축 납입인정 횟수</h5>
@@ -938,9 +938,9 @@ const Calculator1 = ()=>{
                                     )
                                 }
                             </select>
-                            <div className = "score">점수 : <span className = "option1_result">{Result2}</span><span class = "red">{Result2_Alert}</span></div>
+                            <div className = "score">점수 : <span className = "option1_result">{Result2}</span><span className = "red">{Result2_Alert}</span></div>
                             <div className = "block"><div className = "score totalScore inline-block">총점 : <span className = "total_result">{Result1+Result2+Result3}</span>/9</div><input className = "submitBTN" value = "결과 보기" onClick = {ChangeAlert} type = "submit"/></div>
-                            <div className = "result4_alert red"><span class = {className}>{Result4_Alert}</span></div>
+                            <div className = "result4_alert red"><span className = {className}>{Result4_Alert}</span></div>
                         </div>
                         <div className = "LocationBox2">{alert}</div>
                     </form>

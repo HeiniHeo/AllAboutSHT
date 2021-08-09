@@ -133,9 +133,6 @@ ul > li > input, input{
   font-size: 20px;
 }
 
-.red{
-  color:red;
-}
 
 @media screen and (max-width:768px) {
   h5{
