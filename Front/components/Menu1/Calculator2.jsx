@@ -421,7 +421,7 @@ const Calculator2 = ()=>{
                                 <div className = "inline-block">
                                     <input onChange = {changOption1} type = "text" />명
                                 </div>
-                                <input onClick = {HandleResult1} onTouchEnd = {HandleResult1}  className = "BTN" type = "button" value = "점수 계산"/>
+                                <input onClick = {HandleResult1} onTouch = {HandleResult1}  className = "BTN" type = "button" value = "점수 계산"/>
                                 <div className = "score">점수 : <span className = "option1_result">{Result1}</span><span className = "red">{Result1_Alert}</span></div>
                             </div>
                             <div className = "option2">
@@ -429,7 +429,7 @@ const Calculator2 = ()=>{
                                 <div className = "inline-block">
                                     <input onChange = {changOption2} type = "text" />개월
                                 </div>
-                                <input onClick = {HandleResult2} onTouchEnd = {HandleResult2} className = "BTN" type = "button" value = "점수 계산"/>
+                                <input onClick = {HandleResult2} onTouch = {HandleResult2} className = "BTN" type = "button" value = "점수 계산"/>
                                 <p className="small_font red">공고일 기준 만30세 미만이면서 혼인한 적이 없는 분은 "-"입력, 가점선택 불가하여 0점처리</p>
                                 <div className = "score">점수 : <span className = "option1_result">{Result2}</span><span className = "red">{Result2_Alert}</span></div>
                             </div>
@@ -438,15 +438,15 @@ const Calculator2 = ()=>{
                                 <div className = "inline-block">
                                     <input onChange = {changOption4} type = "text" />회
                                 </div>
-                                <input onClick = {HandleResult4} onTouchEnd = {HandleResult4} className = "BTN subbtn" type = "button" value = "점수 계산"/>
+                                <input onClick = {HandleResult4} onTouch = {HandleResult4} className = "BTN subbtn" type = "button" value = "점수 계산"/>
                                 <div className = "score">점수 : <span className = "option1_result">{Result4}</span><span className = "red">{Result4_Alert}</span></div>
                             </div>
                             <div className = "option3">
-                                <h5>(4) 해당 시*도 연속 거주기간</h5><input onClick = {HandleResult3} onTouchEnd = {HandleResult3} className = "BTN" type = "button" value = "점수 계산"/>
+                                <h5>(4) 해당 시*도 연속 거주기간</h5><input onClick = {HandleResult3} onTouch = {HandleResult3} className = "BTN" type = "button" value = "점수 계산"/>
                                 <div></div>
                                 <div className = "inline-block">
                                 <h6>1. 거주 지역</h6>
-                                <select onClick = {ChangeLocation} onTouchEnd = {ChangeLocation}>
+                                <select onClick = {ChangeLocation} onTouch = {ChangeLocation}>
                                     <option>
                                         시/도
                                     </option>
@@ -502,7 +502,7 @@ const Calculator2 = ()=>{
                                         제주특별자치도
                                     </option>
                                 </select>   
-                                <select onClick = {dbLocationset}  onTouchEnd = {dbLocationset}>
+                                <select onClick = {dbLocationset}  onTouch = {dbLocationset}>
                                     <option>
                                         군/구
                                     </option>
@@ -827,7 +827,7 @@ const Calculator2 = ()=>{
                                 <option value = "third">3차 지원(11월)</option>
                                 <option value = "fourth">4차 지원(12월)</option>
                             </select>
-                            <select className = "Select_Box" onClick = {Applying_Location}  onTouchEnd = {Applying_Location}>
+                            <select className = "Select_Box" onClick = {Applying_Location}  onTouch = {Applying_Location}>
                                 {
                                     Location2 == 'first'
                                     ? <>
