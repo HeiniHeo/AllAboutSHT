@@ -88,6 +88,7 @@ ul > li > input, input{
   border-radius: 4px;
   position: absolute;
   top:10px;
+  display: inline-block;
 }
 
 .submitBTN:hover{
@@ -105,6 +106,7 @@ ul > li > input, input{
 .block{
   display: block;
   position: relative;
+  width:500px;
 }
 
 *{
@@ -152,3 +154,10 @@ ul > li > input, input{
   }
 }
 
+
+.option1_result{
+  margin-right: 10px;
+}
+.red{
+  color:red;
+}

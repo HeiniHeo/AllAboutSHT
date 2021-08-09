@@ -3,20 +3,25 @@ import {postCalculator2} from '../../api/api'
 
 const Calculator2 = ()=>{
 
-    const [Location, setLocation] = useState(1)
-    const [Location2, setLocation2] = useState(1)
-    const [apply, setapply] = useState(1)
-    const [dbLocation, setdbLocation] = useState(1)
+    const [Location, setLocation] = useState('.')
+    const [Location2, setLocation2] = useState('.')
+    const [apply, setapply] = useState('.')
+    const [dbLocation, setdbLocation] = useState('.')
 
-    const [option1, setOption1] = useState(1)
-    const [option2, setOption2] = useState(1)
-    const [option3, setOption3] = useState(1)
-    const [option4, setOption4] = useState(1)
+    const [option1, setOption1] = useState('.')
+    const [option2, setOption2] = useState('.')
+    const [option3, setOption3] = useState('.')
+    const [option4, setOption4] = useState('.')
 
-    const [Result1, setResult1] = useState(1)
-    const [Result2, setResult2] = useState(1)
-    const [Result3, setResult3] = useState(1)
-    const [Result4, setResult4] = useState(1)
+    const [Result1, setResult1] = useState(0)
+    const [Result1_Alert, setResult1_Alert] = useState('')
+    const [Result2, setResult2] = useState(0)
+    const [Result2_Alert, setResult2_Alert] = useState('')
+    const [Result3, setResult3] = useState(0)
+    const [Result3_Alert, setResult3_Alert] = useState('')
+    const [Result4, setResult4] = useState(0)
+    const [Result4_Alert, setResult4_Alert] = useState('')
+    const [Result5_Alert, setResult5_Alert] = useState('')
 
     const [alert, setAlert] = useState('지원 가능 여부입니다')
 
@@ -28,15 +33,33 @@ const Calculator2 = ()=>{
         setOption1(e.target.value)
         console.log(option1)
     }
+
+    const Result1_function = (e) => {
+        setResult1(1),
+        setResult1_Alert('')
+
+    }
+    const Result2_function = (e) => {
+        setResult1(2),
+        setResult1_Alert('')
+
+    }
+    const Result3_function = (e) => {
+        setResult1(3),
+        setResult1_Alert('')
+
+    }
     const HandleResult1 = (e) => {
         {
             option1 == 1
-            ? setResult1(1)
+            ? Result1_function()
             : ( option1 == 2
-                ? setResult1(2)
+                ? Result2_function()
                 : ( option1 >= 3
-                    ? setResult1(3)
-                    : ''
+                    ? Result3_function()
+                    : ( option1 == '.'
+                        ? setResult1_Alert('항목을 입력해주세요')
+                        : '')
                     )
                 )
         }
@@ -47,15 +70,33 @@ const Calculator2 = ()=>{
     const changOption2 = (e) => {
         setOption2(e.target.value)
     }
+
+    const Result4_function = (e) => {
+        setResult2(1),
+        setResult2_Alert('')
+
+    }
+    const Result5_function = (e) => {
+        setResult2(2),
+        setResult2_Alert('')
+
+    }
+    const Result6_function = (e) => {
+        setResult2(3),
+        setResult2_Alert('')
+
+    }
     const HandleResult2 = (e) => {
         {
             option2 < 12
-            ? setResult2(1)
+            ? Result4_function()
             : ( option2 >= 12 && option2 < 36
-                ? setResult2(2)
+                ? Result5_function()
                 : ( option2 >= 36
-                    ? setResult2(3)
-                    : ''
+                    ? Result6_function()
+                    : ( option1 == '.'
+                        ? setResult2_Alert('항목을 입력해주세요')
+                        : '')
                     )
                 )
         }
@@ -64,15 +105,34 @@ const Calculator2 = ()=>{
        
         setOption4(e.target.value)
     }
+
+    const Result7_function = (e) => {
+        setResult4(1),
+        setResult4_Alert('')
+
+    }
+    const Result8_function = (e) => {
+        setResult4(2),
+        setResult4_Alert('')
+
+    }
+    const Result9_function = (e) => {
+        setResult4(3),
+        setResult4_Alert('')
+
+    }
+
     const HandleResult4 = (e) => {
         {
             option4 < 12
-            ? setResult4(1)
+            ? Result7_function()
             : ( option4 >= 12 && option4 < 24
-                ? setResult4(2)
+                ? Result8_function()
                 : ( option4 >= 24
-                    ? setResult4(3)
-                    : ''
+                    ? Result9_function()
+                    : ( option1 == '.'
+                        ? setResult4_Alert('항목을 입력해주세요')
+                        : '')
                     )
                 )
         }
@@ -83,12 +143,6 @@ const Calculator2 = ()=>{
     }
     const ChangeLocation2 = (e) => {
         setLocation2(e.target.value)
-    }
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        postCalculator2({Number_Of_Children:Result1,Resident_period:Result3,Resident_Location1:Location,Resident_Location2:dbLocation,Period_Of_HomeLessness:Result2,Number_Of_Payment:Result4,Applying_Location:apply})
-
     }
 
     const dbLocationset = (e) => {
@@ -115,7 +169,15 @@ const Calculator2 = ()=>{
             ? setResult3(2)
             : ( Location == 'GyeongGi' && apply != '동작구수방사' && apply != '인천계양' && option3 < 12
             ? setResult3(1)
-            : setResult3(0)
+            : ( Location == '.' || apply == '.' || option3 == '.' || dbLocation == '.' || Location2 == '.'
+            ? setResult3_Alert('모든 항목을 입력해주세요')
+            : (
+              Location != '.' || apply != '.' || option3 != '.' || dbLocation != '.' || Location2 != '.'
+              ? setResult3_Alert('')
+              : setResult3(0)
+            )
+
+          )
 
             )
 
@@ -314,6 +376,21 @@ const Calculator2 = ()=>{
         }
     }
 
+    const successSubmit = (e) => {
+        setResult5_Alert('결과가 저장되었습니다!'),
+        postCalculator2({Number_Of_Children:Result1,Resident_period:Result3,Resident_Location1:Location,Resident_Location2:dbLocation,Period_Of_HomeLessness:Result2,Number_Of_Payment:Result4,Applying_Location:apply})
+    }
+    const handleSubmit = (e) => {
+        e.preventDefault()
+
+        {
+            Result1_Alert == '항목을 입력해주세요' || Result2_Alert == '항목을 입력해주세요' || Result3_Alert == '모든 항목을 입력해주세요' || Result4_Alert == '항목을 입력해주세요' || Result1 == 0 || Result2 == 0 || Result4 == 0 
+            ? setResult5_Alert('모든 항목의 점수를 내주세요')
+            : successSubmit()
+        }
+
+    }
+
     return(
         <>
             <div className = "subscription_wrap w100">
@@ -327,7 +404,7 @@ const Calculator2 = ()=>{
                                     <input onChange = {changOption1} type = "text" />명
                                 </div>
                                 <input onClick = {HandleResult1} onTouchEnd = {HandleResult1}  className = "BTN" type = "button" value = "점수 계산"/>
-                                <div className = "score">점수 : <span className = "option1_result">{Result1}</span></div>
+                                <div className = "score">점수 : <span className = "option1_result">{Result1}</span><span className = "red">{Result1_Alert}</span></div>
                             </div>
                             <div className = "option2">
                                 <h5>(2) 무주택기간</h5>
@@ -335,7 +412,7 @@ const Calculator2 = ()=>{
                                     <input onChange = {changOption2} type = "text" />개월
                                 </div>
                                 <input onClick = {HandleResult2} onTouchEnd = {HandleResult2} className = "BTN" type = "button" value = "점수 계산"/>
-                                <div className = "score">점수 : <span className = "option2_result">{Result2}</span></div>
+                                <div className = "score">점수 : <span className = "option1_result">{Result2}</span><span className = "red">{Result2_Alert}</span></div>
                             </div>
                             <div className = "option4">
                                 <h5>(3) 주택청약종합저축 납입인정 횟수</h5>
@@ -343,7 +420,7 @@ const Calculator2 = ()=>{
                                     <input onChange = {changOption4} type = "text" />회
                                 </div>
                                 <input onClick = {HandleResult4} onTouchEnd = {HandleResult4} className = "BTN" type = "button" value = "점수 계산"/>
-                                <div className = "score">점수 : <span className = "option4_result">{Result4}</span></div>
+                                <div className = "score">점수 : <span className = "option1_result">{Result4}</span><span className = "red">{Result4_Alert}</span></div>
                             </div>
                             <div className = "option3">
                                 <h5>(4) 해당 시*도 연속 거주기간</h5><input onClick = {HandleResult3} onTouchEnd = {HandleResult3} className = "BTN" type = "button" value = "점수 계산"/>
@@ -772,8 +849,8 @@ const Calculator2 = ()=>{
                                     )
                                 }
                             </select>
-                            <div className = "score">점수 : <span className = "option3_result">{Result3}</span></div>
-                            <div className = "block"><div className = "score totalScore inline-block">총점 : <span className = "total_result">{Result1+Result2+Result3+Result4}</span>/12</div><input onClick = {ChangeAlert} className = "submitBTN" value = "결과 보기" type = "submit"/></div>
+                            <div className = "score">점수 : <span className = "option1_result">{Result3}</span><span className = "red">{Result3_Alert}</span></div>
+                            <div className = "block"><div className = "score totalScore inline-block">총점 : <span className = "total_result">{Result1+Result2+Result3+Result4}</span>/12</div><input onClick = {ChangeAlert} className = "submitBTN" value = "결과 보기" type = "submit"/><span className = "result4_alert">{Result5_Alert}</span></div>
                         </div>
                         <div className = "LocationBox">{alert}</div>
                     </form>
