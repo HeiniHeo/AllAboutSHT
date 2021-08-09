@@ -154,10 +154,19 @@ ul > li > input, input{
   }
 }
 
-
+.result4_alert{
+  margin-bottom: 5px;
+}
+.result5_alert{
+  margin-bottom: 10px;
+}
 .option1_result{
   margin-right: 10px;
 }
 .red{
   color:red;
+}
+
+.blue{
+  color:blue;
 }

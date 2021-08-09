@@ -32,6 +32,7 @@ const Calculator1 = ()=>{
 
 
     const [alert, setAlert] = useState('지원 가능 여부입니다')
+    const [className,setClassName] = useState('')
 
     const ChangeAlert = (e) => {
         {
@@ -441,6 +442,7 @@ const Calculator1 = ()=>{
 
     const successSubmit = (e) => {
         setResult4_Alert('결과가 저장되었습니다!'),
+        setClassName('blue'),
         postCalculator1({income:Result1,Resident_period:Result2,Resident_Location1:Location,Resident_Location2:dbLocation,Number_Of_Payment:Result3,Applying_Location:apply})
 
     }
@@ -448,7 +450,7 @@ const Calculator1 = ()=>{
 
         e.preventDefault()
         {
-            Result1_Alert == '모든 항목을 입력해주세요' || Result2_Alert == '모든 항목을 입력해주세요' || Result3_Alert == '모든 항목을 입력해주세요' || Result1 == 0 || Result3 == 0
+            Result1_Alert == '모든 항목을 입력해주세요' || Result2_Alert == '모든 항목을 입력해주세요' || Result3_Alert == '모든 항목을 입력해주세요' || Result1 == 0 || Result3 == 0 || Location == '.' || apply == '.' || option3 == '.' || dbLocation == '.' || Location2 == '.'
             ? setResult4_Alert('모든 항목의 점수를 내주세요')
             : successSubmit()
         }
@@ -929,7 +931,8 @@ const Calculator1 = ()=>{
                                 }
                             </select>
                             <div className = "score">점수 : <span className = "option1_result">{Result2}</span><span class = "red">{Result2_Alert}</span></div>
-                            <div className = "block"><div className = "score totalScore inline-block">총점 : <span className = "total_result">{Result1+Result2+Result3}</span>/9</div><input className = "submitBTN" value = "결과 보기" onClick = {ChangeAlert} type = "submit"/><span class = "result4_alert">{Result4_Alert}</span></div>
+                            <div className = "block"><div className = "score totalScore inline-block">총점 : <span className = "total_result">{Result1+Result2+Result3}</span>/9</div><input className = "submitBTN" value = "결과 보기" onClick = {ChangeAlert} type = "submit"/></div>
+                            <div className = "result4_alert red"><span class = {className}>{Result4_Alert}</span></div>
                         </div>
                         <div className = "LocationBox2">{alert}</div>
                     </form>
