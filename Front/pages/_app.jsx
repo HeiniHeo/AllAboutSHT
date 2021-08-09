@@ -21,6 +21,7 @@ const App = ({ Component }) => {
         <>
             <Head>
                 <title>신희타가점도우미</title>
+                <meta property="og:image" content="/신가도아이콘.png" />
             </Head>
             <Store.Provider value={{ state, dispatch }}>
                 <Component />
