@@ -24,6 +24,7 @@ const Calculator2 = ()=>{
     const [Result5_Alert, setResult5_Alert] = useState('')
 
     const [alert, setAlert] = useState('지원 가능 여부입니다')
+    const [className,setClassName] = useState('')
 
     const Applying_Location = (e) => {
         setapply(e.target.value)
@@ -378,13 +379,14 @@ const Calculator2 = ()=>{
 
     const successSubmit = (e) => {
         setResult5_Alert('결과가 저장되었습니다!'),
+        setClassName('blue'),
         postCalculator2({Number_Of_Children:Result1,Resident_period:Result3,Resident_Location1:Location,Resident_Location2:dbLocation,Period_Of_HomeLessness:Result2,Number_Of_Payment:Result4,Applying_Location:apply})
     }
     const handleSubmit = (e) => {
         e.preventDefault()
 
         {
-            Result1_Alert == '항목을 입력해주세요' || Result2_Alert == '항목을 입력해주세요' || Result3_Alert == '모든 항목을 입력해주세요' || Result4_Alert == '항목을 입력해주세요' || Result1 == 0 || Result2 == 0 || Result4 == 0 
+            Result1_Alert == '항목을 입력해주세요' || Result2_Alert == '항목을 입력해주세요' || Result3_Alert == '모든 항목을 입력해주세요' || Result4_Alert == '항목을 입력해주세요' || Result1 == 0 || Result2 == 0 || Result4 == 0 || Location == '.' || apply == '.' || option3 == '.' || dbLocation == '.' || Location2 == '.'
             ? setResult5_Alert('모든 항목의 점수를 내주세요')
             : successSubmit()
         }
@@ -850,7 +852,8 @@ const Calculator2 = ()=>{
                                 }
                             </select>
                             <div className = "score">점수 : <span className = "option1_result">{Result3}</span><span className = "red">{Result3_Alert}</span></div>
-                            <div className = "block"><div className = "score totalScore inline-block">총점 : <span className = "total_result">{Result1+Result2+Result3+Result4}</span>/12</div><input onClick = {ChangeAlert} className = "submitBTN" value = "결과 보기" type = "submit"/><span className = "result4_alert">{Result5_Alert}</span></div>
+                            <div className = "block"><div className = "score totalScore inline-block">총점 : <span className = "total_result">{Result1+Result2+Result3+Result4}</span>/12</div><input onClick = {ChangeAlert} className = "submitBTN" value = "결과 보기" type = "submit"/></div>
+                            <div className = "result5_alert red"><span className = {className}>{Result5_Alert}</span></div>
                         </div>
                         <div className = "LocationBox">{alert}</div>
                     </form>
