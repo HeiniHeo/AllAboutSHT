@@ -7,7 +7,7 @@ import Feedback from '../components/Feedback'
 const Index = () => {
     return (
         <div className="site_wrap">
-            <h1 className="indexTitle">🏡 신희타 가점 도우미 🏡</h1>
+            <h1 className="indexTitle">🏡신희타 가점 도우미🏡</h1>
             <Supply />
             <Notice />
             <div className="wrap">

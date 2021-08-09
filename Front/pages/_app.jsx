@@ -11,6 +11,7 @@ import Head from 'next/head'
 import { useContext, useReducer } from 'react'
 import Store from '../Store/context'
 import reducer from '../Store/reducer'
+ 
 
 const App = ({ Component }) => {
     const globalStore = useContext(Store)

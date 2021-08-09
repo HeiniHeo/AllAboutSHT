@@ -45,6 +45,7 @@
     border: 1px solid rgb(0,91,172);  
     border-radius: 5px;
     padding: 10px;
+    overflow-y: hidden
 }
 
 .entrepreneur div h3{
@@ -75,6 +76,7 @@
     border: 1px solid rgb(0,91,172);  
     border-radius: 5px;
     padding: 10px;
+    overflow-y: hidden
 }
 
 .EtcIncome  div h3{
@@ -128,7 +130,6 @@
     .EtcIncome{
         width:380px;
     }
-
     .EtcIncome div h3{
         font-size:15px;
     }
