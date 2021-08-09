@@ -133,6 +133,10 @@ ul > li > input, input{
   font-size: 20px;
 }
 
+.red{
+  color:red;
+}
+
 @media screen and (max-width:768px) {
   h5{
     font-size: 15px;
@@ -151,6 +155,16 @@ ul > li > input, input{
   }
   .margin-left{
     margin-left: 10px;
+  }
+  .subbtn{
+    top:30px;
+    right:50px;
+  }
+  .option3{
+    position: relative;
+  }
+  .option4{
+    position: relative;
   }
 }
 

@@ -236,6 +236,11 @@ const Calculator1 = ()=>{
         setCost(e.target.value)
     }
 
+    const option3_function0 = (e) => (
+        setResult3(0), 
+        setResult3_Alert('')
+    )
+
     const option3_function1 = (e) => (
         setResult3(1), 
         setResult3_Alert('')
@@ -252,17 +257,20 @@ const Calculator1 = ()=>{
     )
     const HandleResult3 = (e) => {
         {
-            option3 < 12
-            ? option3_function1()
-            : ( option3 >= 12 && option3 < 24
-                ? option3_function2()
-                : ( option3 >= 24
-                    ? option3_function3()
-                    : ( option3 == '.' 
-                        ? setResult3_Alert('항목을 입력해주세요')
-                        : ''
-                            )
+            option3 < 6 
+            ? option3_function0()
+            : ( option3 < 12
+                ? option3_function1()
+                : ( option3 >= 12 && option3 < 24
+                    ? option3_function2()
+                    : ( option3 >= 24
+                        ? option3_function3()
+                        : ( option3 == '.' 
+                            ? setResult3_Alert('항목을 입력해주세요')
+                            : ''
+                                )
 
+                        )
                     )
                 )
         }
@@ -500,7 +508,7 @@ const Calculator1 = ()=>{
                                 <div className = "inline-block">
                                     <input onChange = {changOption3} type = "text" />회
                                 </div>
-                                <input onClick = {HandleResult3} onTouchEnd = {HandleResult3} className = "BTN" type = "button" value = "점수 계산"/>
+                                <input onClick = {HandleResult3} onTouchEnd = {HandleResult3} className = "BTN subbtn" type = "button" value = "점수 계산"/>
                                 <div className = "score">점수 : <span className = "option1_result">{Result3}</span><span className = "red">{Result3_Alert}</span></div>
                             </div>
                             <div className = "option2">

@@ -71,7 +71,11 @@ const Calculator2 = ()=>{
     const changOption2 = (e) => {
         setOption2(e.target.value)
     }
+    const Result0_function = (e) => {
+        setResult2(0),
+        setResult2_Alert('')
 
+    }
     const Result4_function = (e) => {
         setResult2(1),
         setResult2_Alert('')
@@ -89,17 +93,20 @@ const Calculator2 = ()=>{
     }
     const HandleResult2 = (e) => {
         {
-            option2 < 12
-            ? Result4_function()
-            : ( option2 >= 12 && option2 < 36
-                ? Result5_function()
-                : ( option2 >= 36
-                    ? Result6_function()
-                    : ( option1 == '.'
-                        ? setResult2_Alert('항목을 입력해주세요')
-                        : '')
+            option2 == "-"
+            ? Result0_function()
+            : ( option2 < 12
+                ? Result4_function()
+                : ( option2 >= 12 && option2 < 36
+                    ? Result5_function()
+                    : ( option2 >= 36
+                        ? Result6_function()
+                        : ( option1 == '.'
+                            ? setResult2_Alert('항목을 입력해주세요')
+                            : '')
+                        )
                     )
-                )
+            )
         }
     }
     const changOption4 = (e) => {
@@ -108,34 +115,43 @@ const Calculator2 = ()=>{
     }
 
     const Result7_function = (e) => {
+        setResult4(0),
+        setResult4_Alert('')
+
+    }
+
+    const Result8_function = (e) => {
         setResult4(1),
         setResult4_Alert('')
 
     }
-    const Result8_function = (e) => {
+    const Result9_function = (e) => {
         setResult4(2),
         setResult4_Alert('')
 
     }
-    const Result9_function = (e) => {
+    const Result10_function = (e) => {
         setResult4(3),
         setResult4_Alert('')
 
     }
 
     const HandleResult4 = (e) => {
-        {
-            option4 < 12
-            ? Result7_function()
-            : ( option4 >= 12 && option4 < 24
+        {   
+            option4 < 6
+            ?Result7_function()
+            :(option4 < 12
                 ? Result8_function()
-                : ( option4 >= 24
+                : ( option4 >= 12 && option4 < 24
                     ? Result9_function()
-                    : ( option1 == '.'
-                        ? setResult4_Alert('항목을 입력해주세요')
-                        : '')
+                    : ( option4 >= 24
+                        ? Result10_function()
+                        : ( option1 == '.'
+                            ? setResult4_Alert('항목을 입력해주세요')
+                            : '')
+                        )
                     )
-                )
+            )
         }
     }
 
@@ -414,6 +430,7 @@ const Calculator2 = ()=>{
                                     <input onChange = {changOption2} type = "text" />개월
                                 </div>
                                 <input onClick = {HandleResult2} onTouchEnd = {HandleResult2} className = "BTN" type = "button" value = "점수 계산"/>
+                                <p className="small_font red">공고일 기준 만30세 미만이면서 혼인한 적이 없는 분은 "-"입력, 가점선택 불가하여 0점처리</p>
                                 <div className = "score">점수 : <span className = "option1_result">{Result2}</span><span className = "red">{Result2_Alert}</span></div>
                             </div>
                             <div className = "option4">
@@ -421,7 +438,7 @@ const Calculator2 = ()=>{
                                 <div className = "inline-block">
                                     <input onChange = {changOption4} type = "text" />회
                                 </div>
-                                <input onClick = {HandleResult4} onTouchEnd = {HandleResult4} className = "BTN" type = "button" value = "점수 계산"/>
+                                <input onClick = {HandleResult4} onTouchEnd = {HandleResult4} className = "BTN subbtn" type = "button" value = "점수 계산"/>
                                 <div className = "score">점수 : <span className = "option1_result">{Result4}</span><span className = "red">{Result4_Alert}</span></div>
                             </div>
                             <div className = "option3">
