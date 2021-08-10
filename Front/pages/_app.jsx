@@ -12,7 +12,6 @@ import { useContext, useReducer } from 'react'
 import Store from '../Store/context'
 import reducer from '../Store/reducer'
 import GoogleAnalytics from '../components/GoogleAnalytics'
- 
 
 const App = ({ Component }) => {
     const globalStore = useContext(Store)

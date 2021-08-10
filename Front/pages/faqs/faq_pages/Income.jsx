@@ -1,12 +1,13 @@
 import { useEffect,useContext,useCallback } from 'react'
 import Store from '../../../Store/context'
+import { faqurl } from '../../../Store/faqurl'
 
 const Income = () => {
 
     const { state, dispatch } = useContext(Store)
 
     useEffect(async () => {
-        const response = await fetch('http://api.jebaldangcheom.com/faqs/income')
+        const response = await fetch(`${faqurl}income`)
         const data = await response.json()
         dispatch({ type: 'FAQ_GET', payload: data })
     }, [])

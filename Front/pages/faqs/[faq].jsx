@@ -6,7 +6,7 @@ import Bank from "./faq_pages/Bank"
 import Etc from "./faq_pages/Etc"
 import Link from 'next/link'
 import Styled from "styled-components"
-
+import { clickurl } from "../../Store/faqclickurl"
 
 const LinkCss = Styled.a`
     cursor: pointer;
@@ -72,6 +72,19 @@ const FaqList = () => {
                     </div>
                     <div className="FaqBoard">
                         <div className="btn_array">
+
+                            <Link href={`${clickurl}income`}>
+                                <LinkCss style={(faq === "income") ? color : {}}>소득</LinkCss>
+                            </Link>
+                            <Link href={`${clickurl}property`}>
+                                <LinkCss style={(faq === "property") ? color : {}}>자산</LinkCss>
+                            </Link>
+                            <Link href={`${clickurl}bank`}>
+                                <LinkCss style={(faq === "bank") ? color : {}}>청약통장</LinkCss>
+                            </Link>
+                            <Link href={`${clickurl}etc`}>
+                                <LinkCss style={(faq === "etc") ? color : {}}>기타</LinkCss>
+                            </Link>
                             <Link href="http://jebaldangcheom.com/faqs/income"><LinkCss style={(faq === "income") ? color : {}}>소득</LinkCss></Link>
                             <Link href="http://jebaldangcheom.com/faqs/property"><LinkCss style={(faq === "property") ? color : {}}>자산</LinkCss></Link>
                             <Link href="http://jebaldangcheom.com/faqs/bank"><LinkCss style={(faq === "bank") ? color : {}}>청약통장</LinkCss></Link>

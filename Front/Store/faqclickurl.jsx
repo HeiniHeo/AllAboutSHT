@@ -1,0 +1,1 @@
+export const clickurl = 'http://jebaldangcheom.com/faqs/'
