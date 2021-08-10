@@ -1,1 +1,1 @@
-export const faqurl = 'http://localhost:80/faqs/'
+export const faqurl = 'http://api.jebaldangcheom.com/faqs/'

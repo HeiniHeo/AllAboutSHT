@@ -1,1 +1,1 @@
-export const clickurl = 'http://localhost:3001/faqs/'
+export const clickurl = 'http://jebaldangcheom.com/faqs/'
