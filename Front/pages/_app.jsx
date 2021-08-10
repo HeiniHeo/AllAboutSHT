@@ -11,6 +11,7 @@ import Head from 'next/head'
 import { useContext, useReducer } from 'react'
 import Store from '../Store/context'
 import reducer from '../Store/reducer'
+import GoogleAnalytics from '../components/GoogleAnalytics'
  
 
 const App = ({ Component }) => {
@@ -19,10 +20,7 @@ const App = ({ Component }) => {
 
     return (
         <>
-            <Head>
-                <title>신희타가점도우미</title>
-                <meta property="og:image" content="/신가도아이콘.png" />
-            </Head>
+            <GoogleAnalytics />
             <Store.Provider value={{ state, dispatch }}>
                 <Component />
             </Store.Provider>
