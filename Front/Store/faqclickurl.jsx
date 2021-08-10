@@ -1,0 +1,1 @@
+export const clickurl = 'http://localhost:3001/faqs/'

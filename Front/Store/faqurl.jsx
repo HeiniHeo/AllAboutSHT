@@ -1,0 +1,1 @@
+export const faqurl = 'http://localhost:80/faqs/'
