@@ -47,9 +47,9 @@ ul > li > input, input{
   border:1px solid rgb(40, 140, 228);
   box-sizing: border-box;
   padding:3px;
-  font-size: 11px;
+  font-size: 14px;
   border-radius: 4px;
-
+  position: absolute;
 }
 
 .BTN:hover{
@@ -84,10 +84,11 @@ ul > li > input, input{
   border:1px solid rgb(40, 140, 228);
   box-sizing: border-box;
   padding:3px;
-  font-size: 11px;
+  font-size: 15px;
   border-radius: 4px;
   position: absolute;
   top:10px;
+  display: inline-block;
 }
 
 .submitBTN:hover{
@@ -105,6 +106,7 @@ ul > li > input, input{
 .block{
   display: block;
   position: relative;
+  width:500px;
 }
 
 *{
@@ -131,6 +133,7 @@ ul > li > input, input{
   font-size: 20px;
 }
 
+
 @media screen and (max-width:768px) {
   h5{
     font-size: 15px;
@@ -150,5 +153,31 @@ ul > li > input, input{
   .margin-left{
     margin-left: 10px;
   }
+  .subbtn{
+    top:30px;
+    right:50px;
+  }
+  .option3{
+    position: relative;
+  }
+  .option4{
+    position: relative;
+  }
 }
 
+.result4_alert{
+  margin-bottom: 5px;
+}
+.result5_alert{
+  margin-bottom: 10px;
+}
+.option1_result{
+  margin-right: 10px;
+}
+.red{
+  color:red;
+}
+
+.blue{
+  color:blue;
+}

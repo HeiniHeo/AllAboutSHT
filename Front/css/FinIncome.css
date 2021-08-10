@@ -18,10 +18,12 @@
     margin-top:-40px;
     background-color:#fff;
     font-size:12px;
+    overflow-y:hidden;
 }
 
 .finincome2{
     margin-top:-40px;
+    overflow-y:hidden
 }
 
 @media screen and (max-width:768px) {

@@ -16,25 +16,29 @@
     border: 1px solid rgb(0,91,172);  
     border-radius: 5px;
     padding: 10px;
+    overflow-y: hidden;
 }
 
 .office_worker div h3{
     text-align: center;
 }
-
+.income_info{
+    font-size:12px;
+    margin-top: 10px;
+}
 .office_worker div p a{
     margin:0 auto;
 }
 
 .office_worker div p a img{
-    width:150px;
-    height:50px;
-    margin-top:20px;
+    width:130px;
+    height:40px;
+    margin-top:10px;
     margin-left:200px;
 }
 
 .office_worker div p a img:hover{
-    transform: scale(1.2, 1.2);
+    transform: scale(1.1, 1.1);
     transition-duration: 0.5s;
 }
 
@@ -45,13 +49,10 @@
     border: 1px solid rgb(0,91,172);  
     border-radius: 5px;
     padding: 10px;
+    overflow-y: hidden
 }
 
 .entrepreneur div h3{
-    text-align: center;
-}
-
-.center{
     text-align: center;
 }
 
@@ -75,6 +76,7 @@
     border: 1px solid rgb(0,91,172);  
     border-radius: 5px;
     padding: 10px;
+    overflow-y: hidden
 }
 
 .EtcIncome  div h3{
@@ -128,7 +130,6 @@
     .EtcIncome{
         width:380px;
     }
-
     .EtcIncome div h3{
         font-size:15px;
     }

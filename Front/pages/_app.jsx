@@ -19,7 +19,7 @@ const App = ({ Component }) => {
 
     return (
         <>
-            <GoogleAnalytics/>
+            <GoogleAnalytics />
             <Store.Provider value={{ state, dispatch }}>
                 <Component />
             </Store.Provider>
