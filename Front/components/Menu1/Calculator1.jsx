@@ -2,6 +2,9 @@ import React,{useContext,useReducer,useEffect,useState} from 'react'
 import Store from '../../Store/context'
 import reducer from '../../Store/reducer'
 import {postCalculator1} from '../../api/api'
+import { base_url } from '../../Store/baseurl'
+
+
 
 const Calculator1 = ()=>{
     const {state,dispatch} = useContext(Store)
@@ -328,109 +331,28 @@ const Calculator1 = ()=>{
         HandleResult11()
         ,HandleResult12()
     }
-    const HandleResult11 = (e) => {
+    const HandleResult11 = async (e) => {
 
-        {
-            Income == "two" && Person == "three" && Cost <= 4824128
-            ? setResult1(3)
-            : ( Income == "one" && Person == "three" && Cost <= 4221112
-                ? setResult1(3)
-                : ( Income == "two" && Person == "three" && Cost > 4824128 && Cost <= 6633176
-                    ? setResult1(2)
-                    : ( Income == "one" && Person == "three" && Cost > 4221112 && Cost <= 6030160
-                    ? setResult1(2)
-                    : ( Income == "two" && Person == "three" && Cost > 6633176
-                    ? setResult1(1)
-                    : ( Income == "one" && Person == "three" && Cost > 6030160
-                    ? setResult1(1)
-                    : ( Income == "two" && Person == "four" && Cost <= 5675364 || Income == "two" && Person == "five" && Cost <= 5675364
-                    ? setResult1(3)
-                    : ( Income == "one" && Person == "four" && Cost <= 4965944 || Income == "one" && Person == "five" && Cost <= 4965944
-                    ? setResult1(3)
-                    : ( Income == "two" && Person == "four" && Cost > 5675364 && Cost <= 7803626 || Income == "two" && Person == "five" && Cost > 5675364 && Cost <= 7803626
-                    ? setResult1(2)
-                    : ( Income == "one" && Person == "four" && Cost > 4965944 && Cost <= 7094205 || Income == "one" && Person == "five" && Cost > 4965944 && Cost <= 7094205
-                    ? setResult1(2)
-                    : ( Income == "two" && Person == "four" && Cost > 7803626 || Income == "two" && Person == "five" && Cost > 7803626
-                    ? setResult1(1)
-                    : ( Income == "one" && Person == "four" && Cost > 7094205 || Income == "one" && Person == "five" && Cost > 7094205
-                    ? setResult1(1)
-                    : ( Income == "two" && Person == "six" && Cost <= 5914918
-                    ? setResult1(3)
-                    : ( Income == "one" && Person == "six" && Cost <= 5175553
-                    ? setResult1(3)
-                    : ( Income == "two" && Person == "six" && Cost > 5914918 && Cost <= 8133012
-                    ? setResult1(2)
-                    : ( Income == "one" && Person == "six" && Cost > 5175553 && Cost <= 7393647
-                    ? setResult1(2)
-                    : ( Income == "two" && Person == "six" && Cost > 8133012
-                    ? setResult1(1)
-                    : ( Income == "one" && Person == "six" && Cost > 7393647
-                    ? setResult1(1)
-                    : ( Income == "two" && Person == "seven" && Cost <= 6222418
-                    ? setResult1(3)
-                    : ( Income == "one" && Person == "seven" && Cost <= 5444616
-                    ? setResult1(3)
-                    : ( Income == "two" && Person == "seven" && Cost > 6222418 && Cost <= 8555825
-                    ? setResult1(2)
-                    : ( Income == "one" && Person == "seven" && Cost > 5444616 && Cost <= 7778023
-                    ? setResult1(2)
-                    : ( Income == "two" && Person == "seven" && Cost > 8555825 
-                    ? setResult1(1)
-                    : ( Income == "one" && Person == "seven" && Cost > 7778023 
-                    ? setResult1(1)
-                    : ( Income == "two" && Person == "eight" && Cost <= 6529919 
-                    ? setResult1(3)
-                    : ( Income == "one" && Person == "eight" && Cost <= 5713679 
-                    ? setResult1(3)
-                    : ( Income == "two" && Person == "eight" && Cost > 6529919 && Cost <= 8978639 
-                    ? setResult1(2)
-                    : ( Income == "one" && Person == "eight" && Cost > 5713679 && Cost <= 8162399 
-                    ? setResult1(2)
-                    : ( Income == "two" && Person == "eight" && Cost > 8978639 
-                    ? setResult1(1)
-                    : ( Income == "one" && Person == "eight" && Cost > 8162399 
-                    ? setResult1(1)
-                    : (Income == "zero"
-                    ? setResult1(3)
-                    : (Income == 0 || Person == 0 || Cost == '.' 
-                        ? setResult1_Alert('모든 항목을 입력해주세요')
-                        : ''))
-                    )
-                    )
-                    )
-                    )
-                    )
-                    )
-                    )
-                    )
-                    )
-                    )
-                    )
-                    )
-                    )
-                    )
-                    )
-                    )
-                    )
-                    )
-                    )
-                    )
-                    )
-                    )
-                    )
-                    )
-                    )
-                    ))
-                    ))
-                
-    }}
+        let options = {
+            method:'GET'
+        }
+
+        let result = await fetch(`http://localhost/IncomeScores?Income=${Income}&Person=${Person}&Cost=${Cost}`,options)
+        const data = await result.json()
+        
+        dispatch({ type: 'Income_Score', payload: data[0].Income_Score })
+        console.log(data[0].Income_Score)
+
+        
+    }
 
     const HandleResult12 = (e) => {
         {
             Income != "." && Person != "." && Cost != '.'
             ? setResult1_Alert('')
-            : ''
+            : (Income == 0 || Person == 0 || Cost == '.' 
+                ? setResult1_Alert('모든 항목을 입력해주세요')
+                : '')
         }
     }
 
@@ -478,7 +400,7 @@ const Calculator1 = ()=>{
                                 </div>
                                 <div className = "inline-block">
                                 <h6>1. 배우자 소득 유무</h6>
-                                <select onClick = {ChangeIncome} onTouch = {ChangeIncome}>
+                                <select onClick = {ChangeIncome}>
                                     <option>선택</option>
                                     <option value = "two">맞벌이</option>
                                     <option value = "one">외벌이</option>
@@ -487,7 +409,7 @@ const Calculator1 = ()=>{
                                 </div>
                                 <div className = "inline-block margin-left">
                                 <h6>2. 가구 수</h6>
-                                <select onClick = {ChangePerson} onTouch = {ChangePerson}>
+                                <select onClick = {ChangePerson}>
                                     <option>선택</option>
                                     <option value = "three">3인 이하</option>
                                     <option value = "four">4인</option>
@@ -501,7 +423,7 @@ const Calculator1 = ()=>{
                                 <h6>3. 소득금액</h6>
                                     <div><input className = "option1" type = "text" onChange = {ChangeCost} />원</div>     
                                 </div>
-                                <div className = "score">점수 : <span className = "option1_result">{Result1}</span><span className = "red">{Result1_Alert}</span></div>
+                                <div className = "score">점수 : <span className = "option1_result">{state.Income_Score}</span><span className = "red">{Result1_Alert}</span></div>
                             </div>
                             <div className = "option3">
                                 <h5>(2) 주택청약종합저축 납입인정 횟수</h5>

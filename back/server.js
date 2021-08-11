@@ -3,8 +3,10 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 // npm install body-parser
 const app = express()
+const sequelize = require('sequelize')
+const Op = sequelize.Op;
 const db = require('./models')
-const { calculator1, calculator2, FAQ, FeedBack } = require('./models')
+const { calculator1, calculator2, FAQ, FeedBack, Income_Scores } = require('./models')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false, }))
 app.use(cors());
@@ -75,6 +77,20 @@ app.post('/Feedback', async (req, res, next) => {
     }
 })
 
+app.get('/IncomeScores', async (req, res, next) => {
+
+
+    const {Income, Person, Cost} = req.query
+
+    const data = await Income_Scores.findAll({
+        where: { Income:Income, Person:Person, Cost_Front: {[Op.lt]: Cost}, Cost_Back: {[Op.gte]: Cost}}
+    })
+
+    res.json(
+        {...data}
+    )
+
+})
 app.get('/faqs/:localhost', async (req, res, next) => {
 
     const {localhost} = req.params

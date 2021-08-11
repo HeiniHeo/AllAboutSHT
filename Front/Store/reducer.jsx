@@ -21,6 +21,15 @@ const reducer = (state,action) => {
             
                 
             }
+
+        case "Income_Score": 
+    
+            return {
+                ...state,
+                Income_Score: action.payload
+            
+                
+            }
         default:
             return state
     }
