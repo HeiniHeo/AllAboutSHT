@@ -17,13 +17,15 @@ const Index = () => {
                 </div>
                 <a href="https://apply.lh.or.kr/#"><input className="GoTo" type="button" value="청약하러가기" /></a>
                 <Feedback />
-        <div className="site_wrap">
-            <h1 className="indexTitle">🏡신희타 가점 도우미🏡</h1>
-            <Supply />
-            <Notice />
-            <div className="wrap">
-                <Tab />
-                <Tab2 />
+            </div>
+            <div className="site_wrap">
+                <h1 className="indexTitle">🏡신희타 가점 도우미🏡</h1>
+                <Supply />
+                <Notice />
+                <div className="wrap">
+                    <Tab />
+                    <Tab2 />
+                </div>
             </div>
         </>
     )
