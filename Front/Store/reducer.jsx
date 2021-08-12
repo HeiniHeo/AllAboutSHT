@@ -32,6 +32,13 @@ const reducer = (state,action) => {
             }
         default:
             return state
+
+        case "apply_alert2":
+
+            return{
+                ...state,
+                supply: action.payload
+            }
     }
 }
 

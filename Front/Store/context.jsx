@@ -7,7 +7,8 @@ const initalState = {
             question:'test',
         }
     ],
-    Income_Score:0
+    Income_Score:0,
+    supply:0,
 }
 
 const Store = createContext(initalState);

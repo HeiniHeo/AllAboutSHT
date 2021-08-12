@@ -1,8 +1,12 @@
 import React,{useContext,useReducer,useEffect,useState} from 'react'
 import Store from '../../Store/context'
 import reducer from '../../Store/reducer'
-import {postCalculator1} from '../../api/api'
-import { base_url } from '../../Store/baseurl'
+import AreaComponent from './Location/AreaComponent'
+import { LocationCalcul, LocationComponent, SeoulLocation, BusanLocation, DaeguLocation, IncheonLocation, GwangjuLocation, DaejeonLocation, UlsanLocation, SejongLocation, GyeongiLocation, GangwonLocation, ChungCheong1Location, ChungCheong2Location, JeonLa1Location, JeonLa2Location, GyeongSang1Location, GyeongSang2Location, JejuLocation } from './Location/LocationComponent'
+import { postCalculator1 } from '../../api/api'
+// import LocationComponent from './Location/LocationComponent'
+import { base_url } from '../../Store/Allurl'
+import data from './Location/data.json'
 
 
 
@@ -10,7 +14,7 @@ const Calculator1 = ()=>{
     const {state,dispatch} = useContext(Store)
 
     const [Location, setLocation] = useState('.')
-    const [Location2, setLocation2] = useState('.')
+    const [Location2, setLocation2] = useState('1차')
     const [apply, setapply] = useState('.')
     const [dbLocation, setdbLocation] = useState('.')
     
@@ -281,48 +285,39 @@ const Calculator1 = ()=>{
 
     const HandleResult2 = (e) => {
         {
-            Location == 'Incheon' && apply == '인천계양' && option2 >= 24 
+            Location == 'Incheon' && apply == '인천계양' && option2 >= 24
             ? setResult2(3)
-            : ( Location == 'Incheon' && apply == '인천계양' && option2 < 24 && option2 >= 12 
+            : (Location == 'Incheon' && apply == '인천계양' && option2 < 24 && option2 >= 12
             ? setResult2(2)
-            : ( Location == 'Incheon' && apply == '인천계양' && option2 < 12
+            : (Location == 'Incheon' && apply == '인천계양' && option2 < 12
             ? setResult2(1)
-            : ( Location == 'seoul' && apply == '동작구수방사' && option2 >= 24 
+            : (Location == 'seoul' && apply == '동작구수방사' && option2 >= 24
             ? setResult2(3)
-            : ( Location == 'seoul' && apply == '동작구수방사' && option2 < 24 && option2 >= 12 
+            : (Location == 'seoul' && apply == '동작구수방사' && option2 < 24 && option2 >= 12
             ? setResult2(2)
-            : ( Location == 'seoul' && apply == '동작구수방사' && option2 < 12
+            : (Location == 'seoul' && apply == '동작구수방사' && option2 < 12
             ? setResult2(1)
-            : ( Location == 'GyeongGi' && apply != '동작구수방사' && apply != '인천계양' && option2 >= 24
+            : (Location == 'GyeongGi' && apply != '동작구수방사' && apply != '인천계양' && option2 >= 24
             ? setResult2(3)
-            : ( Location == 'GyeongGi' && apply != '동작구수방사' && apply != '인천계양' && option2 < 24 && option2 >= 12 
+            : (Location == 'GyeongGi' && apply != '동작구수방사' && apply != '인천계양' && option2 < 24 && option2 >= 12
             ? setResult2(2)
-            : ( Location == 'GyeongGi' && apply != '동작구수방사' && apply != '인천계양' && option2 < 12
+            : (Location == 'GyeongGi' && apply != '동작구수방사' && apply != '인천계양' && option2 < 12
             ? setResult2(1)
-            : ( Location == '.' || apply == '.' || option2 == '.' || dbLocation == '.' || Location2 == '.'
-              ? setResult2_Alert('모든 항목을 입력해주세요')
-              : (
-                Location != '.' || apply != '.' || option2 != '.' || dbLocation != '.' || Location2 != '.'
-                ? setResult2_Alert('')
-                : setResult2(0)
-              )
-
+            : (Location == '.' || apply == '.' || option2 == '.' || dbLocation == '.' || Location2 == '.'
+            ? setResult2_Alert('모든 항목을 입력해주세요')
+            : (
+            Location != '.' || apply != '.' || option2 != '.' || dbLocation != '.' || Location2 != '.'
+            ? setResult2_Alert('')
+            : setResult2(0)
             )
-
             )
-
             )
-
             )
-
             )
-
             )
-
             )
-
             )
-
+            )
             )
         }
     }
@@ -392,113 +387,84 @@ const Calculator1 = ()=>{
             <div className = "subscription_wrap w100">
                 <div className = "subscription w1200">
                     <div>
-                    <form onSubmit = {handleSubmit}>
-                        <div className = "calculator_content1">
-                            <div className = "option1">
-                                <h5>(1) 가구소득</h5><input onClick = {HandleResult1} onTouch = {HandleResult1} className = "BTN" type = "button" value = "점수 계산"/>
-                                <div>
+                        <form onSubmit={handleSubmit}>
+                            <div className="calculator_content1">
+                                <div className="option1">
+                                    <h5>(1) 가구소득</h5><input onClick={HandleResult1} className="BTN" type="button" value="점수 계산" />
+                                    <div>
+
+                                    </div>
+                                    <div className="inline-block">
+                                        <h6>1. 배우자 소득 유무</h6>
+
+                                        <select onChange={ChangeIncome}>
+                                            <option value="two">맞벌이</option>
+                                            <option value="one">외벌이</option>
+                                            <option value="zero">둘 다 무직</option>
+                                        </select>
+                                    </div>
+                                    <div className="inline-block margin-left">
+                                        <h6>2. 가구 수</h6>
+                                        <select onChange={ChangePerson}>
+                                            <option value="three">3인 이하</option>
+                                            <option value="four">4인</option>
+                                            <option value="five">5인</option>
+                                            <option value="six">6인</option>
+                                            <option value="seven">7인</option>
+                                            <option value="eight">8인</option>
+                                        </select>
+                                    </div>
+                                    <div className="inline-block margin-left">
+                                        <h6>3. 소득금액</h6>
+                                        <div><input className="option1" type="text" onChange={ChangeCost} />원</div>
+                                    </div>
+                                    <div className="score">점수 : <span className="option1_result">{Result1}</span></div>
                                 </div>
-                                <div className = "inline-block">
-                                <h6>1. 배우자 소득 유무</h6>
-                                <select onClick = {ChangeIncome}>
-                                    <option>선택</option>
-                                    <option value = "two">맞벌이</option>
-                                    <option value = "one">외벌이</option>
-                                    <option value = "zero">둘 다 무직</option>
+                                <div className="option3">
+                                    <h5>(2) 주택청약종합저축 납입인정 횟수</h5>
+                                    <div className="inline-block">
+                                        <input onChange={changOption3} type="text" />회
+                                    </div>
+                                    <input onClick={HandleResult3} className="BTN" type="button" value="점수 계산" />
+                                    <div className="score">점수 : <span className="option3_result">{Result3}</span></div>
+                                </div>
+                                <div className="option2">
+                                    <h5>(3) 해당 시*도 연속 거주기간</h5><input onClick={HandleResult2} className="BTN" type="button" value="점수 계산" />
+                                    <div></div>
+                                    <div className="inline-block">
+                                        <h6>1. 거주 지역</h6>
+                                        <select onChange={ChangeLocation}>
+                                            <AreaComponent />
+                                        </select>
+                                        <select onChange={dbLocationset}>
+                                            <LocationComponent location={Location} />
+                                        </select>
+                                    </div>
+                                    <div className="inline-block margin-left">
+                                        <h6>2. 거주 기간</h6>
+                                        <div className=""><input onChange={changeOption2} type="text" />개월</div>
+                                    </div>
+                                </div>
+                                <div className="score totalScore apply">지원 지역</div>
+                                <select className="Select_Box" onChange={ChangeLocation2}>
+                                    <option value="1차">1차 지원(7월)</option>
+                                    <option value="2차">2차 지원(10월)</option>
+                                    <option value="3차">3차 지원(11월)</option>
+                                    <option value="4차">4차 지원(12월)</option>
                                 </select>
-                                </div>
-                                <div className = "inline-block margin-left">
-                                <h6>2. 가구 수</h6>
-                                <select onClick = {ChangePerson}>
-                                    <option>선택</option>
-                                    <option value = "three">3인 이하</option>
-                                    <option value = "four">4인</option>
-                                    <option value = "five">5인</option>
-                                    <option value = "six">6인</option>
-                                    <option value = "seven">7인</option>
-                                    <option value = "eight">8인</option>
+                                <select className="Select_Box" onChange={Applying_Location}>
+                                    <option>내용을선택해주세요.</option>
+                                    {
+                                       data.filter(v => Location2 == v.session )
+                                       .map((v,k)=><option key={k} selected={k==0 && "selected"}  >{v.name}</option>)  
+                                    }
                                 </select>
-                                </div>
-                                <div className = "inline-block margin-left">
-                                <h6>3. 소득금액</h6>
-                                    <div><input className = "option1" type = "text" onChange = {ChangeCost} />원</div>     
-                                </div>
-                                <div className = "score">점수 : <span className = "option1_result">{state.Income_Score}</span><span className = "red">{Result1_Alert}</span></div>
+                                <div className="score">점수 : <span className="option1_result">{Result2}</span><span className="red">{Result2_Alert}</span></div>
+                                <div className="block"><div className="score totalScore inline-block">총점 : <span className="total_result">{Result1 + Result2 + Result3}</span>/9</div><input className="submitBTN" value="결과 보기" onClick={ChangeAlert} type="submit" /></div>
+                                <div className="result4_alert red"><span className={className}>{Result4_Alert}</span></div>
                             </div>
-                            <div className = "option3">
-                                <h5>(2) 주택청약종합저축 납입인정 횟수</h5>
-                                <div className = "inline-block">
-                                    <input onChange = {changOption3} type = "text" />회
-                                </div>
-                                <input onClick = {HandleResult3} onTouch = {HandleResult3} className = "BTN subbtn" type = "button" value = "점수 계산"/>
-                                <div className = "score">점수 : <span className = "option1_result">{Result3}</span><span className = "red">{Result3_Alert}</span></div>
-                            </div>
-                            <div className = "option2">
-                                <h5>(3) 해당 시*도 연속 거주기간</h5><input onClick = {HandleResult2} onTouch = {HandleResult2} className = "BTN" type = "button" value = "점수 계산"/>
-                                <div></div>
-                                <div className = "inline-block">
-                                <h6>1. 거주 지역</h6>
-                               
-                                </div>
-                                <div className = "inline-block margin-left">
-                                <h6>2. 거주 기간</h6>
-                                <div className = ""><input onChange = {changeOption2} type = "text"/>개월</div>
-                                </div>
-                            </div>
-                            <div className = "score totalScore apply">지원 지역</div>
-                            <select className = "Select_Box" onClick = {ChangeLocation2}  onTouch = {ChangeLocation2}>
-                                <option value = "first">1차 지원(7월)</option>
-                                <option value = "second">2차 지원(10월)</option>
-                                <option value = "third">3차 지원(11월)</option>
-                                <option value = "fourth">4차 지원(12월)</option>
-                            </select>
-                            <select className = "Select_Box" onClick = {Applying_Location} onTouch = {Applying_Location}>
-                                {
-                                    Location2 == 'first'
-                                    ? <>
-                                    <option value = "인천계양">인천계양</option>
-                                    <option value = "남양주진접2">남양주진접2</option>
-                                    <option value = "성남복정1">성남복정1</option>
-                                    <option value = "의왕청계2">의왕청계2</option>
-                                    <option value = "위례">위례</option></>
-                                    : (
-                                        Location2 == 'second'
-                                        ? <>
-                                    <option value = "성남낙생">성남낙생</option>
-                                    <option value = "성남복정2">성남복정2</option>
-                                    <option value = "군포대야미">군포대야미</option>
-                                    <option value = "의왕월암">의왕월암</option>
-                                    <option value = "수원당수">수원당수</option>
-                                    <option value = "부천원종">부천원종</option></>
-                                        : (
-                                            Location2 == 'third'
-                                            ? <>
-                                   <option value = "시흥하중">시흥하중</option>
-                                   <option value = "과천주암">과천주암</option></>
-                                            : (
-                                                Location2 == 'fourth'
-                                                ? <> <option value = "남양주왕숙2">남양주왕숙2</option>
-                                                <option value = "성남금토">성남금토</option>
-                                                <option value = "부천대장">부천대장</option>
-                                                <option value = "고양창릉">고양창릉</option>
-                                                <option value = "부천역곡">부천역곡</option>
-                                                <option value = "시흥거모">시흥거모</option>
-                                                <option value = "안산장상">안산장상</option>
-                                                <option value = "안산신길2">안산신길2</option>
-                                                <option value = "동작구수방사">동작구수방사</option>
-                                                <option value = "구리갈매역세권">구리갈매역세권</option></>
-                                                :'bye'
-                                            )
-                                        )
-                                    )
-                                }
-                            </select>
-                            <div className = "score">점수 : <span className = "option1_result">{Result2}</span><span className = "red">{Result2_Alert}</span></div>
-                            <div className = "block"><div className = "score totalScore inline-block">총점 : <span className = "total_result">{Result1+Result2+Result3}</span>/9</div><input className = "submitBTN" value = "결과 보기" onClick = {ChangeAlert} type = "submit"/></div>
-                            <div className = "result4_alert red"><span className = {className}>{Result4_Alert}</span></div>
-                        </div>
-                        <div className = "LocationBox2">{alert}</div>
-                    </form>
+                            <div className="LocationBox2">{alert}</div>
+                        </form>
                     </div>
                 </div>
             </div>

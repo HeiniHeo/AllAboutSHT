@@ -3,9 +3,10 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 // npm install body-parser
 const app = express()
-const sequelize = require('sequelize')
-const Op = sequelize.Op;
+const Sequelize = require('sequelize')
+const Op = Sequelize.Op;
 const db = require('./models')
+const {sequelize} = require('./models')
 const { calculator1, calculator2, FAQ, FeedBack, Income_Scores } = require('./models')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false, }))
@@ -64,15 +65,15 @@ app.post('/calculator2', async (req, res, next) => {
     }
 })
 
-app.get('/calculator2', (req, res, next) =>{
-    var query = ''; 
-    sequelize.query(query)
-	.spread(function (results, metadata) { 
-        
-    }, function (err) { 
-    // 쿼리 실행 에러 
-    });
+app.get('/calculator2', async(req, res, next) =>{
+    
+    const {apply,Location,dbLocation,option3}= req.query 
 
+    var query = `SELECT CASE WHEN (residential_area1 = '경기도') THEN (CASE WHEN (A.residential_area2 =A.db_location AND A.period <= A.term) THEN A.applicable+A.inapplicable+A.etc WHEN (A.location = '인천' OR A.location = '서울특별시') THEN A.etc ELSE A.inapplicable+A.etc END) ELSE ( CASE WHEN (A.residential_area1 = A.location AND A.period <= A.term) THEN A.applicable+A.inapplicable+A.etc ELSE A.inapplicable+A.etc END) END AS apply_type FROM ( SELECT residential_area1, residential_area2, support_area, period, applicable, inapplicable, etc, "${Location}" AS location, "${dbLocation}" AS db_location, "${apply}" AS apply, ${option3} AS term FROM apply_alert2 WHERE support_area = "${apply}") AS A`
+    let result = await sequelize.query(query)
+
+    console.log(result)
+    res.json(result)
 })
 
 app.post('/Feedback', async (req, res, next) => {
