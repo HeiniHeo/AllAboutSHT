@@ -1,8 +1,8 @@
 import React, { useContext, useReducer, useEffect, useState } from 'react'
 import Store from '../../Store/context'
 import reducer from '../../Store/reducer'
-import AreaComponent from './AreaComponent'
-import { SeoulLocation, BusanLocation, DaeguLocation, IncheonLocation, GwangjuLocation, DaejeonLocation, UlsanLocation, SejongLocation, GyeongiLocation, GangwonLocation, ChungCheong1Location, ChungCheong2Location, JeonLa1Location, JeonLa2Location, GyeongSang1Location, GyeongSang2Location, JejuLocation } from './LocationComponent'
+import AreaComponent from './Location/AreaComponent'
+import { SeoulLocation, BusanLocation, DaeguLocation, IncheonLocation, GwangjuLocation, DaejeonLocation, UlsanLocation, SejongLocation, GyeongiLocation, GangwonLocation, ChungCheong1Location, ChungCheong2Location, JeonLa1Location, JeonLa2Location, GyeongSang1Location, GyeongSang2Location, JejuLocation } from './Location/LocationComponent'
 import {postCalculator1} from '../../api/api'
 import { base_url } from '../../Store/Allurl'
 
@@ -438,10 +438,10 @@ const Calculator1 = () => {
                                     <div></div>
                                     <div className="inline-block">
                                         <h6>1. 거주 지역</h6>
-                                        <select onClick={ChangeLocation}>
+                                        <select onChange={ChangeLocation}>
                                             <AreaComponent />
                                         </select>
-                                        <select onClick={dbLocationset}>
+                                        <select onChange={dbLocationset}>
                                             <option>
                                                 군/구
                                             </option>
@@ -449,38 +449,38 @@ const Calculator1 = () => {
                                                 Location === 'seoul'
                                                     ? <SeoulLocation />
                                                     : (Location === 'busan'
-                                                        ? <BusanLocation />
-                                                        : (Location === 'dagu'
-                                                            ? <DaeguLocation />
-                                                            : (Location === 'GwangJu'
-                                                                ? <GwangjuLocation />
-                                                                : (Location === 'Daejeon'
-                                                                    ? <DaejeonLocation />
-                                                                    : (Location === 'Ulsan'
-                                                                        ? <UlsanLocation />
-                                                                        : (Location === 'Incheon'
-                                                                            ? <IncheonLocation />
-                                                                            : (Location === 'SaeJong'
-                                                                                ? <SejongLocation />
-                                                                                : (Location === 'GyeongGi'
-                                                                                    ? <GyeongiLocation />
-                                                                                    : (Location === 'GangWon'
-                                                                                        ? <GangwonLocation />
-                                                                                        : (Location === 'ChungCheong1'
-                                                                                            ? <ChungCheong1Location />
-                                                                                            : (Location === 'ChungCheong2'
-                                                                                                ? <ChungCheong2Location />
-                                                                                                : (Location === 'JeongLa1'
-                                                                                                    ? <JeonLa1Location />
-                                                                                                    : (Location === 'JeongLa2'
-                                                                                                        ? <JeonLa2Location />
-                                                                                                        : (Location === 'GyeongSang1'
-                                                                                                            ? <GyeongSang1Location />
-                                                                                                            : (Location === 'GyeongSang2'
-                                                                                                                ? <GyeongSang2Location />
-                                                                                                                : (Location === 'Jeju'
-                                                                                                                    ? <JejuLocation />
-                                                                                                                    : 'GyeongSang1'))))))))))))))))
+                                                    ? <BusanLocation />
+                                                    : (Location === 'dagu'
+                                                    ? <DaeguLocation />
+                                                    : (Location === 'GwangJu'
+                                                    ? <GwangjuLocation />
+                                                    : (Location === 'Daejeon'
+                                                    ? <DaejeonLocation />
+                                                    : (Location === 'Ulsan'
+                                                    ? <UlsanLocation />
+                                                    : (Location === 'Incheon'
+                                                    ? <IncheonLocation />
+                                                    : (Location === 'SaeJong'
+                                                    ? <SejongLocation />
+                                                    : (Location === 'GyeongGi'
+                                                    ? <GyeongiLocation />
+                                                    : (Location === 'GangWon'
+                                                    ? <GangwonLocation />
+                                                    : (Location === 'ChungCheong1'
+                                                    ? <ChungCheong1Location />
+                                                    : (Location === 'ChungCheong2'
+                                                    ? <ChungCheong2Location />
+                                                    : (Location === 'JeongLa1'
+                                                    ? <JeonLa1Location />
+                                                    : (Location === 'JeongLa2'
+                                                    ? <JeonLa2Location />
+                                                    : (Location === 'GyeongSang1'
+                                                    ? <GyeongSang1Location />
+                                                    : (Location === 'GyeongSang2'
+                                                    ? <GyeongSang2Location />
+                                                    : (Location === 'Jeju'
+                                                    ? <JejuLocation />
+                                                    : 'GyeongSang1'))))))))))))))))
                                             }
                                         </select>
                                     </div>
