@@ -8,6 +8,7 @@ const FAQ = require('./FAQ')
 const calculator1 = require('./calculator1')
 const calculator2 = require('./calculator2')
 const Income_Scores = require('./Income_Scores')
+const apply_alert1 = require('./apply_alert1')
 const db = {};
 
 let sequelize;
@@ -27,6 +28,8 @@ db.calculator2 = calculator2
 calculator2.init(sequelize)
 db.Income_Scores = Income_Scores
 Income_Scores.init(sequelize)
+db.apply_alert1 = apply_alert1
+apply_alert1.init(sequelize)
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;

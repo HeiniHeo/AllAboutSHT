@@ -1,4 +1,4 @@
-import {base_url} from '../Store/Allurl'
+import {base_url} from '../Store/baseurl'
 
 export const postCalculator1 = async (body) => {
     //code block
