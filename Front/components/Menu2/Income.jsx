@@ -8,13 +8,14 @@ const Income = () =>{
                 <div>
                     <h3>근로소득자 : 국민건강보험사이트에서 보수월액 조회</h3>
                     <p><a href="https://www.nhis.or.kr/nhis/index.do"><img src="/국민건강보험.png" /></a></p>
+                    <p className="income_info">근로소득자의 경우 보수월액이 월평균소득이 됩니다. <br />가점계산시 적는 소득금액은 본인 및 배우자 월평균소득 합산하여 기재</p>
                 </div>
             </div>
             <div className="entrepreneur">
                 <div>
                     <h3>사업소득자 : 국세청 홈택스 사이트에서 종합소득 조회</h3>
                     <p><a href="https://hometax.go.kr/websquare/websquare.html?w2xPath=/ui/pp/index.xml"><img src="hometax.png"/></a></p>
-                    <p className="center">조회된 종합소득의 12분의 1로 나눈 것이 월평균 소득</p>
+                    <p className="income_info">조회된 종합소득의 12분의 1로 나눈 것이 월평균 소득</p>
                 </div>
             </div>
             <div className="entrepreneur">

@@ -20,6 +20,7 @@
     font-size:14px;
     font-family:"LH_L";
     color:rgb(0,91,172);
+    overflow-y: hidden;
 }
 
 .supply:hover{

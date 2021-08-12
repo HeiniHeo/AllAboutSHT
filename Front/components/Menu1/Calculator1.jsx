@@ -1,31 +1,41 @@
 import React, { useContext, useReducer, useEffect, useState } from 'react'
 import Store from '../../Store/context'
 import reducer from '../../Store/reducer'
-import { postCalculator1 } from '../../api/api'
 import AreaComponent from './AreaComponent'
-import { SeoulLocation,BusanLocation,DaeguLocation,IncheonLocation,GwangjuLocation,DaejeonLocation,UlsanLocation,SejongLocation,GyeongiLocation,GangwonLocation,ChungCheong1Location,ChungCheong2Location,JeonLa1Location,JeonLa2Location,GyeongSang1Location,GyeongSang2Location,JejuLocation } from './LocationComponent'
+import { SeoulLocation, BusanLocation, DaeguLocation, IncheonLocation, GwangjuLocation, DaejeonLocation, UlsanLocation, SejongLocation, GyeongiLocation, GangwonLocation, ChungCheong1Location, ChungCheong2Location, JeonLa1Location, JeonLa2Location, GyeongSang1Location, GyeongSang2Location, JejuLocation } from './LocationComponent'
+import {postCalculator1} from '../../api/api'
+import { base_url } from '../../Store/Allurl'
 
 const Calculator1 = () => {
     const { state, dispatch } = useContext(Store)
 
-    const [Location, setLocation] = useState(1)
-    const [Location2, setLocation2] = useState(1)
-    const [apply, setapply] = useState(1)
-    const [dbLocation, setdbLocation] = useState(1)
+    const [Location, setLocation] = useState('.')
+    const [Location2, setLocation2] = useState('.')
+    const [apply, setapply] = useState('.')
+    const [dbLocation, setdbLocation] = useState('.')
 
 
-    const [Income, setIncome] = useState(1)
-    const [Person, setPerson] = useState(1)
-    const [Cost, setCost] = useState(1)
+    const [Income, setIncome] = useState('.')
+    const [Person, setPerson] = useState('.')
+    const [Cost, setCost] = useState('.')
 
-    const [option2, setOption2] = useState(1)
-    const [option3, setOption3] = useState(1)
-    const [Result1, setResult1] = useState(1)
-    const [Result2, setResult2] = useState(1)
-    const [Result3, setResult3] = useState(1)
+
+
+    const [option2, setOption2] = useState('.')
+    const [option3, setOption3] = useState('.')
+
+    const [Result1, setResult1] = useState(0)
+    const [Result1_Alert, setResult1_Alert] = useState('')
+    const [Result2, setResult2] = useState(0)
+    const [Result2_Alert, setResult2_Alert] = useState('')
+    const [Result3, setResult3] = useState(0)
+    const [Result3_Alert, setResult3_Alert] = useState('')
+
+    const [Result4_Alert, setResult4_Alert] = useState('')
 
 
     const [alert, setAlert] = useState('지원 가능 여부입니다')
+    const [className, setClassName] = useState('')
 
     const ChangeAlert = (e) => {
         {
@@ -184,7 +194,7 @@ const Calculator1 = () => {
                                                                                                                                                                                                                         setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 60호 입니다.')
                                                                                                                                                                                                                         : (apply == '동작구수방사' && Location != 'seoul'
                                                                                                                                                                                                                             ?
-                                                                                                                                                                                                                            setAlert('지원 미달시 지원 가능 합니다!')
+                                                                                                                                                                                                                            setAlert('당해 지원 미달시 지원 가능 합니다!')
                                                                                                                                                                                                                             : apply == '구리갈매역세권' && Location == 'GyeongGi' && dbLocation == '구리시' && option2 >= 24
                                                                                                                                                                                                                                 ?
                                                                                                                                                                                                                                 setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 330호 입니다.')
@@ -194,7 +204,14 @@ const Calculator1 = () => {
                                                                                                                                                                                                                                     : (apply == '구리갈매역세권' && Location != 'GyeongGi'
                                                                                                                                                                                                                                         ?
                                                                                                                                                                                                                                         setAlert('기타지역 거주자 이시네요! 1단계 공급물량은 총 165호 입니다.')
-                                                                                                                                                                                                                                        : '')))))))))))))))))))))))))))))))))))))))))))))))))
+                                                                                                                                                                                                                                        : (apply == '성남금토' && dbLocation == '성남시' && option3 >= 24
+                                                                                                                                                                                                                                            ?
+                                                                                                                                                                                                                                            setAlert('당해기준 충족자 이시네요! 1단계 공급물량은 총 210호 입니다.')
+                                                                                                                                                                                                                                            : apply == '성남금토' && dbLocation != '성남시'
+                                                                                                                                                                                                                                                ?
+                                                                                                                                                                                                                                                setAlert('지원불가능합니다.')
+                                                                                                                                                                                                                                                :
+                                                                                                                                                                                                                                                ''))))))))))))))))))))))))))))))))))))))))))))))))))
 
         }
     }
@@ -222,19 +239,46 @@ const Calculator1 = () => {
         setCost(e.target.value)
     }
 
+    const option3_function0 = (e) => (
+        setResult3(0),
+        setResult3_Alert('')
+    )
+
+    const option3_function1 = (e) => (
+        setResult3(1),
+        setResult3_Alert('')
+    )
+
+    const option3_function2 = (e) => (
+        setResult3(2),
+        setResult3_Alert('')
+    )
+
+    const option3_function3 = (e) => (
+        setResult3(3),
+        setResult3_Alert('')
+    )
     const HandleResult3 = (e) => {
         {
-            option3 < 12
-                ? setResult3(1)
-                : (option3 >= 12 && option3 < 24
-                    ? setResult3(2)
-                    : (option3 >= 24
-                        ? setResult3(3)
-                        : ''
+            option3 < 6
+                ? option3_function0()
+                : (option3 < 12
+                    ? option3_function1()
+                    : (option3 >= 12 && option3 < 24
+                        ? option3_function2()
+                        : (option3 >= 24
+                            ? option3_function3()
+                            : (option3 == '.'
+                                ? setResult3_Alert('항목을 입력해주세요')
+                                : ''
+                            )
+
+                        )
                     )
                 )
         }
     }
+
     const HandleResult2 = (e) => {
         {
             Location == 'Incheon' && apply == '인천계양' && option2 >= 24
@@ -255,7 +299,15 @@ const Calculator1 = () => {
                                             ? setResult2(2)
                                             : (Location == 'GyeongGi' && apply != '동작구수방사' && apply != '인천계양' && option2 < 12
                                                 ? setResult2(1)
-                                                : setResult2(0)
+                                                : (Location == '.' || apply == '.' || option2 == '.' || dbLocation == '.' || Location2 == '.'
+                                                    ? setResult2_Alert('모든 항목을 입력해주세요')
+                                                    : (
+                                                        Location != '.' || apply != '.' || option2 != '.' || dbLocation != '.' || Location2 != '.'
+                                                            ? setResult2_Alert('')
+                                                            : setResult2(0)
+                                                    )
+
+                                                )
 
                                             )
 
@@ -276,109 +328,37 @@ const Calculator1 = () => {
     }
 
     const HandleResult1 = (e) => {
-        {
-            Income == "two" && Person == "three" && Cost <= 4824128
-                ? setResult1(3)
-                : (Income == "one" && Person == "three" && Cost <= 4221112
-                    ? setResult1(3)
-                    : (Income == "two" && Person == "three" && Cost > 4824128 && Cost <= 6633176
-                        ? setResult1(2)
-                        : (Income == "one" && Person == "three" && Cost > 4221112 && Cost <= 6030160
-                            ? setResult1(2)
-                            : (Income == "two" && Person == "three" && Cost > 6633176
-                                ? setResult1(1)
-                                : (Income == "one" && Person == "three" && Cost > 6030160
-                                    ? setResult1(1)
-                                    : (Income == "two" && Person == "four" && Cost <= 5675364 || Income == "two" && Person == "five" && Cost <= 5675364
-                                        ? setResult1(3)
-                                        : (Income == "one" && Person == "four" && Cost <= 4965944 || Income == "one" && Person == "five" && Cost <= 4965944
-                                            ? setResult1(3)
-                                            : (Income == "two" && Person == "four" && Cost > 5675364 && Cost <= 7803626 || Income == "two" && Person == "five" && Cost > 5675364 && Cost <= 7803626
-                                                ? setResult1(2)
-                                                : (Income == "one" && Person == "four" && Cost > 4965944 && Cost <= 7094205 || Income == "one" && Person == "five" && Cost > 4965944 && Cost <= 7094205
-                                                    ? setResult1(2)
-                                                    : (Income == "two" && Person == "four" && Cost > 7803626 || Income == "two" && Person == "five" && Cost > 7803626
-                                                        ? setResult1(1)
-                                                        : (Income == "one" && Person == "four" && Cost > 7094205 || Income == "one" && Person == "five" && Cost > 7094205
-                                                            ? setResult1(1)
-                                                            : (Income == "two" && Person == "six" && Cost <= 5914918
-                                                                ? setResult1(3)
-                                                                : (Income == "one" && Person == "six" && Cost <= 5175553
-                                                                    ? setResult1(3)
-                                                                    : (Income == "two" && Person == "six" && Cost > 5914918 && Cost <= 8133012
-                                                                        ? setResult1(2)
-                                                                        : (Income == "one" && Person == "six" && Cost > 5175553 && Cost <= 7393647
-                                                                            ? setResult1(2)
-                                                                            : (Income == "two" && Person == "six" && Cost > 8133012
-                                                                                ? setResult1(1)
-                                                                                : (Income == "one" && Person == "six" && Cost > 7393647
-                                                                                    ? setResult1(1)
-                                                                                    : (Income == "two" && Person == "seven" && Cost <= 6222418
-                                                                                        ? setResult1(3)
-                                                                                        : (Income == "one" && Person == "seven" && Cost <= 5444616
-                                                                                            ? setResult1(3)
-                                                                                            : (Income == "two" && Person == "seven" && Cost > 6222418 && Cost <= 8555825
-                                                                                                ? setResult1(2)
-                                                                                                : (Income == "one" && Person == "seven" && Cost > 5444616 && Cost <= 7778023
-                                                                                                    ? setResult1(2)
-                                                                                                    : (Income == "two" && Person == "seven" && Cost > 8555825
-                                                                                                        ? setResult1(1)
-                                                                                                        : (Income == "one" && Person == "seven" && Cost > 7778023
-                                                                                                            ? setResult1(1)
-                                                                                                            : (Income == "two" && Person == "eight" && Cost <= 6529919
-                                                                                                                ? setResult1(3)
-                                                                                                                : (Income == "one" && Person == "eight" && Cost <= 5713679
-                                                                                                                    ? setResult1(3)
-                                                                                                                    : (Income == "two" && Person == "eight" && Cost > 6529919 && Cost <= 8978639
-                                                                                                                        ? setResult1(2)
-                                                                                                                        : (Income == "one" && Person == "eight" && Cost > 5713679 && Cost <= 8162399
-                                                                                                                            ? setResult1(2)
-                                                                                                                            : (Income == "two" && Person == "eight" && Cost > 8978639
-                                                                                                                                ? setResult1(1)
-                                                                                                                                : (Income == "one" && Person == "eight" && Cost > 8162399
-                                                                                                                                    ? setResult1(1)
-                                                                                                                                    : (Income == "zero"
-                                                                                                                                        ? setResult1(3)
-                                                                                                                                        : '')
-                                                                                                                                )
-                                                                                                                            )
-                                                                                                                        )
-                                                                                                                    )
-                                                                                                                )
-                                                                                                            )
-                                                                                                        )
-                                                                                                    )
-                                                                                                )
-                                                                                            )
-                                                                                        )
-                                                                                    )
-                                                                                )
-                                                                            )
-                                                                        )
-                                                                    )
-                                                                )
-                                                            )
-                                                        )
-                                                    )
-                                                )
-                                            )
-                                        )
-                                    )
-                                )
-                            ))
-                    ))
+        HandleResult11()
+            , HandleResult12()
+    }
+    const HandleResult11 = async (e) => {
 
+        let options = {
+            method: 'GET'
+        }
+
+        let result = await fetch(`http://localhost/IncomeScores?Income=${Income}&Person=${Person}&Cost=${Cost}`, options)
+        const data = await result.json()
+
+        dispatch({ type: 'Income_Score', payload: data[0].Income_Score })
+        console.log(data[0].Income_Score)
+
+
+    }
+
+    const HandleResult12 = (e) => {
+        {
+            Income != "." && Person != "." && Cost != '.'
+                ? setResult1_Alert('')
+                : (Income == 0 || Person == 0 || Cost == '.'
+                    ? setResult1_Alert('모든 항목을 입력해주세요')
+                    : '')
         }
     }
 
+
     const ChangeLocation2 = (e) => {
         setLocation2(e.target.value)
-    }
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        postCalculator1({ income: Result1, Resident_period: Result2, Resident_Location1: Location, Resident_Location2: dbLocation, Number_Of_Payment: Result3, Applying_Location: apply })
-
     }
 
     const Applying_Location = (e) => {
@@ -387,6 +367,24 @@ const Calculator1 = () => {
 
     const dbLocationset = (e) => {
         setdbLocation(e.target.value)
+    }
+
+
+    const successSubmit = (e) => {
+        setResult4_Alert('결과가 저장되었습니다!'),
+            setClassName('blue'),
+            postCalculator1({ income: Result1, Resident_period: Result2, Resident_Location1: Location, Resident_Location2: dbLocation, Number_Of_Payment: Result3, Applying_Location: apply })
+
+    }
+    const handleSubmit = (e) => {
+
+        e.preventDefault()
+        {
+            Result1_Alert == '모든 항목을 입력해주세요' || Result2_Alert == '모든 항목을 입력해주세요' || Result3_Alert == '모든 항목을 입력해주세요' || Result1 == 0 || Result3 == 0 || Location == '.' || apply == '.' || option3 == '.' || dbLocation == '.' || Location2 == '.'
+                ? setResult4_Alert('모든 항목의 점수를 내주세요')
+                : successSubmit()
+        }
+
     }
 
     return (
@@ -449,40 +447,40 @@ const Calculator1 = () => {
                                             </option>
                                             {
                                                 Location === 'seoul'
-                                                    ? <SeoulLocation/>
+                                                    ? <SeoulLocation />
                                                     : (Location === 'busan'
-                                                        ? <BusanLocation/>
+                                                        ? <BusanLocation />
                                                         : (Location === 'dagu'
-                                                            ? <DaeguLocation/>
+                                                            ? <DaeguLocation />
                                                             : (Location === 'GwangJu'
-                                                                ? <GwangjuLocation/>
+                                                                ? <GwangjuLocation />
                                                                 : (Location === 'Daejeon'
-                                                                    ? <DaejeonLocation/>
+                                                                    ? <DaejeonLocation />
                                                                     : (Location === 'Ulsan'
-                                                                        ? <UlsanLocation/>
+                                                                        ? <UlsanLocation />
                                                                         : (Location === 'Incheon'
-                                                                            ? <IncheonLocation/>
+                                                                            ? <IncheonLocation />
                                                                             : (Location === 'SaeJong'
-                                                                                ? <SejongLocation/>
+                                                                                ? <SejongLocation />
                                                                                 : (Location === 'GyeongGi'
-                                                                                    ? <GyeongiLocation/>
+                                                                                    ? <GyeongiLocation />
                                                                                     : (Location === 'GangWon'
-                                                                                        ? <GangwonLocation/>
+                                                                                        ? <GangwonLocation />
                                                                                         : (Location === 'ChungCheong1'
-                                                                                            ? <ChungCheong1Location/>
+                                                                                            ? <ChungCheong1Location />
                                                                                             : (Location === 'ChungCheong2'
-                                                                                                ? <ChungCheong2Location/>
+                                                                                                ? <ChungCheong2Location />
                                                                                                 : (Location === 'JeongLa1'
-                                                                                                    ? <JeonLa1Location/>
+                                                                                                    ? <JeonLa1Location />
                                                                                                     : (Location === 'JeongLa2'
-                                                                                                        ? <JeonLa2Location/>
-                                                                                                            : (Location === 'GyeongSang1'
-                                                                                                                ? <GyeongSang1Location/>
-                                                                                                                : (Location === 'GyeongSang2'
-                                                                                                                    ? <GyeongSang2Location/>
-                                                                                                                    : (Location === 'Jeju'
-                                                                                                                        ? <JejuLocation/>
-                                                                                                                        : 'GyeongSang1'))))))))))))))))
+                                                                                                        ? <JeonLa2Location />
+                                                                                                        : (Location === 'GyeongSang1'
+                                                                                                            ? <GyeongSang1Location />
+                                                                                                            : (Location === 'GyeongSang2'
+                                                                                                                ? <GyeongSang2Location />
+                                                                                                                : (Location === 'Jeju'
+                                                                                                                    ? <JejuLocation />
+                                                                                                                    : 'GyeongSang1'))))))))))))))))
                                             }
                                         </select>
                                     </div>
@@ -508,38 +506,25 @@ const Calculator1 = () => {
                                                 <option value="의왕청계2">의왕청계2</option>
                                                 <option value="위례">위례</option></>
                                             : (
-                                                Location2 == 'second'
-                                                    ? <>
-                                                        <option value="성남낙생">성남낙생</option>
-                                                        <option value="성남복정2">성남복정2</option>
-                                                        <option value="군포대야미">군포대야미</option>
-                                                        <option value="의왕월암">의왕월암</option>
-                                                        <option value="수원당수">수원당수</option>
-                                                        <option value="부천원종">부천원종</option></>
-                                                    : (
-                                                        Location2 == 'third'
-                                                            ? <>
-                                                                <option value="시흥하중">시흥하중</option>
-                                                                <option value="과천주암">과천주암</option></>
-                                                            : (
-                                                                Location2 == 'fourth'
-                                                                    ? <> <option value="남양주왕숙2">남양주왕숙2</option>
-                                                                        <option value="부천대장">부천대장</option>
-                                                                        <option value="고양창릉">고양창릉</option>
-                                                                        <option value="부천역곡">부천역곡</option>
-                                                                        <option value="시흥거모">시흥거모</option>
-                                                                        <option value="안산장상">안산장상</option>
-                                                                        <option value="안산신길2">안산신길2</option>
-                                                                        <option value="동작구수방사">동작구수방사</option>
-                                                                        <option value="구리갈매역세권">구리갈매역세권</option></>
-                                                                    : 'bye'
-                                                            )
-                                                    )
+                                                Location2 == 'fourth'
+                                                    ? <> <option value="남양주왕숙2">남양주왕숙2</option>
+                                                        <option value="성남금토">성남금토</option>
+                                                        <option value="부천대장">부천대장</option>
+                                                        <option value="고양창릉">고양창릉</option>
+                                                        <option value="부천역곡">부천역곡</option>
+                                                        <option value="시흥거모">시흥거모</option>
+                                                        <option value="안산장상">안산장상</option>
+                                                        <option value="안산신길2">안산신길2</option>
+                                                        <option value="동작구수방사">동작구수방사</option>
+                                                        <option value="구리갈매역세권">구리갈매역세권</option>
+                                                    </>
+                                                    : 'bye'
                                             )
                                     }
                                 </select>
-                                <div className="score">점수 : <span className="option2_result">{Result2}</span></div>
+                                <div className="score">점수 : <span className="option1_result">{Result2}</span><span className="red">{Result2_Alert}</span></div>
                                 <div className="block"><div className="score totalScore inline-block">총점 : <span className="total_result">{Result1 + Result2 + Result3}</span>/9</div><input className="submitBTN" value="결과 보기" onClick={ChangeAlert} type="submit" /></div>
+                                <div className="result4_alert red"><span className={className}>{Result4_Alert}</span></div>
                             </div>
                             <div className="LocationBox2">{alert}</div>
                         </form>

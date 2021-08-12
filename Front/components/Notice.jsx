@@ -8,7 +8,7 @@ const Notice = () =>{
     }
         return(
             <div className="notice_header">
-                <button className="notice" onClick={noticeOpen}><img style={{width:"65px", height:"50px"}} src="https://thema25.dubuplus.com/template/s150319001001/images/m_ban_icon2.png" />공지사항</button>
+                <button className="notice" onClick={noticeOpen}><img src="https://thema25.dubuplus.com/template/s150319001001/images/m_ban_icon2.png" />공지사항</button>
                     {notice 
                     ?
                     <img className="notice_img" src="/신혼희망타운팝업.png" />

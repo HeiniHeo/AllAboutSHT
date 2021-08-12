@@ -18,6 +18,11 @@
     color:rgb(0,91,172);
 }
 
+.notice img{
+    width:65px;
+    height:50px;
+}
+
 .notice:hover{
     color:rgb(0,91,172);
     border: 3px solid rgb(0,91,172);
@@ -34,6 +39,7 @@
 
 @media screen and (max-width: 768px) {
     .notice{
+        width:110px;
         margin-left:0px;
         transform: translateX(100%);
     }
@@ -42,5 +48,10 @@
         width:400px;
         height:250px;
         transform:translate(2%,40%);
+    }
+
+    .notice img{
+        width:100px;
+        height:50px;
     }
 }

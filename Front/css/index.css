@@ -14,7 +14,7 @@
 *{
     margin:0;
     padding:0;
-    overflow:hidden;
+    overflow-x:hidden;
 }
 
 
@@ -86,6 +86,7 @@ body{
     transition:all 0.4s;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 7px;
+    overflow-y: hidden;
 }
 
 .FeedBack_open:hover{
@@ -108,6 +109,7 @@ body{
     transition:all 0.5s;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
+    overflow-y: hidden;
 }
 
 .FeedBack_close:hover{
@@ -137,6 +139,7 @@ body{
     padding: 20px;
     right:0px;
     transition: all 0.5s;
+    overflow-y: hidden;
 }
 
 .inputcontent{
@@ -164,6 +167,12 @@ body{
 }
 
 @media screen and (max-width:768px) {
+
+    *{
+        margin:0;
+        padding:0;
+        overflow:visible;
+    }
     .site_wrap{
         width:100%;
         height:2000px;
