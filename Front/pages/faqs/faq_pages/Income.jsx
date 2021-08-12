@@ -1,6 +1,6 @@
 import { useEffect,useContext,useCallback } from 'react'
 import Store from '../../../Store/context'
-import { faqurl } from '../../../Store/faqurl'
+import { faqurl } from '../../../Store/Allurl'
 
 const Income = () => {
 

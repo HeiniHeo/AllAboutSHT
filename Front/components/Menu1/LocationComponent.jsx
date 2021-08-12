@@ -94,8 +94,6 @@ export const ChungCheong1Location = () => {
 
 export const ChungCheong2Location = () => {
     const result = 충청남도.map((v,k)=>{
-        
-
         return <option key={k} value={v}>{v}</option>
     })
     return result
