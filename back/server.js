@@ -6,7 +6,7 @@ const app = express()
 const sequelize = require('sequelize')
 const Op = sequelize.Op;
 const db = require('./models')
-const { calculator1, calculator2, FAQ, FeedBack, Income_Scores } = require('./models')
+const { calculator1, calculator2, FAQ, FeedBack, Income_Scores, apply_alert1 } = require('./models')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false, }))
 app.use(cors());
@@ -91,6 +91,75 @@ app.get('/IncomeScores', async (req, res, next) => {
     )
 
 })
+
+app.get('/apply_alert1_1', async (req, res, next) => {
+
+
+    let {apply, Location, dbLocation, option2} = req.query
+
+        const data = await apply_alert1.findAll({
+            where: { apply:apply, Location:Location, dbLocation:dbLocation, option2:{[Op.lte]:option2} }
+        })
+
+        if(data.length == 0){
+
+            const data = await apply_alert1.findAll({
+                where: { apply:apply, Location:Location, dbLocation:'not', option2:{[Op.lte]:option2}}
+            })
+
+                if(data.length == 0){
+                    const data = await apply_alert1.findAll({
+                        where: { apply:apply, Location:Location, option2:{[Op.lte]:option2}}
+
+
+                    })
+
+
+                        if(data.length == 0){
+
+                            const data = await apply_alert1.findAll({
+                                where: { apply:apply, Location:'not', option2:{[Op.lte]:option2}}
+                            })
+                            if(data.length == 0){
+
+                                const data = await apply_alert1.findAll({
+                                    where: { apply:apply, dbLocation:dbLocation, option2:{[Op.lte]:option2}}
+                                })
+                        
+                                if(data.length == 0){
+
+                                    const data = await apply_alert1.findAll({
+                                        where: { apply:apply, dbLocation:'not', option2:{[Op.lte]:option2}}
+                                    })
+                                    
+                                }
+                                res.json(
+                                    {...data}
+                                )
+                            }
+                            
+                            res.json(
+                                {...data}
+                            )
+                        }
+
+                    res.json(
+                        {...data}
+                    )
+                }
+
+            res.json(
+                {...data}
+            )
+        }
+
+        res.json(
+            {...data}
+        )
+
+})
+
+
 app.get('/faqs/:localhost', async (req, res, next) => {
 
     const {localhost} = req.params
