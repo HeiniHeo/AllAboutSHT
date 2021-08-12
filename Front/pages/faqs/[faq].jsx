@@ -6,7 +6,7 @@ import Bank from "./faq_pages/Bank"
 import Etc from "./faq_pages/Etc"
 import Link from 'next/link'
 import Styled from "styled-components"
-import { clickurl } from "../../Store/faqclickurl"
+import { clickurl } from "../../Store/Allurl"
 
 const LinkCss = Styled.a`
     cursor: pointer;
