@@ -1,6 +1,6 @@
 export const 군 = ['군/구']
 export const 서울특별시 = ['군/구', '종로구', '중구', '용산구', '성동구', '광진구', '동대문구', '중량구', '성북구', '강북구', '도봉구', '노원구', '은평구', '서대문구', '마포구', '양천구', '강서구', '구로구', '금천구', '영등포구', '동작구', '관악구', '서초구', '강남구', '송파구', '강동구']
-export const 부산특별시 = ['군/구', "중구", "서구", "동구", "영도구", "부산진구", "동래구", "남구", "북구", "해운대구", "사하구", "금정구", "강서구", "연제구", "수영구", "사상구", "기장군"]
+export const 부산광역시 = ['군/구', "중구", "서구", "동구", "영도구", "부산진구", "동래구", "남구", "북구", "해운대구", "사하구", "금정구", "강서구", "연제구", "수영구", "사상구", "기장군"]
 export const 대구광역시 = ['군/구', "중구", "동구", "서구", "남구", "북구", "수성구", "달서구", "달성군"]
 export const 인천광역시 = ['군/구', "중구", "동구", "미추홀구", "연수구", "남동구", "부평구", "계양구", "서구", "강화군", "옹진군"]
 export const 광주광역시 = ['군/구', "동구", "서구", "남구", "북구", "광산구"]
@@ -17,68 +17,11 @@ export const 경상북도 = ['군/구', "포항시", "경주시", "김천시", "
 export const 경상남도 = ['군/구', "창원시", "진주시", "통영시", "사천시", "김해시", "밀양시", "거제시", "양산시", "의령군", "함안군", "창녕군", "고성군", "하동군", "남해군", "산청군", "함양군", "거창군", "합천군"]
 export const 제주특별자치도 = ['군/구', "제주특별자치도"]
 
-// export const LocationCalcul = (props) =>{
-//     switch(props.location){
-//         case '.':
-//             return <LocationComponent location={군}/>
-//         case 'seoul':
-//             return (
-//                 <LocationComponent location={서울특별시}/>
-//             )
-//         case 'busan':
-//             return (
-//                 <LocationComponent location={부산특별시}/>
-//             )
-//         case 'dagu' :
-//             return (
-//                 <LocationComponent location={대구광역시}/>
-//             )
-//         case 'GwangJu' :
-//             return 광주광역시
-//         case 'Daejeon' :
-//             return 대전광역시
-//         case 'Ulsan' : 
-//             return 울산광역시
-//         case 'Incheon' :
-//             return 인천광역시
-//         case 'SaeJeon' :
-//             return 세종특별자치시
-//         case 'GyeonGi' :
-//             return 경기도
-//         case 'GangWon' :
-//             return 강원도
-//         case 'ChungCheong1':
-//             return 충청북도
-//         case 'ChungCheong2':
-//             return 충청남도
-//         case 'JeongLa1' : 
-//             return 전라북도
-//         case 'JeongLa2' :
-//             return 전라남도
-//         case 'GyeongSang1' :
-//             return 경상북도
-//         case 'GyeongSang2':
-//             return 경상남도
-//         case 'Jeju' :
-//             return 제주특별자치도
-//     }
-// }
-
-
-
 export const LocationComponent = (props) => {
-    let locationArr = [군, 서울특별시, 부산특별시, 대구광역시, 인천광역시, 광주광역시, 대전광역시, 울산광역시];
-    let search = {}
 
-    locationArr.forEach(v => {
-        let locationName = `${v}`
-        console.log(v,"++++++++++++v")
-        let obj = { [locationName]: v }
-        console.log(obj,"=========obj")
-        search = { ...search, ...obj }
-    });
+    let locationArr = { 군, 서울특별시, 부산광역시, 대구광역시, 인천광역시, 광주광역시, 대전광역시, 울산광역시, 세종특별자치시,경기도,강원도,충청북도,충청남도,전라북도,전라남도,경상북도,경상남도,제주특별자치도 };
     const { location } = props
-    const result = 서울특별시.map((v, k) => {
+    const result = locationArr[location].map((v, k) => {
         return <option key={k} value={v}>{v}</option>
     })
     return result

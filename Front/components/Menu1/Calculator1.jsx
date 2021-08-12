@@ -2,7 +2,7 @@ import React, { useContext, useReducer, useEffect, useState } from 'react'
 import Store from '../../Store/context'
 import reducer from '../../Store/reducer'
 import AreaComponent from './Location/AreaComponent'
-import { LocationCalcul, LocationComponent, SeoulLocation, BusanLocation, DaeguLocation, IncheonLocation, GwangjuLocation, DaejeonLocation, UlsanLocation, SejongLocation, GyeongiLocation, GangwonLocation, ChungCheong1Location, ChungCheong2Location, JeonLa1Location, JeonLa2Location, GyeongSang1Location, GyeongSang2Location, JejuLocation } from './Location/LocationComponent'
+import { LocationComponent } from './Location/LocationComponent'
 import { postCalculator1 } from '../../api/api'
 // import LocationComponent from './Location/LocationComponent'
 import { base_url } from '../../Store/Allurl'
@@ -11,7 +11,7 @@ import data from './Location/data.json'
 const Calculator1 = () => {
     const { state, dispatch } = useContext(Store)
 
-    const [Location, setLocation] = useState('.')
+    const [Location, setLocation] = useState('군')
     const [Location2, setLocation2] = useState('1차')
     const [apply, setapply] = useState('.')
     const [dbLocation, setdbLocation] = useState('.')
@@ -431,10 +431,10 @@ const Calculator1 = () => {
                                     <div></div>
                                     <div className="inline-block">
                                         <h6>1. 거주 지역</h6>
-                                        <select onChange={ChangeLocation}>
+                                        <select defaultValue={"시/도"} onChange={ChangeLocation}>
                                             <AreaComponent />
                                         </select>
-                                        <select onChange={dbLocationset}>
+                                        <select defaultValue={"군"} onChange={dbLocationset}>
                                             <LocationComponent location={Location} />
                                         </select>
                                     </div>
@@ -444,7 +444,7 @@ const Calculator1 = () => {
                                     </div>
                                 </div>
                                 <div className="score totalScore apply">지원 지역</div>
-                                <select className="Select_Box" onChange={ChangeLocation2}>
+                                <select className="Select_Box" defaultValue={"1차"} onChange={ChangeLocation2}>
                                     <option value="1차">1차 지원(7월)</option>
                                     <option value="2차">2차 지원(10월)</option>
                                     <option value="3차">3차 지원(11월)</option>
@@ -454,7 +454,7 @@ const Calculator1 = () => {
                                     <option>내용을선택해주세요.</option>
                                     {
                                        data.filter(v => Location2 == v.session )
-                                       .map((v,k)=><option key={k} selected={k==0 && "selected"}  >{v.name}</option>)  
+                                       .map((v,k)=><option key={k} value={v.name} >{v.name}</option>)  
                                     }
                                 </select>
                                 <div className="score">점수 : <span className="option1_result">{Result2}</span><span className="red">{Result2_Alert}</span></div>
