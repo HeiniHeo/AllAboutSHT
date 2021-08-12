@@ -1,1 +1,0 @@
-export const faqurl = 'http://api.jebaldangcheom.com/faqs/'
