@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import Head from 'next/head'
 
-const GoogleAnalytics = ({ children }) => {
+const GoogleAnalytics = () => {
     useEffect(()=>{
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -14,7 +14,7 @@ const GoogleAnalytics = ({ children }) => {
             <title>신희타가점도우미</title>
             <script async src="https://www.googletagmanager.com/gtag/js?id=G-H9ZLC0JM12"></script>
         </Head>
-        {children}
+       
         </>
     )
 }
