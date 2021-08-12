@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS `apply_alert2` (
 -- 테이블 데이터 sht.apply_alert1:~18 rows (대략적) 내보내기
 /*!40000 ALTER TABLE `apply_alert1` DISABLE KEYS */;
 INSERT INTO `apply_alert2` (`season`, `month`, `support_area`, `residential_area1`, `residential_area2`, `period`, `applicable`, `inapplicable`, `etc`, `start`, `end`) VALUES
-	('4차', '12월', '동작구수방사', '서울', '', 24, 140, 0, 0, NULL, NULL),
+	('4차', '12월', '동작구수방사', '서울특별시', '', 24, 140, 0, 0, NULL, NULL),
 	('4차', '12월', '남양주왕숙2', '경기도', '남양주시', 12, 147, 98, 245, NULL, NULL),
 	('2차', '10월', '군포대야미', '경기도', '군포시', 24, 700, 0, 0, NULL, NULL),
 	('2차', '10월', '성남낙생', '경기도', '성남시', 24, 630, 0, 0, NULL, NULL),

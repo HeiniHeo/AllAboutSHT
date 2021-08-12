@@ -2,12 +2,15 @@ import React,{useContext,useReducer,useEffect,useState} from 'react'
 import Store from '../../Store/context'
 import reducer from '../../Store/reducer'
 import {postCalculator2} from '../../api/api'
+import AreaComponent from './Location/AreaComponent'
+import { LocationComponent } from './Location/LocationComponent'
+import data from './Location/data.json'
 
 const Calculator2 = ()=>{
     const {state,dispatch} = useContext(Store)
 
-    const [Location, setLocation] = useState('.')
-    const [Location2, setLocation2] = useState('.')
+    const [Location, setLocation] = useState('군')
+    const [Location2, setLocation2] = useState('1차')
     const [apply, setapply] = useState('.')
     const [dbLocation, setdbLocation] = useState('.')
 
@@ -27,7 +30,7 @@ const Calculator2 = ()=>{
     const [Result5_Alert, setResult5_Alert] = useState('')
 
     const [alert, setAlert] = useState('지원 가능 여부입니다')
-    const [className,setClassName] = useState('')
+    const [className, setClassName] = useState('')
 
     const Applying_Location = (e) => {
         setapply(e.target.value)
@@ -40,30 +43,30 @@ const Calculator2 = ()=>{
 
     const Result1_function = (e) => {
         setResult1(1),
-        setResult1_Alert('')
+            setResult1_Alert('')
 
     }
     const Result2_function = (e) => {
         setResult1(2),
-        setResult1_Alert('')
+            setResult1_Alert('')
 
     }
     const Result3_function = (e) => {
         setResult1(3),
-        setResult1_Alert('')
+            setResult1_Alert('')
 
     }
     const HandleResult1 = (e) => {
         {
             option1 == 1
-            ? Result1_function()
-            : ( option1 == 2
-                ? Result2_function()
-                : ( option1 >= 3
-                    ? Result3_function()
-                    : ( option1 == '.'
-                        ? setResult1_Alert('항목을 입력해주세요')
-                        : '')
+                ? Result1_function()
+                : (option1 == 2
+                    ? Result2_function()
+                    : (option1 >= 3
+                        ? Result3_function()
+                        : (option1 == '.'
+                            ? setResult1_Alert('항목을 입력해주세요')
+                            : '')
                     )
                 )
         }
@@ -76,85 +79,85 @@ const Calculator2 = ()=>{
     }
     const Result0_function = (e) => {
         setResult2(0),
-        setResult2_Alert('')
+            setResult2_Alert('')
 
     }
     const Result4_function = (e) => {
         setResult2(1),
-        setResult2_Alert('')
+            setResult2_Alert('')
 
     }
     const Result5_function = (e) => {
         setResult2(2),
-        setResult2_Alert('')
+            setResult2_Alert('')
 
     }
     const Result6_function = (e) => {
         setResult2(3),
-        setResult2_Alert('')
+            setResult2_Alert('')
 
     }
     const HandleResult2 = (e) => {
         {
             option2 == "-"
-            ? Result0_function()
-            : ( option2 < 12
-                ? Result4_function()
-                : ( option2 >= 12 && option2 < 36
-                    ? Result5_function()
-                    : ( option2 >= 36
-                        ? Result6_function()
-                        : ( option1 == '.'
-                            ? setResult2_Alert('항목을 입력해주세요')
-                            : '')
+                ? Result0_function()
+                : (option2 < 12
+                    ? Result4_function()
+                    : (option2 >= 12 && option2 < 36
+                        ? Result5_function()
+                        : (option2 >= 36
+                            ? Result6_function()
+                            : (option1 == '.'
+                                ? setResult2_Alert('항목을 입력해주세요')
+                                : '')
                         )
                     )
-            )
+                )
         }
     }
     const changOption4 = (e) => {
-       
+
         setOption4(e.target.value)
     }
 
     const Result7_function = (e) => {
         setResult4(0),
-        setResult4_Alert('')
+            setResult4_Alert('')
 
     }
 
     const Result8_function = (e) => {
         setResult4(1),
-        setResult4_Alert('')
+            setResult4_Alert('')
 
     }
     const Result9_function = (e) => {
         setResult4(2),
-        setResult4_Alert('')
+            setResult4_Alert('')
 
     }
     const Result10_function = (e) => {
         setResult4(3),
-        setResult4_Alert('')
+            setResult4_Alert('')
 
     }
 
     const HandleResult4 = (e) => {
-        {   
+        {
             option4 < 6
-            ?Result7_function()
-            :(option4 < 12
-                ? Result8_function()
-                : ( option4 >= 12 && option4 < 24
-                    ? Result9_function()
-                    : ( option4 >= 24
-                        ? Result10_function()
-                        : ( option1 == '.'
-                            ? setResult4_Alert('항목을 입력해주세요')
-                            : '')
+                ? Result7_function()
+                : (option4 < 12
+                    ? Result8_function()
+                    : (option4 >= 12 && option4 < 24
+                        ? Result9_function()
+                        : (option4 >= 24
+                            ? Result10_function()
+                            : (option1 == '.'
+                                ? setResult4_Alert('항목을 입력해주세요')
+                                : '')
                         )
                     )
-            )
+                )
         }
     }
 
@@ -171,49 +174,49 @@ const Calculator2 = ()=>{
 
     const HandleResult3 = (e) => {
         {
-            Location == 'Incheon' && apply == '인천계양' && option3 >= 24 
-            ? setResult3(3)
-            : ( Location == 'Incheon' && apply == '인천계양' && option3 < 24 && option3 >= 12 
-            ? setResult3(2)
-            : ( Location == 'Incheon' && apply == '인천계양' && option3 < 12
-            ? setResult3(1)
-            : ( Location == 'seoul' && apply == '동작구수방사' && option3 >= 24 
-            ? setResult3(3)
-            : ( Location == 'seoul' && apply == '동작구수방사' && option3 < 24 && option3 >= 12 
-            ? setResult3(2)
-            : ( Location == 'seoul' && apply == '동작구수방사' && option3 < 12
-            ? setResult3(1)
-            : ( Location == 'GyeongGi' && apply != '동작구수방사' && apply != '인천계양' && option3 >= 24
-            ? setResult3(3)
-            : ( Location == 'GyeongGi' && apply != '동작구수방사' && apply != '인천계양' && option3 < 24 && option3 >= 12 
-            ? setResult3(2)
-            : ( Location == 'GyeongGi' && apply != '동작구수방사' && apply != '인천계양' && option3 < 12
-            ? setResult3(1)
-            : ( Location == '.' || apply == '.' || option3 == '.' || dbLocation == '.' || Location2 == '.'
-            ? setResult3_Alert('모든 항목을 입력해주세요')
-            : (
-              Location != '.' || apply != '.' || option3 != '.' || dbLocation != '.' || Location2 != '.'
-              ? setResult3_Alert('')
-              : setResult3(0)
-            )
+            Location == 'Incheon' && apply == '인천계양' && option3 >= 24
+                ? setResult3(3)
+                : (Location == 'Incheon' && apply == '인천계양' && option3 < 24 && option3 >= 12
+                    ? setResult3(2)
+                    : (Location == 'Incheon' && apply == '인천계양' && option3 < 12
+                        ? setResult3(1)
+                        : (Location == 'seoul' && apply == '동작구수방사' && option3 >= 24
+                            ? setResult3(3)
+                            : (Location == 'seoul' && apply == '동작구수방사' && option3 < 24 && option3 >= 12
+                                ? setResult3(2)
+                                : (Location == 'seoul' && apply == '동작구수방사' && option3 < 12
+                                    ? setResult3(1)
+                                    : (Location == 'GyeongGi' && apply != '동작구수방사' && apply != '인천계양' && option3 >= 24
+                                        ? setResult3(3)
+                                        : (Location == 'GyeongGi' && apply != '동작구수방사' && apply != '인천계양' && option3 < 24 && option3 >= 12
+                                            ? setResult3(2)
+                                            : (Location == 'GyeongGi' && apply != '동작구수방사' && apply != '인천계양' && option3 < 12
+                                                ? setResult3(1)
+                                                : (Location == '.' || apply == '.' || option3 == '.' || dbLocation == '.' || Location2 == '.'
+                                                    ? setResult3_Alert('모든 항목을 입력해주세요')
+                                                    : (
+                                                        Location != '.' || apply != '.' || option3 != '.' || dbLocation != '.' || Location2 != '.'
+                                                            ? setResult3_Alert('')
+                                                            : setResult3(0)
+                                                    )
 
-          )
+                                                )
 
-            )
+                                            )
 
-            )
+                                        )
 
-            )
+                                    )
 
-            )
+                                )
 
-            )
+                            )
 
-            )
- 
-            )
+                        )
 
-            )
+                    )
+
+                )
         }
     }
 
@@ -225,6 +228,7 @@ const Calculator2 = ()=>{
         let result1 = await fetch(`http://localhost/calculator2?apply=${apply}&Location=${Location}&dbLocation=${dbLocation}&option3=${option3}`,options1)
         const data1 = await result1.json()
         console.log(data1[0][0].apply_type)
+        console.log(data1)
 
         const supply = data1[0][0].apply_type
         dispatch({type:"apply_alert2", payload:supply})
@@ -233,484 +237,88 @@ const Calculator2 = ()=>{
 
     const successSubmit = (e) => {
         setResult5_Alert('결과가 저장되었습니다!'),
-        setClassName('blue'),
-        postCalculator2({Number_Of_Children:Result1,Resident_period:Result3,Resident_Location1:Location,Resident_Location2:dbLocation,Period_Of_HomeLessness:Result2,Number_Of_Payment:Result4,Applying_Location:apply})
+            setClassName('blue'),
+            postCalculator2({ Number_Of_Children: Result1, Resident_period: Result3, Resident_Location1: Location, Resident_Location2: dbLocation, Period_Of_HomeLessness: Result2, Number_Of_Payment: Result4, Applying_Location: apply })
     }
     const handleSubmit = (e) => {
         e.preventDefault()
 
         {
             Result1_Alert == '항목을 입력해주세요' || Result2_Alert == '항목을 입력해주세요' || Result3_Alert == '모든 항목을 입력해주세요' || Result4_Alert == '항목을 입력해주세요' || Result1 == 0 || Result2 == 0 || Result4 == 0 || Location == '.' || apply == '.' || option3 == '.' || dbLocation == '.' || Location2 == '.'
-            ? setResult5_Alert('모든 항목의 점수를 내주세요')
-            : successSubmit()
+                ? setResult5_Alert('모든 항목의 점수를 내주세요')
+                : successSubmit()
         }
 
     }
 
-    return(
+    return (
         <>
-            <div className = "subscription_wrap w100">
-                <div className = "subscription w1200">
+            <div className="subscription_wrap w100">
+                <div className="subscription w1200">
                     <div>
-                    <form onSubmit = {handleSubmit}>
-                        <div className = "calculator_content2">
-                            <div className = "option1">
-                                <h5>(1) 미성년 자녀수</h5>
-                                <div className = "inline-block">
-                                    <input onChange = {changOption1} type = "text" />명
+                        <form onSubmit={handleSubmit}>
+                            <div className="calculator_content2">
+                                <div className="option1">
+                                    <h5>(1) 미성년 자녀수</h5>
+                                    <div className="inline-block">
+                                        <input onChange={changOption1} type="text" />명
+                                    </div>
+                                    <input onClick={HandleResult1} className="BTN" type="button" value="점수 계산" />
+                                    <div className="score">점수 : <span className="option1_result">{Result1}</span><span className="red">{Result1_Alert}</span></div>
                                 </div>
-                                <input onClick = {HandleResult1} onTouch = {HandleResult1}  className = "BTN" type = "button" value = "점수 계산"/>
-                                <div className = "score">점수 : <span className = "option1_result">{Result1}</span><span className = "red">{Result1_Alert}</span></div>
-                            </div>
-                            <div className = "option2">
-                                <h5>(2) 무주택기간</h5>
-                                <div className = "inline-block">
-                                    <input onChange = {changOption2} type = "text" />개월
+                                <div className="option2">
+                                    <h5>(2) 무주택기간</h5>
+                                    <div className="inline-block">
+                                        <input onChange={changOption2} type="text" />개월
+                                    </div>
+                                    <input onClick={HandleResult2} className="BTN" type="button" value="점수 계산" />
+                                    <p className="small_font red">공고일 기준 만30세 미만이면서 혼인한 적이 없는 분은 "-"입력, 가점선택 불가하여 0점처리</p>
+                                    <div className="score">점수 : <span className="option1_result">{Result2}</span><span className="red">{Result2_Alert}</span></div>
                                 </div>
-                                <input onClick = {HandleResult2} onTouch = {HandleResult2} className = "BTN" type = "button" value = "점수 계산"/>
-                                <p className="small_font red">공고일 기준 만30세 미만이면서 혼인한 적이 없는 분은 "-"입력, 가점선택 불가하여 0점처리</p>
-                                <div className = "score">점수 : <span className = "option1_result">{Result2}</span><span className = "red">{Result2_Alert}</span></div>
-                            </div>
-                            <div className = "option4">
-                                <h5>(3) 주택청약종합저축 납입인정 횟수</h5>
-                                <div className = "inline-block">
-                                    <input onChange = {changOption4} type = "text" />회
+                                <div className="option4">
+                                    <h5>(3) 주택청약종합저축 납입인정 횟수</h5>
+                                    <div className="inline-block">
+                                        <input onChange={changOption4} type="text" />회
+                                    </div>
+                                    <input onClick={HandleResult4} className="BTN subbtn" type="button" value="점수 계산" />
+                                    <div className="score">점수 : <span className="option1_result">{Result4}</span><span className="red">{Result4_Alert}</span></div>
                                 </div>
-                                <input onClick = {HandleResult4} onTouch = {HandleResult4} className = "BTN subbtn" type = "button" value = "점수 계산"/>
-                                <div className = "score">점수 : <span className = "option1_result">{Result4}</span><span className = "red">{Result4_Alert}</span></div>
-                            </div>
-                            <div className = "option3">
-                                <h5>(4) 해당 시*도 연속 거주기간</h5><input onClick = {HandleResult3} onTouch = {HandleResult3} className = "BTN" type = "button" value = "점수 계산"/>
-                                <div></div>
-                                <div className = "inline-block">
-                                <h6>1. 거주 지역</h6>
-                                <select onClick = {ChangeLocation} onTouch = {ChangeLocation}>
-                                    <option>
-                                        시/도
-                                    </option>
-                                    <option value = "seoul">
-                                        서울특별시
-                                    </option>
-                                    <option value = "busan">
-                                        부산광역시
-                                    </option>
-                                    <option value = "dagu">
-                                        대구광역시
-                                    </option>
-                                    <option value = "Incheon">
-                                        인천광역시
-                                    </option>
-                                    <option value = "GwangJu">
-                                        광주광역시
-                                    </option>
-                                    <option value = "Daejeon">
-                                        대전광역시
-                                    </option>
-                                    <option value = "Ulsan">
-                                        울산광역시
-                                    </option>
-                                    <option value = "SaeJong">
-                                        세종특별자치시
-                                    </option>
-                                    <option value = "GyeongGi">
-                                        경기도
-                                    </option>
-                                    <option value = "GangWon">
-                                        강원도
-                                    </option>
-                                    <option value = "ChungCheong1">
-                                        충청북도
-                                    </option>
-                                    <option value = "ChungCheong2">
-                                        충청남도
-                                    </option>
-                                    <option value = "JeongLa1">
-                                        전라북도
-                                    </option>
-                                    <option value = "JeongLa2">
-                                        전라남도
-                                    </option>
-                                    <option value = "GyeongSang1">
-                                        경상북도
-                                    </option>
-                                    <option value = "GyeongSang2">
-                                        경상남도
-                                    </option>
-                                    <option value = "Jeju">
-                                        제주특별자치도
-                                    </option>
-                                </select>   
-                                <select onClick = {dbLocationset}  onTouch = {dbLocationset}>
-                                    <option>
-                                        군/구
-                                    </option>
-                                        {
-                                            Location === 'seoul'
-                                            ? <>
-                                                <option value = "종로구">종로구</option>
-                                                <option value = "중구">중구</option>
-                                                <option value = "용산구">용산구</option>
-                                                <option value = "성동구">성동구</option>
-                                                <option value = "광진구">광진구</option>
-                                                <option value = "동대문구">동대문구</option>
-                                                <option value = "중량구">중량구</option>
-                                                <option value = "성북구">성북구</option>
-                                                <option value = "강북구">강북구</option>
-                                                <option value = "도봉구">도봉구</option>
-                                                <option value = "노원구">노원구</option>
-                                                <option value = "은평구">은평구</option>
-                                                <option value = "서대문구">서대문구</option>
-                                                <option value = "마포구">마포구</option>
-                                                <option value = "양천구">양천구</option>
-                                                <option value = "강서구">강서구</option>
-                                                <option value = "구로구">구로구</option>
-                                                <option value = "금천구">금천구</option>
-                                                <option value = "영등포구">영등포구</option>
-                                                <option value = "동작구">동작구</option>
-                                                <option value = "관악구">관악구</option>
-                                                <option value = "서초구">서초구</option>
-                                                <option value = "강남구">강남구</option>
-                                                <option value = "송파구">송파구</option>
-                                                <option value = "강동구">강동구</option>
-                                                </>
-                                                : ( Location === 'busan'
-                                                    ? <>
-                                                    <option value = "중구">중구</option>
-                                                    <option value = "서구">서구</option>
-                                                    <option value = "동구">동구</option>
-                                                    <option value = "영도구">영도구</option>
-                                                    <option value = "부산진구">부산진구</option>
-                                                    <option value = "동래구">동래구</option>
-                                                    <option value = "남구">남구</option>
-                                                    <option value = "북구">북구</option>
-                                                    <option value = "해운대구">해운대구</option>
-                                                    <option value = "사하구">사하구</option>
-                                                    <option value = "금정구">금정구</option>
-                                                    <option value = "강서구">강서구</option>
-                                                    <option value = "연제구">연제구</option>
-                                                    <option value = "수영구">수영구</option>
-                                                    <option value = "사상구">사상구</option>
-                                                    <option value = "기장군">기장군</option>
-                                                    </>
-                                                    : ( Location === 'dagu'
-                                                    ? <>
-                                                    <option value = "중구">중구</option>
-                                                    <option value = "동구">동구</option>
-                                                    <option value = "서구">서구</option>
-                                                    <option value = "남구">남구</option>
-                                                    <option value = "북구">북구</option>
-                                                    <option value = "수성구">수성구</option>
-                                                    <option value = "달서구">달서구</option>
-                                                    <option value = "달성군">달성군</option>
-                                                    </>
-                                                    : ( Location === 'GwangJu'
-                                                    ? <>
-                                                    <option value = "동구">동구</option>
-                                                    <option value = "서구">서구</option>
-                                                    <option value = "남구">남구</option>
-                                                    <option value = "북구">북구</option>
-                                                    <option value = "광산구">광산구</option>
-                                                    </>
-                                                    : ( Location === 'Daejeon'
-                                                    ? <>
-                                                    <option value = "동구">동구</option>
-                                                    <option value = "중구">중구</option>
-                                                    <option value = "서구">서구</option>
-                                                    <option value = "유성구">유성구</option>
-                                                    <option value = "대덕구">대덕구</option>
-                                                    </>
-                                                    : ( Location === 'Ulsan'
-                                                    ? <>
-                                                    <option value = "중구">중구</option>
-                                                    <option value = "남구">남구</option>
-                                                    <option value = "동구">동구</option>
-                                                    <option value = "북구">북구</option>
-                                                    <option value = "울주군">울주군</option>
-                                                    </>
-                                                    : ( Location === 'Incheon'
-                                                    ? <>
-                                                    <option value = "중구">중구</option>
-                                                    <option value = "동구">동구</option>
-                                                    <option value = "미추홀구">미추홀구</option>
-                                                    <option value = "연수구">연수구</option>
-                                                    <option value = "남동구">남동구</option>
-                                                    <option value = "부평구">부평구</option>
-                                                    <option value = "계양구">계양구</option>
-                                                    <option value = "서구">서구</option>
-                                                    <option value = "강화군">강화군</option>
-                                                    <option value = "옹진군">옹진군</option>
-                                                    </>
-                                                    : ( Location === 'SaeJong'
-                                                    ? <>
-                                                    <option value = "세종특별자치시">세종특별자치시</option>
-                                                    </>
-                                                    : ( Location === 'GyeongGi'
-                                                    ? <>
-                                                    <option value = "수원시">수원시</option>
-                                                    <option value = "성남시">성남시</option>
-                                                    <option value = "고양시">고양시</option>
-                                                    <option value = "용인시">용인시</option>
-                                                    <option value = "부천시">부천시</option>
-                                                    <option value = "안산시">안산시</option>
-                                                    <option value = "안양시">안양시</option>
-                                                    <option value = "남양주시">남양주시</option>
-                                                    <option value = "화성시">화성시</option>
-                                                    <option value = "평택시">평택시</option>
-                                                    <option value = "의정부시">의정부시</option>
-                                                    <option value = "시흥시">시흥시</option>
-                                                    <option value = "파주시">파주시</option>
-                                                    <option value = "광명시">광명시</option>
-                                                    <option value = "김포시">김포시</option>
-                                                    <option value = "군포시">군포시</option>
-                                                    <option value = "광주시">광주시</option>
-                                                    <option value = "이천시">이천시</option>
-                                                    <option value = "양주시">양주시</option>
-                                                    <option value = "오산시">오산시</option>
-                                                    <option value = "구리시">구리시</option>
-                                                    <option value = "안성시">안성시</option>
-                                                    <option value = "포천시">포천시</option>
-                                                    <option value = "의왕시">의왕시</option>
-                                                    <option value = "하남시">하남시</option>
-                                                    <option value = "여주시">여주시</option>
-                                                    <option value = "양평군">양평군</option>
-                                                    <option value = "동두천시">동두천시</option>
-                                                    <option value = "과천시">과천시</option>
-                                                    <option value = "가평군">가평군</option>
-                                                    <option value = "연천군">연천군</option>
-                                                    </>
-                                                    : ( Location === 'GangWon'
-                                                    ? <>
-                                                    <option value = "춘천시">춘천시</option>
-                                                    <option value = "원주시">원주시</option>
-                                                    <option value = "강릉시">강릉시</option>
-                                                    <option value = "동해시">동해시</option>
-                                                    <option value = "태백시">태백시</option>
-                                                    <option value = "속초시">속초시</option>
-                                                    <option value = "삼척시">삼척시</option>
-                                                    <option value = "홍천군">홍천군</option>
-                                                    <option value = "횡성군">횡성군</option>
-                                                    <option value = "영월군">영월군</option>
-                                                    <option value = "평창군">평창군</option>
-                                                    <option value = "정선군">정선군</option>
-                                                    <option value = "철원군">철원군</option>
-                                                    <option value = "화천군">화천군</option>
-                                                    <option value = "양구군">양구군</option>
-                                                    <option value = "인제군">인제군</option>
-                                                    <option value = "고성군">고성군</option>
-                                                    <option value = "양양군">양양군</option>
-                                                    </>
-                                                    : ( Location === 'ChungCheong1'
-                                                    ? <>
-                                                    <option value = "청주시">청주시</option>
-                                                    <option value = "충주시">충주시</option>
-                                                    <option value = "제천시">제천시</option>
-                                                    <option value = "보은군">보은군</option>
-                                                    <option value = "옥천군">옥천군</option>
-                                                    <option value = "영동군">영동군</option>
-                                                    <option value = "진천군">진천군</option>
-                                                    <option value = "괴산군">괴산군</option>
-                                                    <option value = "음성군">음성군</option>
-                                                    <option value = "단양군">단양군</option>
-                                                    <option value = "증평군">증평군</option>
-                                                    </>
-                                                    : ( Location === 'ChungCheong2'
-                                                    ? <>
-                                                    <option value = "천안시">천안시</option>
-                                                    <option value = "공주시">공주시</option>
-                                                    <option value = "보령시">보령시</option>
-                                                    <option value = "아산시">아산시</option>
-                                                    <option value = "서산시">서산시</option>
-                                                    <option value = "논산시">논산시</option>
-                                                    <option value = "계룡시">계룡시</option>
-                                                    <option value = "당진시">당진시</option>
-                                                    <option value = "금산군">금산군</option>
-                                                    <option value = "부여군">부여군</option>
-                                                    <option value = "서천군">서천군</option>
-                                                    <option value = "청양군">청양군</option>
-                                                    <option value = "홍성군">홍성군</option>
-                                                    <option value = "예산군">예산군</option>
-                                                    <option value = "태안군">태안군</option>
-                                                    </>
-                                                    : ( Location === 'JeongLa1'
-                                                    ? <>
-                                                    <option value = "전주시">전주시</option>
-                                                    <option value = "군산시">군산시</option>
-                                                    <option value = "익산시">익산시</option>
-                                                    <option value = "정읍시">정읍시</option>
-                                                    <option value = "남원시">남원시</option>
-                                                    <option value = "김제시">김제시</option>
-                                                    <option value = "완주군">완주군</option>
-                                                    <option value = "진안군">진안군</option>
-                                                    <option value = "무주군">무주군</option>
-                                                    <option value = "장수군">장수군</option>
-                                                    <option value = "임실군">임실군</option>
-                                                    <option value = "순창군">순창군</option>
-                                                    <option value = "고창군">고창군</option>
-                                                    <option value = "부안군">부안군</option>
-                                                    </>
-                                                    : ( Location === 'JeongLa2'
-                                                    ? <>
-                                                    <option>목포시</option>
-                                                    <option>여수시</option>
-                                                    <option>순천시</option>
-                                                    <option>나주시</option>
-                                                    <option>광양시</option>
-                                                    <option>담양군</option>
-                                                    <option>곡성군</option>
-                                                    <option>구례군</option>
-                                                    <option>고흥군</option>
-                                                    <option>보성군</option>
-                                                    <option>화순군</option>
-                                                    <option>장흥군</option>
-                                                    <option>강진군</option>
-                                                    <option>해남군</option>
-                                                    <option>영암군</option>
-                                                    <option>무안군</option>
-                                                    <option>함평군</option>
-                                                    <option>영광군</option>
-                                                    <option>장성군</option>
-                                                    <option>완도군</option>
-                                                    <option>진도군</option>
-                                                    <option>신안군</option>
-                                                    </>
-                                                    : ( Location === 'JeongLa2'
-                                                    ? <>
-                                                    <option value = "목포시">목포시</option>
-                                                    <option value = "여수시">여수시</option>
-                                                    <option value = "순천시">순천시</option>
-                                                    <option value = "나주시">나주시</option>
-                                                    <option value = "광양시">광양시</option>
-                                                    <option value = "담양군">담양군</option>
-                                                    <option value = "곡성군">곡성군</option>
-                                                    <option value = "구례군">구례군</option>
-                                                    <option value = "고흥군">고흥군</option>
-                                                    <option value = "보성군">보성군</option>
-                                                    <option value = "화순군">화순군</option>
-                                                    <option value = "장흥군">장흥군</option>
-                                                    <option value = "강진군">강진군</option>
-                                                    <option value = "해남군">해남군</option>
-                                                    <option value = "영암군">영암군</option>
-                                                    <option value = "무안군">무안군</option>
-                                                    <option value = "함평군">함평군</option>
-                                                    <option value = "영광군">영광군</option>
-                                                    <option value = "장성군">장성군</option>
-                                                    <option value = "완도군">완도군</option>
-                                                    <option value = "진도군">진도군</option>
-                                                    <option value = "신안군">신안군</option>
-                                                    </>
-                                                    : ( Location === 'GyeongSang1'
-                                                    ? <>
-                                                    <option value = "포항시">포항시</option>
-                                                    <option value = "경주시">경주시</option>
-                                                    <option value = "김천시">김천시</option>
-                                                    <option value = "안동시">안동시</option>
-                                                    <option value = "구미시">구미시</option>
-                                                    <option value = "영주시">영주시</option>
-                                                    <option value = "영천시">영천시</option>
-                                                    <option value = "상주시">상주시</option>
-                                                    <option value = "문경시">문경시</option>
-                                                    <option value = "경산시">경산시</option>
-                                                    <option value = "군위군">군위군</option>
-                                                    <option value = "의성군">의성군</option>
-                                                    <option value = "청송군">청송군</option>
-                                                    <option value = "영양군">영양군</option>
-                                                    <option value = "영덕군">영덕군</option>
-                                                    <option value = "청도군">청도군</option>
-                                                    <option value = "고령군">고령군</option>
-                                                    <option value = "성주군">성주군</option>
-                                                    <option value = "칠곡군">칠곡군</option>
-                                                    <option value = "예천군">예천군</option>
-                                                    <option value = "봉화군">봉화군</option>
-                                                    <option value = "울진군">울진군</option>
-                                                    <option value = "울릉군">울릉군</option>
-                                                    </>
-                                                    : ( Location === 'GyeongSang2'
-                                                    ? <>
-                                                    <option value = "창원시">창원시</option>
-                                                    <option value = "진주시">진주시</option>
-                                                    <option value = "통영시">통영시</option>
-                                                    <option value = "사천시">사천시</option>
-                                                    <option value = "김해시">김해시</option>
-                                                    <option value = "밀양시">밀양시</option>
-                                                    <option value = "거제시">거제시</option>
-                                                    <option value = "양산시">양산시</option>
-                                                    <option value = "의령군">의령군</option>
-                                                    <option value = "함안군">함안군</option>
-                                                    <option value = "창녕군">창녕군</option>
-                                                    <option value = "고성군">고성군</option>
-                                                    <option value = "하동군">하동군</option>
-                                                    <option value = "남해군">남해군</option>
-                                                    <option value = "산청군">산청군</option>
-                                                    <option value = "함양군">함양군</option>
-                                                    <option value = "거창군">거창군</option>
-                                                    <option value = "합천군">합천군</option>
-                                                    </>
-                                                    : ( Location === 'Jeju'
-                                                    ? <>
-                                                    <option value = "제주특별자치도">제주특별자치도</option>
-                                                    </>
-                                                    : 'GyeongSang1')))))))))))))))))
-                                        }
+                                <div className="option3">
+                                    <h5>(4) 해당 시*도 연속 거주기간</h5><input onClick={HandleResult3} className="BTN" type="button" value="점수 계산" />
+                                    <div></div>
+                                    <div className="inline-block">
+                                        <h6>1. 거주 지역</h6>
+                                        <select defaultValue={"시/도"} onChange={ChangeLocation}>
+                                            <AreaComponent />
+                                        </select>
+                                        <select defaultValue={"군"} onChange={dbLocationset}>
+                                            <LocationComponent location={Location} />
+                                        </select>
+                                    </div>
+                                    <div className="inline-block margin-left">
+                                        <h6>2. 거주 기간</h6>
+                                        <div className=""><input onChange={changeOption3} type="text" />개월</div>
+                                    </div>
+                                </div>
+                                <div className="score totalScore apply">지원 지역</div>
+                                <select className="Select_Box" defaultValue={"1차"} onChange={ChangeLocation2}>
+                                    <option value="1차">1차 지원(7월)</option>
+                                    <option value="2차">2차 지원(10월)</option>
+                                    <option value="3차">3차 지원(11월)</option>
+                                    <option value="4차">4차 지원(12월)</option>
                                 </select>
-                                </div>
-                                <div className = "inline-block margin-left">
-                                <h6>2. 거주 기간</h6>
-                                <div className = ""><input onChange = {changeOption3} type = "text"/>개월</div>
-                                </div>
+                                <select className="Select_Box" onChange={Applying_Location}>
+                                    <option>내용을선택해주세요.</option>
+                                    {
+                                        data.filter(v => Location2 == v.session)
+                                        .map((v, k) => <option key={k} value={v.name} >{v.name}</option>)
+                                    }
+                                </select>
+                                <div className="score">점수 : <span className="option1_result">{Result3}</span><span className="red">{Result3_Alert}</span></div>
+                                <div className="block"><div className="score totalScore inline-block">총점 : <span className="total_result">{Result1 + Result2 + Result3 + Result4}</span>/12</div><input onClick={ChangeAlert} className="submitBTN" value="결과 보기" type="submit" /></div>
+                                <div className="result5_alert red"><span className={className}>{Result5_Alert}</span></div>
                             </div>
-                            <div className = "score totalScore apply">지원 지역</div>
-                            <select className = "Select_Box" onClick = {ChangeLocation2}>
-                                <option value = "first">1차 지원(7월)</option>
-                                <option value = "second">2차 지원(10월)</option>
-                                <option value = "third">3차 지원(11월)</option>
-                                <option value = "fourth">4차 지원(12월)</option>
-                            </select>
-                            <select className = "Select_Box" onClick = {Applying_Location}  onTouch = {Applying_Location}>
-                                {
-                                    Location2 == 'first'
-                                    ? <>
-                                    <option value = "인천계양">인천계양</option>
-                                    <option value = "남양주진접2">남양주진접2</option>
-                                    <option value = "성남복정1">성남복정1</option>
-                                    <option value = "의왕청계2">의왕청계2</option>
-                                    <option value = "위례">위례</option></>
-                                    : (
-                                        Location2 == 'second'
-                                        ? <>
-                                    <option value = "성남낙생">성남낙생</option>
-                                    <option value = "성남복정2">성남복정2</option>
-                                    <option value = "군포대야미">군포대야미</option>
-                                    <option value = "의왕월암">의왕월암</option>
-                                    <option value = "수원당수">수원당수</option>
-                                    <option value = "부천원종">부천원종</option></>
-                                        : (
-                                            Location2 == 'third'
-                                            ? <>
-                                   <option value = "시흥하중">시흥하중</option>
-                                   <option value = "과천주암">과천주암</option></>
-                                            : (
-                                                Location2 == 'fourth'
-                                                ? <> <option value = "남양주왕숙2">남양주왕숙2</option>
-                                                <option value = "성남금토">성남금토</option>
-                                                <option value = "부천대장">부천대장</option>
-                                                <option value = "고양창릉">고양창릉</option>
-                                                <option value = "부천역곡">부천역곡</option>
-                                                <option value = "시흥거모">시흥거모</option>
-                                                <option value = "안산장상">안산장상</option>
-                                                <option value = "안산신길2">안산신길2</option>
-                                                <option value = "동작구수방사">동작구수방사</option>
-                                                <option value = "구리갈매역세권">구리갈매역세권</option></>
-                                                :'bye'
-                                            )
-                                        )
-                                    )
-                                }
-                            </select>
-                            <div className = "score">점수 : <span className = "option1_result">{Result3}</span><span className = "red">{Result3_Alert}</span></div>
-                            <div className = "block"><div className = "score totalScore inline-block">총점 : <span className = "total_result">{Result1+Result2+Result3+Result4}</span>/12</div><input onClick = {ChangeAlert} className = "submitBTN" value = "결과 보기" type = "submit"/></div>
-                            <div className = "result5_alert red"><span className = {className}>{Result5_Alert}</span></div>
-                        </div>
-                        <div className = "LocationBox">해당되는 공급물량은{state.supply}호 입니다.</div>
+                            <div className = "LocationBox">해당되는 공급물량은{state.supply}호 입니다.</div>
                     </form>
                     </div>   
                 </div>                
