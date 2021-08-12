@@ -26,23 +26,23 @@ insert into Income_Scores (Income, Person, Cost_Front, Cost_Back, Income_Score) 
 insert into Income_Scores (Income, Person, Cost_Front, Cost_Back, Income_Score) values ('two', 'six', 8133012, 1000000000, 1);
 insert into Income_Scores (Income, Person, Cost_Front, Cost_Back, Income_Score) values ('one', 'six', 7393647, 1000000000, 1);
 
-insert into Income_Scores (Income, Person, Cost_Front, Cost_Back, Income_Score) values ('two', 'seven', 0, 6222418, 3);
-insert into Income_Scores (Income, Person, Cost_Front, Cost_Back, Income_Score) values ('one', 'seven', 0, 5444616, 3);
+insert into Income_Scores (Income, Person, Cost_Front, Cost_Back, Income_Score) values ('two', 'seven', -1, 6222418, 3);
+insert into Income_Scores (Income, Person, Cost_Front, Cost_Back, Income_Score) values ('one', 'seven', -1, 5444616, 3);
 insert into Income_Scores (Income, Person, Cost_Front, Cost_Back, Income_Score) values ('two', 'seven', 6222418, 8555825, 2);
 insert into Income_Scores (Income, Person, Cost_Front, Cost_Back, Income_Score) values ('one', 'seven', 5444616, 7778023, 2);
 insert into Income_Scores (Income, Person, Cost_Front, Cost_Back, Income_Score) values ('two', 'seven', 8555825, 1000000000, 1);
 insert into Income_Scores (Income, Person, Cost_Front, Cost_Back, Income_Score) values ('one', 'seven', 7778023, 1000000000, 1);
 
-insert into Income_Scores (Income, Person, Cost_Front, Cost_Back, Income_Score) values ('two', 'eight', 0, 6529919, 3);
-insert into Income_Scores (Income, Person, Cost_Front, Cost_Back, Income_Score) values ('one', 'eight', 0, 5713679, 3);
+insert into Income_Scores (Income, Person, Cost_Front, Cost_Back, Income_Score) values ('two', 'eight', -1, 6529919, 3);
+insert into Income_Scores (Income, Person, Cost_Front, Cost_Back, Income_Score) values ('one', 'eight', -1, 5713679, 3);
 insert into Income_Scores (Income, Person, Cost_Front, Cost_Back, Income_Score) values ('two', 'eight', 6529919, 8978639, 2);
 insert into Income_Scores (Income, Person, Cost_Front, Cost_Back, Income_Score) values ('one', 'eight', 5713679, 8162399, 2);
 insert into Income_Scores (Income, Person, Cost_Front, Cost_Back, Income_Score) values ('two', 'eight', 8978639, 1000000000, 1);
 insert into Income_Scores (Income, Person, Cost_Front, Cost_Back, Income_Score) values ('one', 'eight', 8162399, 1000000000, 1);
 
-insert into Income_Scores (Income, Person, Cost_Front, Cost_Back, Income_Score) values ('zero', 'three', 0, 1000000000, 3);
-insert into Income_Scores (Income, Person, Cost_Front, Cost_Back, Income_Score) values ('zero', 'four', 0, 1000000000, 3);
-insert into Income_Scores (Income, Person, Cost_Front, Cost_Back, Income_Score) values ('zero', 'five', 0, 1000000000, 3);
-insert into Income_Scores (Income, Person, Cost_Front, Cost_Back, Income_Score) values ('zero', 'six', 0, 1000000000, 3);
-insert into Income_Scores (Income, Person, Cost_Front, Cost_Back, Income_Score) values ('zero', 'seven', 0, 1000000000, 3);
-insert into Income_Scores (Income, Person, Cost_Front, Cost_Back, Income_Score) values ('zero', 'eight', 0, 1000000000, 3);
+insert into Income_Scores (Income, Person, Cost_Front, Cost_Back, Income_Score) values ('zero', 'three', -1, 1000000000, 3);
+insert into Income_Scores (Income, Person, Cost_Front, Cost_Back, Income_Score) values ('zero', 'four', -1, 1000000000, 3);
+insert into Income_Scores (Income, Person, Cost_Front, Cost_Back, Income_Score) values ('zero', 'five', -1, 1000000000, 3);
+insert into Income_Scores (Income, Person, Cost_Front, Cost_Back, Income_Score) values ('zero', 'six', -1, 1000000000, 3);
+insert into Income_Scores (Income, Person, Cost_Front, Cost_Back, Income_Score) values ('zero', 'seven', -1, 1000000000, 3);
+insert into Income_Scores (Income, Person, Cost_Front, Cost_Back, Income_Score) values ('zero', 'eight', -1, 1000000000, 3);
