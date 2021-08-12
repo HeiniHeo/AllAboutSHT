@@ -64,6 +64,17 @@ app.post('/calculator2', async (req, res, next) => {
     }
 })
 
+app.get('/calculator2', (req, res, next) =>{
+    var query = ''; 
+    sequelize.query(query)
+	.spread(function (results, metadata) { 
+        
+    }, function (err) { 
+    // 쿼리 실행 에러 
+    });
+
+})
+
 app.post('/Feedback', async (req, res, next) => {
     const { feedbackcontent } = req.body
     try {
