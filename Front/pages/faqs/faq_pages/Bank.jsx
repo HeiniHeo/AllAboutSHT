@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useContext } from 'react'
 import Store from '../../../Store/context'
-import { faqurl } from '../../../Store/faqurl'
+import { faqurl } from '../../../Store/Allurl'
 
 const Bank = () => {
 

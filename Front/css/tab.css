@@ -43,6 +43,10 @@
     overflow-y: hidden;
 }
 
+.btn_array > button:nth-child(1){
+    border-left:none;
+}
+
 .btn_array > button:hover{
     background-color: rgb(40, 140, 228);
     color:aliceblue;
