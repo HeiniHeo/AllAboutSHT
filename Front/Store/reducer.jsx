@@ -30,6 +30,14 @@ const reducer = (state,action) => {
             
                 
             }
+        case "apply_alert":
+            return {
+                ...state,
+                apply_alert1: action.payload
+            
+                
+            }
+
         default:
             return state
 

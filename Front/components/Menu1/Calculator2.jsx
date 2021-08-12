@@ -10,7 +10,7 @@ const Calculator2 = ()=>{
     const {state,dispatch} = useContext(Store)
 
     const [Location, setLocation] = useState('군')
-    const [Location2, setLocation2] = useState('1차')
+    const [Location2, setLocation2] = useState('2차')
     const [apply, setapply] = useState('.')
     const [dbLocation, setdbLocation] = useState('.')
 
@@ -301,8 +301,7 @@ const Calculator2 = ()=>{
                                     </div>
                                 </div>
                                 <div className="score totalScore apply">지원 지역</div>
-                                <select className="Select_Box" defaultValue={"1차"} onChange={ChangeLocation2}>
-                                    <option value="1차">1차 지원(7월)</option>
+                                <select className="Select_Box" defaultValue={"2차"} onChange={ChangeLocation2}>
                                     <option value="2차">2차 지원(10월)</option>
                                     <option value="3차">3차 지원(11월)</option>
                                     <option value="4차">4차 지원(12월)</option>
