@@ -24,7 +24,6 @@ const Calculator1 = ()=>{
     const [option2, setOption2] = useState('.')
     const [option3, setOption3] = useState('.')
 
-    const [Result1, setResult1] = useState(0)
     const [Result1_Alert, setResult1_Alert] = useState('')
     const [Result2, setResult2] = useState(0)
     const [Result2_Alert, setResult2_Alert] = useState('')
@@ -207,14 +206,14 @@ const Calculator1 = ()=>{
     const successSubmit = (e) => {
         setResult4_Alert('결과가 저장되었습니다!'),
         setClassName('blue'),
-        postCalculator1({income:Result1,Resident_period:Result2,Resident_Location1:Location,Resident_Location2:dbLocation,Number_Of_Payment:Result3,Applying_Location:apply})
+        postCalculator1({income:state.Income_Score,Resident_period:Result2,Resident_Location1:Location,Resident_Location2:dbLocation,Number_Of_Payment:Result3,Applying_Location:apply})
 
     }
     const handleSubmit = (e) => {
 
         e.preventDefault()
         {
-            Result1_Alert == '모든 항목을 입력해주세요' || Result2_Alert == '모든 항목을 입력해주세요' || Result3_Alert == '모든 항목을 입력해주세요' || Result1 == 0 || Result3 == 0 || Location == '.' || apply == '.' || option3 == '.' || dbLocation == '.' || Location2 == '.'
+            Result1_Alert == '모든 항목을 입력해주세요' || Result2_Alert == '모든 항목을 입력해주세요' || Result3_Alert == '모든 항목을 입력해주세요' || state.Income_Score == 0 || Location == '.' || apply == '.' || option3 == '.' || dbLocation == '.' || Location2 == '.'
             ? setResult4_Alert('모든 항목의 점수를 내주세요')
             : successSubmit()
         }
@@ -695,7 +694,7 @@ const Calculator1 = ()=>{
                                 }
                             </select>
                             <div className = "score">점수 : <span className = "option1_result">{Result2}</span><span className = "red">{Result2_Alert}</span></div>
-                            <div className = "block"><div className = "score totalScore inline-block">총점 : <span className = "total_result">{Result1+Result2+Result3}</span>/9</div><input className = "submitBTN" value = "결과 보기" onClick = {ChangeAlert} type = "submit"/></div>
+                            <div className = "block"><div className = "score totalScore inline-block">총점 : <span className = "total_result">{state.Income_Score+Result2+Result3}</span>/9</div><input className = "submitBTN" value = "결과 보기" onClick = {ChangeAlert} type = "submit"/></div>
                             <div className = "result4_alert red"><span className = {className}>{Result4_Alert}</span></div>
                         </div>
                         <div className = "LocationBox2">{state.apply_alert1}</div>
