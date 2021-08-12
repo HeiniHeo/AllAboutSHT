@@ -288,9 +288,9 @@ const Calculator1 = ()=>{
                             </div>
                             <div className = "score totalScore apply">지원 지역</div>
                             <select className = "Select_Box" onChange = {ChangeLocation2}  defaultValue={"2차"} >
-                                <option value = "second">2차 지원(10월)</option>
-                                <option value = "third">3차 지원(11월)</option>
-                                <option value = "fourth">4차 지원(12월)</option>
+                                <option value = "2차">2차 지원(10월)</option>
+                                <option value = "3차">3차 지원(11월)</option>
+                                <option value = "4차">4차 지원(12월)</option>
                             </select>
                             <select className="Select_Box" onChange={Applying_Location}>
                                     <option>내용을선택해주세요.</option>
