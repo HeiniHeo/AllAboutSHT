@@ -1,6 +1,6 @@
 .finincome_header > button{
-    width:20px;
-    margin-left:530px;
+    width:60px;
+    margin-left:480px;
     background-color: rgb(40, 140, 228);
     color:#fff;
     border-radius:5px;
@@ -15,16 +15,16 @@
 .finincome{
     width:500px;
     height:100px;
-    margin-top:-40px;
     background-color:#fff;
-    font-size:12px;
+    font-size:10px;
     overflow-y:hidden;
 }
 
 .finincome2{
-    margin-top:-40px;
+    margin-top:-20px;
     overflow-y:hidden
 }
+
 
 @media screen and (max-width:768px) {
     .finincome_header > button{

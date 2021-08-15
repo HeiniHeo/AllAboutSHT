@@ -305,6 +305,7 @@ const Calculator2 = ()=>{
                                     <option value="2차">2차 지원(10월)</option>
                                     <option value="3차">3차 지원(11월)</option>
                                     <option value="4차">4차 지원(12월)</option>
+                                    <option value = "본청약">본청약</option>
                                 </select>
                                 <select className="Select_Box" onChange={Applying_Location}>
                                     <option>내용을선택해주세요.</option>
