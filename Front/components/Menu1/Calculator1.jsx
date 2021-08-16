@@ -209,7 +209,7 @@ const Calculator1 = ()=>{
 
         e.preventDefault()
         {
-            Result1_Alert == '모든 항목을 입력해주세요' || Result2_Alert == '모든 항목을 입력해주세요' || Result3_Alert == '모든 항목을 입력해주세요'|| state.Income_Score == 0 || Result3 == 0 || Location == '.' || apply == '.' || option3 == '.' || dbLocation == '.' || Location2 == '.'
+            Result1_Alert == '모든 항목을 입력해주세요' || Result2_Alert == '모든 항목을 입력해주세요' || Result3_Alert == '모든 항목을 입력해주세요'|| state.Income_Score == 0 || Location == '.' || apply == '.' || option3 == '.' || dbLocation == '.' || Location2 == '.'
                 ? setResult4_Alert('모든 항목의 점수를 내주세요')
                 : successSubmit()
         }
@@ -231,6 +231,7 @@ const Calculator1 = ()=>{
                                         <h6>1. 배우자 소득 유무</h6>
 
                                         <select onChange={ChangeIncome}>
+                                            <option value="two">선택</option>
                                             <option value="two">맞벌이</option>
                                             <option value="one">외벌이</option>
                                             <option value="zero">둘 다 무직</option>
@@ -239,6 +240,7 @@ const Calculator1 = ()=>{
                                     <div className="inline-block margin-left">
                                         <h6>2. 가구 수</h6>
                                         <select onChange={ChangePerson}>
+                                            <option value="two">선택</option>
                                             <option value="three">3인 이하</option>
                                             <option value="four">4인</option>
                                             <option value="five">5인</option>
