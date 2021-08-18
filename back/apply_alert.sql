@@ -78,4 +78,6 @@ insert into apply_alert1 (apply, Location, dbLocation, option2, apply_alert1) va
 insert into apply_alert1 (apply, Location, dbLocation, option2, apply_alert1) values ('성남금토', 'GyeongGi', '성남시', 24, '당해기준 충족자 이시네요! 1단계 공급물량은 총 210호 입니다');
 insert into apply_alert1 (apply, Location, dbLocation, option2, apply_alert1) values ('성남금토', 'GyeongGi', 'not', 0, '지원 자격이 없습니다.');
 insert into apply_alert1 (apply, Location, dbLocation, option2, apply_alert1) values ('성남금토', 'not', 'not', 0, '지원 자격이 없습니다.');
-
+insert into apply_alert1 (apply, Location, dbLocation, option2, apply_alert1) values ('과천지정타(8월)', 'GyeongGi', '과천시', 24, '당해기준 충족자 이시네요! 1단계 공급물량은 총 21호 입니다');
+insert into apply_alert1 (apply, Location, dbLocation, option2, apply_alert1) values ('과천지정타(8월)', 'GyeongGi', 'not', 24, '경기도 거주자 이시네요! 1단계 공급물량은 총 14호 입니다.');
+insert into apply_alert1 (apply, Location, dbLocation, option2, apply_alert1) values ('과천지정타(8월)', 'not', 'not', 0, '기타지역 거주자/미해당 이시네요! 1단계 공급물량은 총 35호 입니다.');
