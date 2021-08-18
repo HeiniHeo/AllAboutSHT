@@ -5,6 +5,7 @@ import {postCalculator2} from '../../api/api'
 import AreaComponent from './Location/AreaComponent'
 import { LocationComponent } from './Location/LocationComponent'
 import data from './Location/data.json'
+import { base_url } from '../../Store/Allurl'
 
 const Calculator2 = ()=>{
     const {state,dispatch} = useContext(Store)
@@ -302,9 +303,9 @@ const Calculator2 = ()=>{
                                 </div>
                                 <div className="score totalScore apply">지원 지역</div>
                                 <select className="Select_Box" defaultValue={"2차"} onChange={ChangeLocation2}>
-                                    <option value="2차">2차 지원(10월)</option>
-                                    <option value="3차">3차 지원(11월)</option>
-                                    <option value="4차">4차 지원(12월)</option>
+                                    <option value="2차">사전청약2차(10월)</option>
+                                    <option value="3차">사전청약3차(11월)</option>
+                                    <option value="4차">사전청약4차(12월)</option>
                                     <option value = "본청약">본청약</option>
                                 </select>
                                 <select className="Select_Box" onChange={Applying_Location}>
