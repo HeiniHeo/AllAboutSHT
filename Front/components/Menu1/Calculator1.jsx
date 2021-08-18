@@ -47,7 +47,7 @@ const Calculator1 = ()=>{
             method:'GET'
         }
 
-        let result1 = await fetch(`http://localhost/apply_alert1_1?apply=${apply}&Location=${Location}&dbLocation=${dbLocation}&option2=${option2}`,options1)
+        let result1 = await fetch(`${base_url}/apply_alert1_1?apply=${apply}&Location=${Location}&dbLocation=${dbLocation}&option2=${option2}`,options1)
         const data1 = await result1.json()
         console.log(data1)
         dispatch({ type: 'apply_alert', payload: data1[0].apply_alert1 })
@@ -166,7 +166,7 @@ const Calculator1 = ()=>{
             method: 'GET'
         }
 
-        let result = await fetch(`http://localhost/IncomeScores?Income=${Income}&Person=${Person}&Cost=${Cost}`, options)
+        let result = await fetch(`${base_url}/IncomeScores?Income=${Income}&Person=${Person}&Cost=${Cost}`, options)
         const data = await result.json()
 
         dispatch({ type: 'Income_Score', payload: data[0].Income_Score })

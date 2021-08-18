@@ -225,7 +225,7 @@ const Calculator2 = ()=>{
             method:'GET'
         }
 
-        let result1 = await fetch(`http://localhost/calculator2?apply=${apply}&Location=${Location}&dbLocation=${dbLocation}&option3=${option3}`,options1)
+        let result1 = await fetch(`${base_url}/calculator2?apply=${apply}&Location=${Location}&dbLocation=${dbLocation}&option3=${option3}`,options1)
         const data1 = await result1.json()
         console.log(data1[0][0].apply_type)
         console.log(data1)
