@@ -36,7 +36,8 @@ INSERT INTO `apply_alert2` (`season`, `month`, `support_area`, `residential_area
 	('4차', '12월', '시흥거모', '경기도', '시흥시', 24, 168, 112, 280, NULL, NULL),
 	('4차', '12월', '안산장상', '경기도', '안산시', 24, 63, 42, 105, NULL, NULL),
 	('4차', '12월', '구리갈매역세권', '경기도', '구리시', 24, 231, 154, 385, NULL, NULL),
-	('4차', '12월', '안산신길2', '경기도', '안산시', 24, 126, 84, 210, NULL, NULL);
+	('4차', '12월', '안산신길2', '경기도', '안산시', 24, 126, 84, 210, NULL, NULL),
+	('본청약', '8월', '과천지식정보타운', '경기도', '과천시', 24, 48, 31, 78, NULL, NULL);
 /*!40000 ALTER TABLE `apply_alert1` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
