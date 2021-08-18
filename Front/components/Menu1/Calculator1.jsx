@@ -6,6 +6,7 @@ import { LocationComponent } from './Location/LocationComponent'
 import { postCalculator1 } from '../../api/api'
 // import LocationComponent from './Location/LocationComponent'
 import { base_url } from '../../Store/Allurl'
+import { localurl } from '../../Store/Allurl'
 import data from './Location/data.json'
 
 
