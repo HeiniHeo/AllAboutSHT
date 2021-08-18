@@ -5,6 +5,7 @@ import {postCalculator2} from '../../api/api'
 import AreaComponent from './Location/AreaComponent'
 import { LocationComponent } from './Location/LocationComponent'
 import data from './Location/data.json'
+import { base_url } from '../../Store/Allurl'
 
 const Calculator2 = ()=>{
     const {state,dispatch} = useContext(Store)
