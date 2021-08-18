@@ -68,6 +68,7 @@
 .bank_site > ul > li {
     float:left;
     margin-left: 15px;
+    overflow-y: hidden;
 }
 .bank_site > ul > li > a > img{
     margin-top:10px;
