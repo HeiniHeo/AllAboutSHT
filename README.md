@@ -112,22 +112,46 @@
 
 # 🖥 Local 실행 방법
 [1] Clone the Repo
+```
 git clone https://github.com/HeiniHeo/AllAboutSHT.git
+```
 
 [2] Install Packages
-Front: cd AllAboutSHT => cd Front => npm i
-back: cd AllAboutSHT => cd back => npm i
+```
+Front
+
+cd AllAboutSHT 
+cd Front 
+npm i
+```
+```
+back
+
+cd AllAboutSHT 
+cd back 
+npm i
+```
 
 [3] Run the Project
-Front => npm run dev
-back => node server.js
+```
+Front 
+
+npm run dev
+```
+```
+back  
+
+mysql sht database 생성
+node server.js
+```
 
 
 ## 👩‍💻 개발자
 
 [허유명](https://github.com/HeiniHeo)
-[강지현](https://github.com/jorny95)
 [김서영](https://github.com/simbian2)
+[강지현](https://github.com/jorny95)
+
 
 ## 🔗 URL
 [신희타가점도우미 바로가기](http://jebaldangcheom.com/)
