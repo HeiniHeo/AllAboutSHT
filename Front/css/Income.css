@@ -118,6 +118,7 @@
 
     .entrepreneur{
         width:380px;
+        overflow-x: hidden;
     }
 
     .entrepreneur div h3{

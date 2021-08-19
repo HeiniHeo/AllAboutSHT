@@ -61,6 +61,7 @@
     .tab_left{
         width:420px;
         margin: 50px auto;
+        overflow-x: hidden;
     }
 
     .tab_right{

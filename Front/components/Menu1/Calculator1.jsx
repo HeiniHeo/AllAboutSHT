@@ -261,7 +261,7 @@ const Calculator1 = ()=>{
                                     <div className="inline-block">
                                         <input onChange={changOption3} type="text" />회
                                     </div>
-                                    <input onClick={HandleResult3} className="BTN" type="button" value="점수 계산" />
+                                    <input onClick={HandleResult3} className="BTN subbtn" type="button" value="점수 계산" />
                                     <div className = "score">점수 : <span className = "option1_result">{Result3}</span><span className = "red">{Result3_Alert}</span></div>
                                 </div>
                                 <div className="option2">

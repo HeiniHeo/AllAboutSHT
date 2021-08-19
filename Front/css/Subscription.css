@@ -135,5 +135,6 @@
     }
     .bank_site > ul > li {
         margin-top: 35px;
+        overflow-x:hidden;
     }
 }

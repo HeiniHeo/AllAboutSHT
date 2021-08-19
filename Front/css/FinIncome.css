@@ -28,7 +28,9 @@
 
 @media screen and (max-width:768px) {
     .finincome_header > button{
-        margin-left:360px;
+        margin-left:320px;
+        position:relative;
+        top:90px;
     }
     .finincome{
         width:350px;
