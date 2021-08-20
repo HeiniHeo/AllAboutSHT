@@ -1,5 +1,6 @@
 import Tab from '../components/Tab'
 import Tab2 from '../components/Tab2'
+import Video from '../components/Video'
 import Notice from '../components/Notice'
 import Supply from '../components/Supply'
 import Feedback from '../components/Feedback'
@@ -16,6 +17,9 @@ const Index = () => {
                     <Tab2 />
                 </div>
                 <a href="https://apply.lh.or.kr/#"><input className="GoTo" type="button" value="청약하러가기" /></a>
+                <div>
+                    <Video />
+                </div>
                 <Feedback />
             </div>
         </>

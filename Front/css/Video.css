@@ -1,0 +1,30 @@
+.video{
+    width: 1250px;
+    height: 750px;
+    margin: 50px auto;
+    background-color: #fff;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 5px 5px 5px -2px rgb(0, 0, 0,.15) ;
+    overflow-y: hidden;
+}
+.video_left{
+    float: left;
+}
+
+.video h1{
+    text-align: center;
+    padding:20px;
+    border-bottom: 1.5px solid rgb(0,91,172);
+}
+
+.video ul  li{
+    margin-left:45px;
+    padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .video{
+        display: none;
+    }
+}
